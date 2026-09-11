@@ -1,8 +1,16 @@
-function Navbar({ onLogin, onSignup }) {
+function Navbar({
+  user,
+  authLoading,
+  onLogin,
+  onSignup,
+  onLogout,
+}) {
   return (
     <nav className="navbar">
       <a className="brand" href="#home" aria-label="AlgoBoom home">
-        <span className="brand-mark">A</span>
+        <div class="footer-logo">
+          <img src="/logo.png" alt="AlgoBoom" />
+        </div>
         <span>AlgoBoom</span>
       </a>
 
@@ -13,13 +21,39 @@ function Navbar({ onLogin, onSignup }) {
       </div>
 
       <div className="nav-actions">
-        <button className="text-button" type="button" onClick={onLogin}>
-          Log in
-        </button>
+        {authLoading ? null : user ? (
+          <>
+            <span className="user-greeting">
+              Hi, {user.name}
+            </span>
 
-        <button className="signup-button" type="button" onClick={onSignup}>
-          Sign up
-        </button>
+            <button
+              className="text-button"
+              type="button"
+              onClick={onLogout}
+            >
+              Log out
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className="text-button"
+              type="button"
+              onClick={onLogin}
+            >
+              Log in
+            </button>
+
+            <button
+              className="signup-button"
+              type="button"
+              onClick={onSignup}
+            >
+              Sign up
+            </button>
+          </>
+        )}
       </div>
     </nav>
   )

@@ -1,77 +1,127 @@
+import { useEffect, useState } from 'react'
+
 function Dashboard() {
+  const [stats, setStats] = useState({
+    loginStreak: 0,
+    problemStreak: 0,
+    totalSolved: 0,
+  })
+
+  async function loadStats() {
+    try {
+      const response = await fetch('/api/streak', {
+        credentials: 'include',
+      })
+
+      if (!response.ok) return
+
+      const data = await response.json()
+
+      if (data.success) {
+        setStats({
+          loginStreak: data.streak.loginStreak,
+          problemStreak: data.streak.problemStreak,
+          totalSolved: data.streak.totalSolved,
+        })
+      }
+    } catch (error) {
+      console.error('Unable to load streak stats:', error)
+    }
+  }
+
+  useEffect(() => {
+    loadStats()
+
+    function refreshStats() {
+      loadStats()
+    }
+
+    window.addEventListener('streak-updated', refreshStats)
+
+    return () => {
+      window.removeEventListener(
+        'streak-updated',
+        refreshStats
+      )
+    }
+  }, [])
+
   return (
     <section className="dashboard-section reveal">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">DASHBOARD</p>
-          <h2>Your momentum</h2>
+          <p className="eyebrow">YOUR STREAKS</p>
+          <h2>Keep the momentum going</h2>
         </div>
-
-        <button className="view-button" type="button">
-          View details <span>→</span>
-        </button>
       </div>
 
       <div className="main-stats">
-        <article className="streak-card">
-          <div className="card-top">
+        <article className="streak-card stat-card">
+          <div className="stat-card-top">
             <div>
-              <p className="card-label">CURRENT STREAK</p>
-              <h3>7 <span>days</span></h3>
+              <p className="card-label">DAILY LOGIN</p>
+
+              <h3>
+                {stats.loginStreak}
+                <span>
+                  {stats.loginStreak === 1
+                    ? 'day'
+                    : 'days'}
+                </span>
+              </h3>
             </div>
 
-            <span className="streak-icon">✦</span>
+            <span className="streak-icon">🔥</span>
           </div>
 
-          <div className="mini-chart">
-            <span className="bar short" />
-            <span className="bar medium" />
-            <span className="bar tall" />
-            <span className="bar medium" />
-            <span className="bar tallest" />
-            <span className="bar high" />
-            <span className="bar active" />
+          <p className="stat-description">
+            Keep showing up every day.
+          </p>
+        </article>
+
+        <article className="streak-card stat-card problem-streak-card">
+          <div className="stat-card-top">
+            <div>
+              <p className="card-label">DAILY PROBLEM</p>
+
+              <h3>
+                {stats.problemStreak}
+                <span>
+                  {stats.problemStreak === 1
+                    ? 'day'
+                    : 'days'}
+                </span>
+              </h3>
+            </div>
+
+            <span className="streak-icon problem-icon">
+              ⚡
+            </span>
           </div>
+
+          <p className="stat-description">
+            Submit at least one problem every day.
+          </p>
         </article>
 
-        <article className="solved-card">
-          <div>
-            <p className="card-label">PROBLEMS SOLVED</p>
-            <h3>70</h3>
-            <p className="solved-copy">12 solved this month</p>
+        <article className="streak-card stat-card solved-stat-card">
+          <div className="stat-card-top">
+            <div>
+              <p className="card-label">TOTAL PROBLEMS</p>
+
+              <h3>
+                {stats.totalSolved}
+              </h3>
+            </div>
+
+            <span className="streak-icon solved-icon">
+              ✓
+            </span>
           </div>
 
-          <div className="progress-circle">
-            <svg viewBox="0 0 120 120" aria-label="70 percent goal progress">
-              <circle className="circle-track" cx="60" cy="60" r="48" />
-              <circle className="circle-value" cx="60" cy="60" r="48" />
-            </svg>
-
-            <span>70%</span>
-          </div>
-        </article>
-      </div>
-
-      <div className="difficulty-grid">
-        <article className="difficulty-card easy-card">
-          <span className="difficulty-dot" />
-          <p>Easy</p>
-          <strong>32</strong>
-          <small>Problems solved</small>
-        </article>
-
-        <article className="difficulty-card medium-card">
-          <span className="difficulty-dot" />
-          <p>Medium</p>
-          <strong>29</strong>
-          <small>Problems solved</small>
-        </article>
-
-        <article className="difficulty-card hard-card">
-          <span className="difficulty-dot" />
-          <p>Hard</p>
-          <strong>9</strong>
-          <small>Problems solved</small>
+          <p className="stat-description">
+            Problems you've marked as submitted.
+          </p>
         </article>
       </div>
     </section>
