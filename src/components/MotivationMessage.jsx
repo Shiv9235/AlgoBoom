@@ -26,7 +26,7 @@ function MotivationMessage() {
           })
         }
       } catch {
-        // The fallback message remains visible if the API is unavailable.
+        // Keep fallback message.
       }
     }
 
@@ -34,13 +34,25 @@ function MotivationMessage() {
   }, [])
 
   return (
-    <div className="motivation">
-      <p>“{message.quote}”</p>
-      <span>— {message.author}</span>
-      <a href="https://zenquotes.io/" target="_blank" rel="noreferrer">
-        Quotes by ZenQuotes
+    <section className="motivation-section reveal" aria-label="Daily motivation">
+      <p className="motivation-label">TODAY'S MOTIVATION</p>
+
+      <blockquote>
+        “{message.quote}”
+      </blockquote>
+
+      <p className="motivation-author">
+        — {message.author}
+      </p>
+
+      <a
+        href="https://zenquotes.io/"
+        target="_blank"
+        rel="noreferrer"
+        className="motivation-source"
+      >
       </a>
-    </div>
+    </section>
   )
 }
 

@@ -1,4 +1,3 @@
-import MotivationMessage from './MotivationMessage.jsx'
 function Dashboard() {
   return (
     <section className="dashboard-section reveal">
@@ -7,6 +6,7 @@ function Dashboard() {
           <p className="eyebrow">DASHBOARD</p>
           <h2>Your momentum</h2>
         </div>
+
         <button className="view-button" type="button">
           View details <span>→</span>
         </button>
@@ -19,6 +19,7 @@ function Dashboard() {
               <p className="card-label">CURRENT STREAK</p>
               <h3>7 <span>days</span></h3>
             </div>
+
             <span className="streak-icon">✦</span>
           </div>
 
@@ -31,8 +32,6 @@ function Dashboard() {
             <span className="bar high" />
             <span className="bar active" />
           </div>
-
-          <MotivationMessage />
         </article>
 
         <article className="solved-card">
@@ -47,6 +46,7 @@ function Dashboard() {
               <circle className="circle-track" cx="60" cy="60" r="48" />
               <circle className="circle-value" cx="60" cy="60" r="48" />
             </svg>
+
             <span>70%</span>
           </div>
         </article>

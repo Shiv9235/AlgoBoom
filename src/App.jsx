@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar.jsx'
+import MotivationMessage from './components/MotivationMessage.jsx'
 import Hero from './components/Hero.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import ProblemSpotlight from './components/ProblemSpotlight.jsx'
@@ -26,7 +27,10 @@ function App() {
           onSignup={() => setAuthMode('signup')}
         />
 
+
+        <MotivationMessage />
         <Hero />
+
         <Dashboard />
         <ProblemSpotlight />
         <Resources />
