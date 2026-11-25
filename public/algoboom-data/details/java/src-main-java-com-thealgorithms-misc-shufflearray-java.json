@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-shufflearray-java",
+  "slug": "shufflearray",
+  "title": "ShuffleArray",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/ShuffleArray.java",
+  "content": "package com.thealgorithms.misc;\n\nimport java.util.Random;\n\n/**\n * The Fisher-Yates (Knuth) Shuffle algorithm randomly permutes an array's\n * elements, ensuring each permutation is equally likely.\n *\n * <p>\n * Worst-case performance O(n)\n * Best-case performance O(n)\n * Average performance O(n)\n * Worst-case space complexity O(1)\n *\n * This class provides a static method to shuffle an array in place.\n *\n * @author Rashi Dashore (https://github.com/rashi07dashore)\n */\npublic final class ShuffleArray {\n\n    private ShuffleArray() {\n    }\n\n    /**\n     * Shuffles the provided array in-place using the Fisher–Yates algorithm.\n     *\n     * @param arr the array to shuffle; must not be {@code null}\n     * @throws IllegalArgumentException if the input array is {@code null}\n     */\n    public static void shuffle(int[] arr) {\n        if (arr == null) {\n            throw new IllegalArgumentException(\"Input array must not be null\");\n        }\n\n        Random random = new Random();\n        for (int i = arr.length - 1; i > 0; i--) {\n            int j = random.nextInt(i + 1);\n            swap(arr, i, j);\n        }\n    }\n\n    /**\n     * Swaps two elements in an array.\n     *\n     * @param arr the array\n     * @param i   index of first element\n     * @param j   index of second element\n     */\n    private static void swap(int[] arr, int i, int j) {\n        if (i != j) {\n            int temp = arr[i];\n            arr[i] = arr[j];\n            arr[j] = temp;\n        }\n    }\n}\n"
+}

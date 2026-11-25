@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterstackandqueue-index-md",
+  "slug": "stacks-and-queues",
+  "title": "Stacks and queues",
+  "source": "hello",
+  "category": "stack_and_queue",
+  "sourcePath": "Algorithms/en/docs/chapter_stack_and_queue/index.md",
+  "content": "# Stacks and queues\n\n![Stacks and queues](../assets/covers/chapter_stack_and_queue.jpg)\n\n!!! abstract\n\n    A stack is like cats piled on top of one another; a queue is like cats standing in line.\n    \n    They represent last-in, first-out and first-in, first-out order, respectively.\n"
+}

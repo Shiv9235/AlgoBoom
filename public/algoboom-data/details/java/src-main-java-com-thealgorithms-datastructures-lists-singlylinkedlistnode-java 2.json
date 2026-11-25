@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-lists-singlylinkedlistnode-java",
+  "slug": "singlylinkedlistnode",
+  "title": "SinglyLinkedListNode",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / lists",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/lists/SinglyLinkedListNode.java",
+  "content": "package com.thealgorithms.datastructures.lists;\n\n/**\n * This class is the nodes of the SinglyLinked List. They consist of a value and\n * a pointer to the node after them.\n */\nclass SinglyLinkedListNode {\n\n    int value;\n    SinglyLinkedListNode next = null;\n\n    SinglyLinkedListNode() {\n    }\n\n    /**\n     * Constructor\n     *\n     * @param value Value to be put in the node\n     */\n    SinglyLinkedListNode(int value) {\n        this(value, null);\n    }\n\n    /**\n     * Constructor\n     *\n     * @param value Value to be put in the node\n     * @param next Reference to the next node\n     */\n    SinglyLinkedListNode(int value, SinglyLinkedListNode next) {\n        this.value = value;\n        this.next = next;\n    }\n}\n"
+}

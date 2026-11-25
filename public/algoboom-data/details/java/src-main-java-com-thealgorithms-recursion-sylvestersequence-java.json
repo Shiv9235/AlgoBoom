@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-recursion-sylvestersequence-java",
+  "slug": "sylvestersequence",
+  "title": "SylvesterSequence",
+  "source": "java",
+  "category": "com / thealgorithms / recursion",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/recursion/SylvesterSequence.java",
+  "content": "package com.thealgorithms.recursion;\n\nimport java.math.BigInteger;\n\n/**\n * A utility class for calculating numbers in Sylvester's sequence.\n *\n * <p>Sylvester's sequence is a sequence of integers where each term is calculated\n * using the formula:\n * <pre>\n * a(n) = a(n-1) * (a(n-1) - 1) + 1\n * </pre>\n * with the first term being 2.\n *\n * <p>This class is final and cannot be instantiated.\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Sylvester_sequence\">Wikipedia: Sylvester sequence</a>\n */\npublic final class SylvesterSequence {\n\n    // Private constructor to prevent instantiation\n    private SylvesterSequence() {\n    }\n\n    /**\n     * Calculates the nth number in Sylvester's sequence.\n     *\n     * <p>The sequence is defined recursively, with the first term being 2:\n     * <pre>\n     * a(1) = 2\n     * a(n) = a(n-1) * (a(n-1) - 1) + 1 for n > 1\n     * </pre>\n     *\n     * @param n the position in the sequence (must be greater than 0)\n     * @return the nth number in Sylvester's sequence\n     * @throws IllegalArgumentException if n is less than or equal to 0\n     */\n    public static BigInteger sylvester(int n) {\n        if (n <= 0) {\n            throw new IllegalArgumentException(\"sylvester() does not accept negative numbers or zero.\");\n        }\n        if (n == 1) {\n            return BigInteger.valueOf(2);\n        } else {\n            BigInteger prev = sylvester(n - 1);\n            // Sylvester sequence formula: a(n) = a(n-1) * (a(n-1) - 1) + 1\n            return prev.multiply(prev.subtract(BigInteger.ONE)).add(BigInteger.ONE);\n        }\n    }\n}\n"
+}

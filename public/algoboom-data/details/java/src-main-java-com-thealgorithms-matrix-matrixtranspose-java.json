@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-matrix-matrixtranspose-java",
+  "slug": "matrixtranspose",
+  "title": "MatrixTranspose",
+  "source": "java",
+  "category": "com / thealgorithms / matrix",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/matrix/MatrixTranspose.java",
+  "content": "package com.thealgorithms.matrix;\n\n/**\n *\n *\n * <h1>Find the Transpose of Matrix!</h1>\n *\n * Simply take input from the user and print the matrix before the transpose and\n * after the transpose.\n *\n * <p>\n * <b>Note:</b> Giving proper comments in your program makes it more user\n * friendly and it is assumed as a high quality code.\n *\n * @author Rajat-Jain29\n * @version 11.0.9\n * @since 2014-03-31\n */\npublic final class MatrixTranspose {\n    private MatrixTranspose() {\n    }\n\n    /**\n     * Calculate the transpose of the given matrix.\n     *\n     * @param matrix The matrix to be transposed\n     * @throws IllegalArgumentException if the matrix is empty\n     * @throws NullPointerException     if the matrix is null\n     * @return The transposed matrix\n     */\n    public static int[][] transpose(int[][] matrix) {\n        if (matrix == null || matrix.length == 0) {\n            throw new IllegalArgumentException(\"Matrix is empty\");\n        }\n\n        int rows = matrix.length;\n        int cols = matrix[0].length;\n        int[][] transposedMatrix = new int[cols][rows];\n        for (int i = 0; i < cols; i++) {\n            for (int j = 0; j < rows; j++) {\n                transposedMatrix[i][j] = matrix[j][i];\n            }\n        }\n        return transposedMatrix;\n    }\n}\n"
+}

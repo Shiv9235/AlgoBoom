@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-lists-tortoiseharealgo-java",
+  "slug": "tortoiseharealgo",
+  "title": "TortoiseHareAlgo",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / lists",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/lists/TortoiseHareAlgo.java",
+  "content": "package com.thealgorithms.datastructures.lists;\n\npublic class TortoiseHareAlgo<E> {\n    static final class Node<E> {\n        Node<E> next;\n        E value;\n\n        private Node(E value, Node<E> next) {\n            this.value = value;\n            this.next = next;\n        }\n    }\n\n    private Node<E> head = null;\n\n    public TortoiseHareAlgo() {\n        head = null;\n    }\n\n    public void append(E value) {\n        Node<E> newNode = new Node<>(value, null);\n        if (head == null) {\n            head = newNode;\n            return;\n        }\n        Node<E> current = head;\n        while (current.next != null) {\n            current = current.next;\n        }\n        current.next = newNode;\n    }\n\n    public E getMiddle() {\n        if (head == null) {\n            return null;\n        }\n\n        Node<E> slow = head;\n        Node<E> fast = head;\n\n        while (fast != null && fast.next != null) {\n            slow = slow.next;\n            fast = fast.next.next;\n        }\n\n        return slow.value;\n    }\n\n    @Override\n    public String toString() {\n        StringBuilder sb = new StringBuilder(\"[\");\n        Node<E> current = head;\n        while (current != null) {\n            sb.append(current.value);\n            if (current.next != null) {\n                sb.append(\", \");\n            }\n            current = current.next;\n        }\n        sb.append(\"]\");\n        return sb.toString();\n    }\n}\n"
+}

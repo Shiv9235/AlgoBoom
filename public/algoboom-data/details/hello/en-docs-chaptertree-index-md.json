@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chaptertree-index-md",
+  "slug": "trees",
+  "title": "Trees",
+  "source": "hello",
+  "category": "tree",
+  "sourcePath": "Algorithms/en/docs/chapter_tree/index.md",
+  "content": "# Trees\n\n![Trees](../assets/covers/chapter_tree.jpg)\n\n!!! abstract\n\n    A towering tree brims with life, its roots deep, its leaves lush, and its branches spreading wide.\n    \n    It gives vivid form to the idea of dividing data to conquer a problem.\n"
+}

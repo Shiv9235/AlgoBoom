@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-medianofrunningarrayfloat-java",
+  "slug": "medianofrunningarrayfloat",
+  "title": "MedianOfRunningArrayFloat",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MedianOfRunningArrayFloat.java",
+  "content": "package com.thealgorithms.misc;\n\npublic final class MedianOfRunningArrayFloat extends MedianOfRunningArray<Float> {\n    @Override\n    public Float calculateAverage(final Float a, final Float b) {\n        return (a + b) / 2.0f;\n    }\n}\n"
+}

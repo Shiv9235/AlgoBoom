@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterappendix-index-md",
+  "slug": "appendix",
+  "title": "Appendix",
+  "source": "hello",
+  "category": "appendix",
+  "sourcePath": "Algorithms/en/docs/chapter_appendix/index.md",
+  "content": "# Appendix\n\n![Appendix](../assets/covers/chapter_appendix.jpg)\n"
+}

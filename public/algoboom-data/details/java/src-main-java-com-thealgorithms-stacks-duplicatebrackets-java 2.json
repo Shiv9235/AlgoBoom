@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-stacks-duplicatebrackets-java",
+  "slug": "duplicatebrackets",
+  "title": "DuplicateBrackets",
+  "source": "java",
+  "category": "com / thealgorithms / stacks",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/stacks/DuplicateBrackets.java",
+  "content": "package com.thealgorithms.stacks;\n\nimport java.util.Stack;\n\n/**\n * Class for detecting unnecessary or redundant brackets in a mathematical expression.\n * Assumes the expression is balanced (i.e., all opening brackets have matching closing brackets).\n */\npublic final class DuplicateBrackets {\n    private DuplicateBrackets() {\n    }\n\n    /**\n     * Checks for extra or redundant brackets in a given expression.\n     *\n     * @param expression the string representing the expression to be checked\n     * @return true if there are extra or redundant brackets, false otherwise\n     * @throws IllegalArgumentException if the input string is null\n     */\n    public static boolean check(String expression) {\n        if (expression == null) {\n            throw new IllegalArgumentException(\"Input expression cannot be null.\");\n        }\n\n        Stack<Character> stack = new Stack<>();\n        for (int i = 0; i < expression.length(); i++) {\n            char ch = expression.charAt(i);\n            if (ch == ')') {\n                if (stack.isEmpty() || stack.peek() == '(') {\n                    return true;\n                }\n                while (!stack.isEmpty() && stack.peek() != '(') {\n                    stack.pop();\n                }\n                if (!stack.isEmpty()) {\n                    stack.pop();\n                }\n            } else {\n                stack.push(ch);\n            }\n        }\n        return false;\n    }\n}\n"
+}

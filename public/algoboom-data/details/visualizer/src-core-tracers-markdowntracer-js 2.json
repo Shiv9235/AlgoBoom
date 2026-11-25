@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-markdowntracer-js",
+  "slug": "markdowntracer",
+  "title": "MarkdownTracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/MarkdownTracer.js",
+  "content": "import { Tracer } from 'core/tracers';\nimport { MarkdownRenderer } from 'core/renderers';\n\nclass MarkdownTracer extends Tracer {\n  getRendererClass() {\n    return MarkdownRenderer;\n  }\n\n  set(markdown = '') {\n    this.markdown = markdown;\n    super.set();\n  }\n}\n\nexport default MarkdownTracer;\n"
+}

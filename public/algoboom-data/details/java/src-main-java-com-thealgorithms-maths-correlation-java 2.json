@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-correlation-java",
+  "slug": "correlation",
+  "title": "Correlation",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Correlation.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Class for correlation of two discrete variables\n */\n\npublic final class Correlation {\n    private Correlation() {\n    }\n\n    public static final double DELTA = 1e-9;\n\n    /**\n     * Discrete correlation function.\n     * Correlation between two discrete variables is calculated\n     * according to the formula: Cor(x, y)=Cov(x, y)/sqrt(Var(x)*Var(y)).\n     * Correlation with a constant variable is taken to be zero.\n     *\n     * @param x The first discrete variable\n     * @param y The second discrete variable\n     * @param n The number of values for each variable\n     * @return The result of the correlation of variables x,y.\n     */\n    public static double correlation(double[] x, double[] y, int n) {\n        double exy = 0; // E(XY)\n        double ex = 0; // E(X)\n        double exx = 0; // E(X^2)\n        double ey = 0; // E(Y)\n        double eyy = 0; // E(Y^2)\n        for (int i = 0; i < n; i++) {\n            exy += x[i] * y[i];\n            ex += x[i];\n            exx += x[i] * x[i];\n            ey += y[i];\n            eyy += y[i] * y[i];\n        }\n        exy /= n;\n        ex /= n;\n        exx /= n;\n        ey /= n;\n        eyy /= n;\n        double cov = exy - ex * ey; // Cov(X, Y) = E(XY)-E(X)E(Y)\n        double varx = Math.sqrt(exx - ex * ex); // Var(X) = sqrt(E(X^2)-E(X)^2)\n        double vary = Math.sqrt(eyy - ey * ey); // Var(Y) = sqrt(E(Y^2)-E(Y)^2)\n        if (varx * vary < DELTA) { // Var(X) = 0 means X = const, the same about Y\n            return 0;\n        } else {\n            return cov / Math.sqrt(varx * vary);\n        }\n    }\n}\n"
+}

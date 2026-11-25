@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-progressbar-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / ProgressBar",
+  "sourcePath": "AlgoVisualizer/src/components/ProgressBar/index.js",
+  "content": "import React from 'react';\nimport { classes } from 'common/util';\nimport styles from './ProgressBar.module.scss';\n\nclass ProgressBar extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.handleMouseDown = this.handleMouseDown.bind(this);\n    this.handleMouseMove = this.handleMouseMove.bind(this);\n    this.handleMouseUp = this.handleMouseUp.bind(this);\n  }\n\n  handleMouseDown(e) {\n    this.target = e.target;\n    this.handleMouseMove(e);\n    document.addEventListener('mousemove', this.handleMouseMove);\n    document.addEventListener('mouseup', this.handleMouseUp);\n  }\n\n  handleMouseMove(e) {\n    const { left } = this.target.getBoundingClientRect();\n    const { offsetWidth } = this.target;\n    const { onChangeProgress } = this.props;\n    const progress = (e.clientX - left) / offsetWidth;\n    if (onChangeProgress) onChangeProgress(progress);\n  }\n\n  handleMouseUp(e) {\n    document.removeEventListener('mousemove', this.handleMouseMove);\n    document.removeEventListener('mouseup', this.handleMouseUp);\n  }\n\n  render() {\n    const { className, total, current } = this.props;\n\n    return (\n      <div className={classes(styles.progress_bar, className)} onMouseDown={this.handleMouseDown}>\n        <div className={styles.active} style={{ width: `${current / total * 100}%` }} />\n        <div className={styles.label}>\n          <span className={styles.current}>{current}</span> / {total}\n        </div>\n      </div>\n    );\n  }\n}\n\nexport default ProgressBar;\n"
+}

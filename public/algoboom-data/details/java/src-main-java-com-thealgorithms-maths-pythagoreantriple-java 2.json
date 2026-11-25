@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-pythagoreantriple-java",
+  "slug": "pythagoreantriple",
+  "title": "PythagoreanTriple",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PythagoreanTriple.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Utility class to check if three integers form a Pythagorean triple.\n * A Pythagorean triple consists of three positive integers a, b, and c,\n * such that a² + b² = c².\n *\n * Common examples:\n * - (3, 4, 5)\n * - (5, 12, 13)\n *\n * Reference: https://en.wikipedia.org/wiki/Pythagorean_triple\n */\npublic final class PythagoreanTriple {\n\n    private PythagoreanTriple() {\n    }\n\n    /**\n     * Checks whether three integers form a Pythagorean triple.\n     * The order of parameters does not matter.\n     *\n     * @param a one side length\n     * @param b another side length\n     * @param c another side length\n     * @return {@code true} if (a, b, c) can form a Pythagorean triple, otherwise {@code false}\n     */\n    public static boolean isPythagTriple(int a, int b, int c) {\n        if (a <= 0 || b <= 0 || c <= 0) {\n            return false;\n        }\n\n        // Sort the sides so the largest is treated as hypotenuse\n        int[] sides = {a, b, c};\n        java.util.Arrays.sort(sides);\n\n        int x = sides[0];\n        int y = sides[1];\n        int hypotenuse = sides[2];\n\n        return x * x + y * y == hypotenuse * hypotenuse;\n    }\n}\n"
+}

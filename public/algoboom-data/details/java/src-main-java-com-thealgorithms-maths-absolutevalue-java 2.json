@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-absolutevalue-java",
+  "slug": "absolutevalue",
+  "title": "AbsoluteValue",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/AbsoluteValue.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class AbsoluteValue {\n    private AbsoluteValue() {\n    }\n\n    /**\n     * Returns the absolute value of a number.\n     *\n     * @param number The number to be transformed\n     * @return The absolute value of the {@code number}\n     */\n    public static long getAbsValue(long number) {\n        return Math.abs(number);\n    }\n}\n"
+}

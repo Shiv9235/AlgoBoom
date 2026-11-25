@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-findminrecursion-java",
+  "slug": "findminrecursion",
+  "title": "FindMinRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/FindMinRecursion.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class FindMinRecursion {\n\n    private FindMinRecursion() {\n    }\n\n    /**\n     * Get min of an array using divide and conquer algorithm\n     *\n     * @param array contains elements\n     * @param low the index of the first element\n     * @param high the index of the last element\n     * @return min of {@code array}\n     */\n\n    public static int min(final int[] array, final int low, final int high) {\n        if (array.length == 0) {\n            throw new IllegalArgumentException(\"array must be non-empty.\");\n        }\n        if (low == high) {\n            return array[low]; // or array[high]\n        }\n\n        int mid = (low + high) >>> 1;\n\n        int leftMin = min(array, low, mid); // get min in [low, mid]\n        int rightMin = min(array, mid + 1, high); // get min in [mid+1, high]\n\n        return Math.min(leftMin, rightMin);\n    }\n\n    /**\n     * Get min of an array using recursion algorithm\n     *\n     * @param array contains elements\n     * @return min value of {@code array}\n     */\n    public static int min(final int[] array) {\n        return min(array, 0, array.length - 1);\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-bubblesortrecursive-java",
+  "slug": "bubblesortrecursive",
+  "title": "BubbleSortRecursive",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/BubbleSortRecursive.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * BubbleSort algorithm implemented using recursion\n */\npublic class BubbleSortRecursive implements SortAlgorithm {\n    /**\n     * @param array - an array should be sorted\n     * @return sorted array\n     */\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        bubbleSort(array, array.length);\n        return array;\n    }\n\n    /**\n     * BubbleSort algorithm implements using recursion\n     *\n     * @param array array contains elements\n     * @param len length of given array\n     */\n    private static <T extends Comparable<T>> void bubbleSort(T[] array, int len) {\n        boolean swapped = false;\n        for (int i = 0; i < len - 1; ++i) {\n            if (SortUtils.greater(array[i], array[i + 1])) {\n                SortUtils.swap(array, i, i + 1);\n                swapped = true;\n            }\n        }\n        if (swapped) {\n            bubbleSort(array, len - 1);\n        }\n    }\n}\n"
+}

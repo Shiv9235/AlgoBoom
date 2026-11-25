@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-scattertracer-js",
+  "slug": "scattertracer",
+  "title": "ScatterTracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/ScatterTracer.js",
+  "content": "import { Array2DTracer } from 'core/tracers';\nimport { ScatterRenderer } from 'core/renderers';\n\nclass ScatterTracer extends Array2DTracer {\n  getRendererClass() {\n    return ScatterRenderer;\n  }\n}\n\nexport default ScatterTracer;\n"
+}

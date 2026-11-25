@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-returnsubsequence-java",
+  "slug": "returnsubsequence",
+  "title": "ReturnSubsequence",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/ReturnSubsequence.java",
+  "content": "package com.thealgorithms.strings;\n\n/**\n * Class for generating all subsequences of a given string.\n */\npublic final class ReturnSubsequence {\n    private ReturnSubsequence() {\n    }\n\n    /**\n     * Generates all subsequences of the given string.\n     *\n     * @param input The input string.\n     * @return An array of subsequences.\n     */\n    public static String[] getSubsequences(String input) {\n        if (input.isEmpty()) {\n            return new String[] {\"\"}; // Return array with an empty string if input is empty\n        }\n\n        // Recursively find subsequences of the substring (excluding the first character)\n        String[] smallerSubsequences = getSubsequences(input.substring(1));\n\n        // Create an array to hold the final subsequences, double the size of smallerSubsequences\n        String[] result = new String[2 * smallerSubsequences.length];\n\n        // Copy the smaller subsequences directly to the result array\n        System.arraycopy(smallerSubsequences, 0, result, 0, smallerSubsequences.length);\n\n        // Prepend the first character of the input string to each of the smaller subsequences\n        for (int i = 0; i < smallerSubsequences.length; i++) {\n            result[i + smallerSubsequences.length] = input.charAt(0) + smallerSubsequences[i];\n        }\n\n        return result;\n    }\n}\n"
+}

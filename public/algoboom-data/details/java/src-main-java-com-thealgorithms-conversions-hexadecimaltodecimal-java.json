@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-hexadecimaltodecimal-java",
+  "slug": "hexadecimaltodecimal",
+  "title": "HexaDecimalToDecimal",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/HexaDecimalToDecimal.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * Utility class for converting a hexadecimal string to its decimal representation.\n * <p>\n * A hexadecimal number uses the base-16 numeral system, with the following characters:\n * <ul>\n *   <li>Digits: 0-9</li>\n *   <li>Letters: A-F (case-insensitive)</li>\n * </ul>\n * Each character represents a power of 16. For example:\n * <pre>\n *   Hexadecimal \"A1\" = 10*16^1 + 1*16^0 = 161 (decimal)\n * </pre>\n *\n * <p>This class provides a method to perform the conversion without using built-in Java utilities.</p>\n */\npublic final class HexaDecimalToDecimal {\n    private HexaDecimalToDecimal() {\n    }\n\n    /**\n     * Converts a hexadecimal string to its decimal integer equivalent.\n     * <p>The input string is case-insensitive, and must contain valid hexadecimal characters [0-9, A-F].</p>\n     *\n     * @param hex the hexadecimal string to convert\n     * @return the decimal integer representation of the input hexadecimal string\n     * @throws IllegalArgumentException if the input string contains invalid characters\n     */\n    public static int getHexaToDec(String hex) {\n        String digits = \"0123456789ABCDEF\";\n        hex = hex.toUpperCase();\n        int val = 0;\n\n        for (int i = 0; i < hex.length(); i++) {\n            int d = digits.indexOf(hex.charAt(i));\n            if (d == -1) {\n                throw new IllegalArgumentException(\"Invalid hexadecimal character: \" + hex.charAt(i));\n            }\n            val = 16 * val + d;\n        }\n\n        return val;\n    }\n}\n"
+}

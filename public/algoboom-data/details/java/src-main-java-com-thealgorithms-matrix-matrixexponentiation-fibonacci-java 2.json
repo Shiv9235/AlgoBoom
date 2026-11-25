@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-matrix-matrixexponentiation-fibonacci-java",
+  "slug": "fibonacci",
+  "title": "Fibonacci",
+  "source": "java",
+  "category": "com / thealgorithms / matrix / matrixexponentiation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/matrix/matrixexponentiation/Fibonacci.java",
+  "content": "package com.thealgorithms.matrix.matrixexponentiation;\n\nimport com.thealgorithms.matrix.utils.MatrixUtil;\nimport java.math.BigDecimal;\n\n/**\n * @author Anirudh Buvanesh (https://github.com/anirudhb11) For more information\n * see https://www.geeksforgeeks.org/matrix-exponentiation/\n *\n */\npublic final class Fibonacci {\n    private Fibonacci() {\n    }\n\n    // Exponentiation matrix for Fibonacci sequence\n    private static final BigDecimal ONE = BigDecimal.valueOf(1);\n    private static final BigDecimal ZERO = BigDecimal.valueOf(0);\n\n    private static final BigDecimal[][] FIB_MATRIX = {{ONE, ONE}, {ONE, ZERO}};\n    private static final BigDecimal[][] IDENTITY_MATRIX = {{ONE, ZERO}, {ZERO, ONE}};\n\n    /**\n     * Calculates the fibonacci number using matrix exponentiaition technique\n     *\n     * @param n The input n for which we have to determine the fibonacci number\n     * Outputs the nth * fibonacci number\n     * @return a 2 X 1 array as { {F_n+1}, {F_n} }\n     */\n    public static BigDecimal[][] fib(int n) {\n        if (n == 0) {\n            return IDENTITY_MATRIX;\n        } else {\n            BigDecimal[][] cachedResult = fib(n / 2);\n            BigDecimal[][] matrixExpResult = MatrixUtil.multiply(cachedResult, cachedResult).get();\n            if (n % 2 == 0) {\n                return matrixExpResult;\n            } else {\n                return MatrixUtil.multiply(FIB_MATRIX, matrixExpResult).get();\n            }\n        }\n    }\n}\n"
+}

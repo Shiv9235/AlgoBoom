@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-upper-java",
+  "slug": "upper",
+  "title": "Upper",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/Upper.java",
+  "content": "package com.thealgorithms.strings;\n\npublic final class Upper {\n    private Upper() {\n    }\n\n    /**\n     * Driver Code\n     */\n    public static void main(String[] args) {\n        String[] strings = {\"ABC\", \"ABC123\", \"abcABC\", \"abc123ABC\"};\n        for (String s : strings) {\n            assert toUpperCase(s).equals(s.toUpperCase());\n        }\n    }\n\n    /**\n     * Converts all the characters in this {@code String} to upper case.\n     *\n     * @param s the string to convert\n     * @return the {@code String}, converted to uppercase.\n     */\n    public static String toUpperCase(String s) {\n        if (s == null) {\n            throw new IllegalArgumentException(\"Input string cannot be null\");\n        }\n        if (s.isEmpty()) {\n            return s;\n        }\n\n        StringBuilder result = new StringBuilder(s.length());\n\n        for (int i = 0; i < s.length(); ++i) {\n            char currentChar = s.charAt(i);\n            if (Character.isLowerCase(currentChar)) {\n                result.append(Character.toUpperCase(currentChar));\n            } else {\n                result.append(currentChar);\n            }\n        }\n        return result.toString();\n    }\n}\n"
+}

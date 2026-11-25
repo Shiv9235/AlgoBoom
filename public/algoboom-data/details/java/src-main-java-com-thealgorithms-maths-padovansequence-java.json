@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-padovansequence-java",
+  "slug": "padovansequence",
+  "title": "PadovanSequence",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PadovanSequence.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * The Padovan Sequence is a sequence of integers defined by the recurrence relation:\n * P(n) = P(n-2) + P(n-3) with initial values P(0) = P(1) = P(2) = 1.\n * Example: 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37...\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Padovan_sequence\">\n *     Wikipedia: Padovan Sequence</a>\n * @author Vraj Prajapati (@Rosander0)\n */\npublic final class PadovanSequence {\n\n    private PadovanSequence() {\n        // Utility class\n    }\n\n    /**\n     * Calculates the nth term of the Padovan Sequence.\n     *\n     * @param n the index of the sequence (must be non-negative)\n     * @return the nth term of the Padovan Sequence\n     */\n    public static long padovan(final int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"Input must be non-negative. Received: \" + n);\n        }\n        if (n <= 2) {\n            return 1;\n        }\n        long a = 1;\n        long b = 1;\n        long c = 1;\n        long result = 0;\n        for (int i = 3; i <= n; i++) {\n            result = a + b;\n            a = b;\n            b = c;\n            c = result;\n        }\n        return result;\n    }\n}\n"
+}

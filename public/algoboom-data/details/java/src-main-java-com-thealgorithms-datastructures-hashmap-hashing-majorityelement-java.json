@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-hashmap-hashing-majorityelement-java",
+  "slug": "majorityelement",
+  "title": "MajorityElement",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / hashmap / hashing",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/hashmap/hashing/MajorityElement.java",
+  "content": "package com.thealgorithms.datastructures.hashmap.hashing;\n\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * This class provides a method to find the majority element(s) in an array of integers.\n * A majority element is defined as an element that appears at least ⌊n/2⌋ times,\n * where n is the length of the array. If multiple elements qualify as majority elements,\n * they are all returned in a list.\n */\npublic final class MajorityElement {\n    private MajorityElement() {\n    }\n\n    /**\n     * Returns a list of majority element(s) from the given array of integers.\n     *\n     * @param nums an array of integers\n     * @return a list containing the majority element(s); returns an empty list if none exist or input is null/empty\n     */\n    public static List<Integer> majority(int[] nums) {\n        if (nums == null || nums.length == 0) {\n            return Collections.emptyList();\n        }\n\n        Map<Integer, Integer> numToCount = new HashMap<>();\n        for (final var num : nums) {\n            numToCount.merge(num, 1, Integer::sum);\n        }\n\n        List<Integer> majorityElements = new ArrayList<>();\n        for (final var entry : numToCount.entrySet()) {\n            if (entry.getValue() >= nums.length / 2) {\n                majorityElements.add(entry.getKey());\n            }\n        }\n        return majorityElements;\n    }\n}\n"
+}

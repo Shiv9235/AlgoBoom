@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-nonrepeatingnumberfinder-java",
+  "slug": "nonrepeatingnumberfinder",
+  "title": "NonRepeatingNumberFinder",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/NonRepeatingNumberFinder.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * A utility class to find the non-repeating number in an array where every other number repeats.\n * This class contains a method to identify the single unique number using bit manipulation.\n *\n * The solution leverages the properties of the XOR operation, which states that:\n * - x ^ x = 0 for any integer x (a number XORed with itself is zero)\n * - x ^ 0 = x for any integer x (a number XORed with zero is the number itself)\n *\n * Using these properties, we can find the non-repeating number in linear time with constant space.\n *\n * Example:\n * Given the input array [2, 3, 5, 2, 3], the output will be 5 since it does not repeat.\n *\n * @author Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n */\npublic final class NonRepeatingNumberFinder {\n    private NonRepeatingNumberFinder() {\n    }\n\n    /**\n     * Finds the non-repeating number in the given array.\n     *\n     * @param arr an array of integers where every number except one appears twice\n     * @return the integer that appears only once in the array or 0 if the array is empty\n     */\n    public static int findNonRepeatingNumber(int[] arr) {\n        int result = 0;\n        for (int num : arr) {\n            result ^= num;\n        }\n        return result;\n    }\n}\n"
+}

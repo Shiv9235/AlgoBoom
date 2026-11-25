@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-ceil-java",
+  "slug": "ceil",
+  "title": "Ceil",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Ceil.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Utility class to compute the ceiling of a given number.\n */\npublic final class Ceil {\n\n    private Ceil() {\n    }\n\n    /**\n     * Returns the smallest double value that is greater than or equal to the input.\n     * Equivalent to mathematical ⌈x⌉ (ceiling function).\n     *\n     * @param number the number to ceil\n     * @return the smallest double greater than or equal to {@code number}\n     */\n    public static double ceil(double number) {\n        if (Double.isNaN(number) || Double.isInfinite(number) || number == 0.0 || number < Integer.MIN_VALUE || number > Integer.MAX_VALUE) {\n            return number;\n        }\n\n        if (number < 0.0 && number > -1.0) {\n            return -0.0;\n        }\n\n        long intPart = (long) number;\n        if (number > 0 && number != intPart) {\n            return intPart + 1.0;\n        } else {\n            return intPart;\n        }\n    }\n}\n"
+}

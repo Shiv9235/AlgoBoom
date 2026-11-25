@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-graycodeconversion-java",
+  "slug": "graycodeconversion",
+  "title": "GrayCodeConversion",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/GrayCodeConversion.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * Gray code is a binary numeral system where two successive values differ in only one bit.\n * Each input and result is treated as a 32-bit pattern, including the sign bit.\n * Example:\n * 7 -> 0111 -> 0100 -> 4\n * 4 -> 0100 -> 0111 -> 7\n * 0 -> 0000 -> 0000 -> 0\n * 1 -> 0001 -> 0000 -> 0\n * 2 -> 0010 -> 0011 -> 3\n * 3 -> 0011 -> 0010 -> 2\n *\n * @author Hardvan\n */\npublic final class GrayCodeConversion {\n    private GrayCodeConversion() {\n    }\n\n    /**\n     * Converts a binary number to Gray code.\n     *\n     * @param num The binary number.\n     * @return The corresponding Gray code.\n     */\n    public static int binaryToGray(int num) {\n        return num ^ (num >>> 1);\n    }\n\n    /**\n     * Converts a Gray code number back to binary.\n     *\n     * @param gray The Gray code number.\n     * @return The corresponding binary number.\n     */\n    public static int grayToBinary(int gray) {\n        int binary = gray;\n        while (gray != 0) {\n            gray >>>= 1;\n            binary ^= gray;\n        }\n        return binary;\n    }\n}\n"
+}

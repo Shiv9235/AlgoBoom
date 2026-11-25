@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-searches-searchinarowandcolwisesortedmatrix-java",
+  "slug": "searchinarowandcolwisesortedmatrix",
+  "title": "SearchInARowAndColWiseSortedMatrix",
+  "source": "java",
+  "category": "com / thealgorithms / searches",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/searches/SearchInARowAndColWiseSortedMatrix.java",
+  "content": "package com.thealgorithms.searches;\n\npublic final class SearchInARowAndColWiseSortedMatrix {\n    /**\n     * Search a key in row and column wise sorted matrix\n     *\n     * @param matrix matrix to be searched\n     * @param value  Key being searched for\n     * @return row and column indices if found, otherwise {-1, -1}\n     * @author Sadiul Hakim : https://github.com/sadiul-hakim\n     */\n    public int[] search(int[][] matrix, int value) {\n        if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {\n            return new int[] {-1, -1};\n        }\n\n        int rows = matrix.length;\n        int cols = matrix[0].length;\n        // This variable iterates over rows\n        int i = 0;\n        // This variable iterates over columns, starting from top-right corner\n        int j = cols - 1;\n        int[] result = {-1, -1};\n        while (i < rows && j >= 0) {\n            if (matrix[i] == null || j >= matrix[i].length) {\n                i++;\n                continue;\n            }\n            if (matrix[i][j] == value) {\n                result[0] = i;\n                result[1] = j;\n                return result;\n            }\n            if (value > matrix[i][j]) {\n                i++;\n            } else {\n                j--;\n            }\n        }\n        return result;\n    }\n}\n"
+}

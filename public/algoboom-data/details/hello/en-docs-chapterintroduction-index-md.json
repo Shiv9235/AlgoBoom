@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterintroduction-index-md",
+  "slug": "getting-to-know-algorithms",
+  "title": "Getting to know algorithms",
+  "source": "hello",
+  "category": "introduction",
+  "sourcePath": "Algorithms/en/docs/chapter_introduction/index.md",
+  "content": "# Getting to know algorithms\n\n![Getting to know algorithms](../assets/covers/chapter_introduction.jpg)\n\n!!! abstract\n\n    A young woman dances gracefully among the data, the melody of algorithms rippling through her skirt.\n    \n    She invites you to join her. Follow her steps into a world of algorithms filled with logic and beauty.\n"
+}

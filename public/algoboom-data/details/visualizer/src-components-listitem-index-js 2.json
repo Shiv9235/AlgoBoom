@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-listitem-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / ListItem",
+  "sourcePath": "AlgoVisualizer/src/components/ListItem/index.js",
+  "content": "import React from 'react';\nimport styles from './ListItem.module.scss';\nimport { classes } from 'common/util';\nimport { Button, Ellipsis } from 'components';\n\nclass ListItem extends React.Component {\n  render() {\n    const { className, children, indent, label, ...props } = this.props;\n\n    return (\n      <Button className={classes(styles.list_item, indent && styles.indent, className)} {...props}>\n        <Ellipsis className={styles.label}>{label}</Ellipsis>\n        {children}\n      </Button>\n    );\n  }\n}\n\nexport default ListItem;\n\n"
+}

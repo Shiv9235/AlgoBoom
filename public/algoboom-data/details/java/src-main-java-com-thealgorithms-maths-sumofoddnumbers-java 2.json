@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-sumofoddnumbers-java",
+  "slug": "sumofoddnumbers",
+  "title": "SumOfOddNumbers",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SumOfOddNumbers.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * This program calculates the sum of the first n odd numbers.\n *\n * https://www.cuemath.com/algebra/sum-of-odd-numbers/\n */\n\npublic final class SumOfOddNumbers {\n    private SumOfOddNumbers() {\n    }\n\n    /**\n     * Calculate sum of the first n odd numbers\n     *\n     * @param n the number of odd numbers to sum\n     * @return sum of the first n odd numbers\n     */\n    public static int sumOfFirstNOddNumbers(final int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"n must be non-negative.\");\n        }\n        return n * n;\n    }\n}\n"
+}

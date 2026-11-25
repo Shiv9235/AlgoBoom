@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterheap-summary-md",
+  "slug": "summary",
+  "title": "Summary",
+  "source": "hello",
+  "category": "heap",
+  "sourcePath": "Algorithms/en/docs/chapter_heap/summary.md",
+  "content": "# Summary\n\n### Key takeaways\n\n- A heap is a complete binary tree. Depending on its ordering condition, it is either a max heap or a min heap. The root holds the largest or smallest element, respectively.\n- A priority queue removes elements according to their priority and is usually implemented with a heap.\n- Common heap operations and their time complexities include insertion in $O(\\log n)$, removing the root in $O(\\log n)$, and accessing the root in $O(1)$.\n- Complete binary trees are well suited to array representation, so heaps are usually stored in arrays.\n- Sifting restores the heap property and is used during both insertion and removal.\n- Building a heap from $n$ input elements can be optimized to $O(n)$ time.\n- Top-k is a classic algorithm problem that a heap can solve efficiently in $O(n \\log k)$ time.\n\n### Q & A\n\n**Q**: Is the heap data structure the same concept as the heap in memory management?\n\nNo; they simply share a name. In computer memory, the heap is used for dynamic memory allocation, allowing a running program to store data. A program can request heap memory for structures such as objects and arrays. When that data is no longer needed, the memory must be released to prevent leaks. Compared with stack memory, heap memory requires more careful management; misuse can lead to memory leaks, dangling pointers, and other problems.\n"
+}

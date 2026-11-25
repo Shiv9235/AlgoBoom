@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-removeduplicatefromstring-java",
+  "slug": "removeduplicatefromstring",
+  "title": "RemoveDuplicateFromString",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/RemoveDuplicateFromString.java",
+  "content": "package com.thealgorithms.strings;\n\n/**\n * @author Varun Upadhyay (https://github.com/varunu28)\n */\npublic final class RemoveDuplicateFromString {\n    private RemoveDuplicateFromString() {\n    }\n\n    /**\n     * Removes duplicate characters from the given string.\n     *\n     * @param input The input string from which duplicate characters need to be removed.\n     * @return A string containing only unique characters from the input, in their original order.\n     */\n    public static String removeDuplicate(String input) {\n        if (input == null || input.isEmpty()) {\n            return input;\n        }\n\n        StringBuilder uniqueChars = new StringBuilder();\n        for (char c : input.toCharArray()) {\n            if (uniqueChars.indexOf(String.valueOf(c)) == -1) {\n                uniqueChars.append(c); // Append character if it's not already in the StringBuilder\n            }\n        }\n\n        return uniqueChars.toString();\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-array2dtracer-js",
+  "slug": "array2dtracer",
+  "title": "Array2DTracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/Array2DTracer.js",
+  "content": "import { Tracer } from 'core/tracers';\nimport { Array2DRenderer } from 'core/renderers';\n\nclass Element {\n  constructor(value) {\n    this.value = value;\n    this.patched = false;\n    this.selected = false;\n  }\n}\n\nclass Array2DTracer extends Tracer {\n  getRendererClass() {\n    return Array2DRenderer;\n  }\n\n  set(array2d = []) {\n    this.data = array2d.map(array1d => [...array1d].map(value => new Element(value)));\n    super.set();\n  }\n\n  patch(x, y, v = this.data[x][y].value) {\n    if (!this.data[x][y]) this.data[x][y] = new Element();\n    this.data[x][y].value = v;\n    this.data[x][y].patched = true;\n  }\n\n  depatch(x, y) {\n    this.data[x][y].patched = false;\n  }\n\n  select(sx, sy, ex = sx, ey = sy) {\n    for (let x = sx; x <= ex; x++) {\n      for (let y = sy; y <= ey; y++) {\n        this.data[x][y].selected = true;\n      }\n    }\n  }\n\n  selectRow(x, sy, ey) {\n    this.select(x, sy, x, ey);\n  }\n\n  selectCol(y, sx, ex) {\n    this.select(sx, y, ex, y);\n  }\n\n  deselect(sx, sy, ex = sx, ey = sy) {\n    for (let x = sx; x <= ex; x++) {\n      for (let y = sy; y <= ey; y++) {\n        this.data[x][y].selected = false;\n      }\n    }\n  }\n\n  deselectRow(x, sy, ey) {\n    this.deselect(x, sy, x, ey);\n  }\n\n  deselectCol(y, sx, ex) {\n    this.deselect(sx, y, ex, y);\n  }\n}\n\nexport default Array2DTracer;\n"
+}

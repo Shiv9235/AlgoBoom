@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-greedyalgorithms-stockprofitcalculator-java",
+  "slug": "stockprofitcalculator",
+  "title": "StockProfitCalculator",
+  "source": "java",
+  "category": "com / thealgorithms / greedyalgorithms",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/greedyalgorithms/StockProfitCalculator.java",
+  "content": "package com.thealgorithms.greedyalgorithms;\n\n/**\n * The StockProfitCalculator class provides a method to calculate the maximum profit\n * that can be made from a single buy and sell of one share of stock.\n * The approach uses a greedy algorithm to efficiently determine the maximum profit.\n *\n * @author Hardvan\n */\npublic final class StockProfitCalculator {\n    private StockProfitCalculator() {\n    }\n\n    /**\n     * Calculates the maximum profit from a list of stock prices.\n     *\n     * @param prices an array of integers representing the stock prices on different days\n     * @return the maximum profit that can be achieved from a single buy and sell\n     * transaction, or 0 if no profit can be made\n     */\n    public static int maxProfit(int[] prices) {\n        if (prices == null || prices.length == 0) {\n            return 0;\n        }\n\n        int minPrice = prices[0];\n        int maxProfit = 0;\n        for (int price : prices) {\n            minPrice = Math.min(price, minPrice);\n            maxProfit = Math.max(price - minPrice, maxProfit);\n        }\n        return maxProfit;\n    }\n}\n"
+}

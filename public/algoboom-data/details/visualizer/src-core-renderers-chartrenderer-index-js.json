@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-renderers-chartrenderer-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "core / renderers / ChartRenderer",
+  "sourcePath": "AlgoVisualizer/src/core/renderers/ChartRenderer/index.js",
+  "content": "import React from 'react';\nimport { Bar } from 'react-chartjs-2';\nimport { Array1DRenderer } from 'core/renderers';\nimport styles from './ChartRenderer.module.scss';\n\nclass ChartRenderer extends Array1DRenderer {\n  renderData() {\n    const { data: [row] } = this.props.data;\n\n    const chartData = {\n      labels: row.map(col => `${col.value}`),\n      datasets: [{\n        backgroundColor: row.map(col => col.patched ? styles.colorPatched : col.selected ? styles.colorSelected : styles.colorFont),\n        data: row.map(col => col.value),\n      }],\n    };\n    return (\n      <Bar data={chartData} options={{\n        scales: {\n          yAxes: [{\n            ticks: {\n              beginAtZero: true\n            }\n          }]\n        },\n        animation: false,\n        legend: false,\n        responsive: true,\n        maintainAspectRatio: false\n      }} />\n    );\n  }\n}\n\nexport default ChartRenderer;\n\n"
+}

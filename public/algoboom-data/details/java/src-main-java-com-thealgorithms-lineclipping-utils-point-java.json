@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-lineclipping-utils-point-java",
+  "slug": "point",
+  "title": "Point",
+  "source": "java",
+  "category": "com / thealgorithms / lineclipping / utils",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/lineclipping/utils/Point.java",
+  "content": "package com.thealgorithms.lineclipping.utils;\n\nimport java.util.Objects;\n\n/**\n * @author moksedursohan\n * @since 10/4/24\n */\npublic class Point {\n\n    public double x;\n    public double y;\n\n    public Point() {\n    }\n\n    public Point(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) {\n            return true;\n        }\n        if (!(o instanceof Point point)) {\n            return false;\n        }\n\n        return Double.compare(x, point.x) == 0 && Double.compare(y, point.y) == 0;\n    }\n\n    @Override\n    public int hashCode() {\n        return Objects.hash(x, y);\n    }\n\n    @Override\n    public String toString() {\n        return \"(\" + x + \", \" + y + \")\";\n    }\n}\n"
+}

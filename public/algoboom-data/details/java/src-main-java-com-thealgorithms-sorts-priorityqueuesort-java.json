@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-priorityqueuesort-java",
+  "slug": "priorityqueuesort",
+  "title": "PriorityQueueSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/PriorityQueueSort.java",
+  "content": "package com.thealgorithms.sorts;\n\nimport java.util.PriorityQueue;\n\n/**\n * Sorts an array using Java's PriorityQueue (Min-Heap).\n *\n * <p>Example: Input: [7, 2, 9, 4, 1] Output: [1, 2, 4, 7, 9]\n *\n * <p>Time Complexity:\n * - Inserting n elements into the PriorityQueue → O(n log n)\n * - Polling n elements → O(n log n)\n * - Total: O(n log n)\n *\n * <p>Space Complexity: O(n) for the PriorityQueue\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Heap_(data_structure)\">\n *     Heap / PriorityQueue</a>\n */\npublic final class PriorityQueueSort {\n\n    // Private constructor to prevent instantiation (utility class)\n    private PriorityQueueSort() {\n    }\n\n    /**\n     * Sorts the given array in ascending order using a PriorityQueue.\n     *\n     * @param arr the array to be sorted\n     * @return the sorted array (in-place)\n     */\n    public static int[] sort(int[] arr) {\n        if (arr == null || arr.length == 0) {\n            return arr;\n        }\n\n        PriorityQueue<Integer> pq = new PriorityQueue<>();\n        for (int num : arr) {\n            pq.offer(num);\n        }\n\n        int i = 0;\n        while (!pq.isEmpty()) {\n            arr[i++] = pq.poll();\n        }\n\n        return arr;\n    }\n}\n"
+}

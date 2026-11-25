@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-findmin-java",
+  "slug": "findmin",
+  "title": "FindMin",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/FindMin.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class FindMin {\n    private FindMin() {\n    }\n\n    /**\n     * @brief finds the minimum value stored in the input array\n     *\n     * @param array the input array\n     * @exception IllegalArgumentException input array is empty\n     * @return the mimum value stored in the input array\n     */\n    public static int findMin(final int[] array) {\n        if (array.length == 0) {\n            throw new IllegalArgumentException(\"Array must be non-empty.\");\n        }\n        int min = array[0];\n        for (int i = 1; i < array.length; i++) {\n            if (array[i] < min) {\n                min = array[i];\n            }\n        }\n        return min;\n    }\n}\n"
+}

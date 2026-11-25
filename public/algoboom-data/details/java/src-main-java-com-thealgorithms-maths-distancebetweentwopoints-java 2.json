@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-distancebetweentwopoints-java",
+  "slug": "distancebetweentwopoints",
+  "title": "DistanceBetweenTwoPoints",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/DistanceBetweenTwoPoints.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Distance Between Two Points in 2D Space.\n *\n * <p>This class provides a method to calculate the Euclidean distance between two points in a\n * two-dimensional plane.\n *\n * <p>Formula: d = sqrt((x2 - x1)^2 + (y2 - y1)^2)\n *\n * <p>Reference: https://en.wikipedia.org/wiki/Euclidean_distance\n */\npublic final class DistanceBetweenTwoPoints {\n\n    private DistanceBetweenTwoPoints() {\n        // Utility class; prevent instantiation\n    }\n\n    /**\n     * Calculate the Euclidean distance between two points.\n     *\n     * @param x1 x-coordinate of the first point\n     * @param y1 y-coordinate of the first point\n     * @param x2 x-coordinate of the second point\n     * @param y2 y-coordinate of the second point\n     * @return Euclidean distance between the two points\n     */\n    public static double calculate(final double x1, final double y1, final double x2, final double y2) {\n        final double deltaX = x2 - x1;\n        final double deltaY = y2 - y1;\n        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);\n    }\n}\n"
+}

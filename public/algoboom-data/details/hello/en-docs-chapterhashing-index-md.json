@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterhashing-index-md",
+  "slug": "hash-tables",
+  "title": "Hash tables",
+  "source": "hello",
+  "category": "hashing",
+  "sourcePath": "Algorithms/en/docs/chapter_hashing/index.md",
+  "content": "# Hash tables\n\n![Hash tables](../assets/covers/chapter_hashing.jpg)\n\n!!! abstract\n\n    In the world of computers, a hash table is like a knowledgeable librarian.\n    \n    Knowing how to calculate a call number lets the librarian find the desired book quickly.\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-reversewordsinstring-java",
+  "slug": "reversewordsinstring",
+  "title": "ReverseWordsInString",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/ReverseWordsInString.java",
+  "content": "package com.thealgorithms.strings;\n\nimport java.util.Arrays;\nimport java.util.Collections;\n\npublic final class ReverseWordsInString {\n\n    private ReverseWordsInString() {\n    }\n\n    /**\n     * @brief Reverses words in the input string\n     * @param s the input string\n     * @return A string created by reversing the order of the words in {@code s}\n     */\n    public static String reverseWordsInString(final String s) {\n        var words = s.trim().split(\"\\\\s+\");\n        Collections.reverse(Arrays.asList(words));\n        return String.join(\" \", words);\n    }\n}\n"
+}

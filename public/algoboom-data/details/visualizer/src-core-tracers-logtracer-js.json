@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-logtracer-js",
+  "slug": "logtracer",
+  "title": "LogTracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/LogTracer.js",
+  "content": "import { sprintf } from 'sprintf-js';\nimport { Tracer } from 'core/tracers';\nimport { LogRenderer } from 'core/renderers';\n\nclass LogTracer extends Tracer {\n  getRendererClass() {\n    return LogRenderer;\n  }\n\n  set(log = '') {\n    this.log = log;\n    super.set();\n  }\n\n  print(message) {\n    this.log += message;\n  }\n\n  println(message) {\n    this.print(message + '\\n');\n  }\n\n  printf(format, ...args) {\n    this.print(sprintf(format, ...args));\n  }\n}\n\nexport default LogTracer;\n"
+}

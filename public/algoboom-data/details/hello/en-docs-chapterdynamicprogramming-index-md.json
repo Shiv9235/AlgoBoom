@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterdynamicprogramming-index-md",
+  "slug": "dynamic-programming",
+  "title": "Dynamic programming",
+  "source": "hello",
+  "category": "dynamic_programming",
+  "sourcePath": "Algorithms/en/docs/chapter_dynamic_programming/index.md",
+  "content": "# Dynamic programming\n\n![Dynamic programming](../assets/covers/chapter_dynamic_programming.jpg)\n\n!!! abstract\n\n    Streams flow into rivers, and rivers flow into the sea.\n    \n    Dynamic programming brings together solutions to small problems to answer a larger one, guiding us step by step to the other shore.\n"
+}

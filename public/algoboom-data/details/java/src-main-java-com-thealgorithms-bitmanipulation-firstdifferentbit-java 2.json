@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-firstdifferentbit-java",
+  "slug": "firstdifferentbit",
+  "title": "FirstDifferentBit",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/FirstDifferentBit.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to find the first differing bit\n * between two integers.\n *\n * Example:\n *  x = 10 (1010 in binary)\n *  y = 12 (1100 in binary)\n *  The first differing bit is at index 1 (0-based)\n *  So, the output will be 1\n *\n * @author Hardvan\n */\npublic final class FirstDifferentBit {\n    private FirstDifferentBit() {\n    }\n\n    /**\n     * Identifies the index of the first differing bit between two integers.\n     * Steps:\n     * 1. XOR the two integers to get the differing bits\n     * 2. Find the index of the first set bit in XOR result\n     *\n     * @param x the first integer\n     * @param y the second integer\n     * @return the index of the first differing bit (0-based)\n     */\n    public static int firstDifferentBit(int x, int y) {\n        int diff = x ^ y;\n        return Integer.numberOfTrailingZeros(diff);\n    }\n}\n"
+}

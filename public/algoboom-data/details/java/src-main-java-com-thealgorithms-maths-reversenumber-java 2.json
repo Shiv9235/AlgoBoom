@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-reversenumber-java",
+  "slug": "reversenumber",
+  "title": "ReverseNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/ReverseNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * @brief utility class reversing numbers\n */\npublic final class ReverseNumber {\n    private ReverseNumber() {\n    }\n\n    /**\n     * @brief reverses the input number\n     * @param number the input number\n     * @exception IllegalArgumentException number is negative\n     * @return the number created by reversing the order of digits of the input number\n     */\n    public static int reverseNumber(int number) {\n        if (number < 0) {\n            throw new IllegalArgumentException(\"number must be nonnegative.\");\n        }\n\n        int result = 0;\n        while (number > 0) {\n            result *= 10;\n            result += number % 10;\n            number /= 10;\n        }\n        return result;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-movehashtoend-java",
+  "slug": "movehashtoend",
+  "title": "MoveHashToEnd",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/MoveHashToEnd.java",
+  "content": "package com.thealgorithms.strings;\n\n/**\n * Moves all '#' characters to the end of the given string while preserving\n * the order of the other characters.\n *\n * Example:\n * Input  : \"h#e#l#llo\"\n * Output : \"helllo###\"\n *\n * The algorithm works by iterating through the string and collecting\n * all non-# characters first, then filling the remaining positions\n * with '#'.\n *\n * Time Complexity: O(n)\n * Space Complexity: O(n)\n *\n * @see <a href=\"https://www.geeksforgeeks.org/move-special-char-end-string-maintain-order-alphabets/\">Move all special characters to end - GeeksForGeeks</a>\n */\npublic final class MoveHashToEnd {\n\n    /**\n     * Private constructor to prevent instantiation of utility class.\n     */\n    private MoveHashToEnd() {\n    }\n\n    /**\n     * Moves all '#' characters in the input string to the end.\n     *\n     * @param str the input string containing characters and '#'\n     * @return a new string with all '#' characters moved to the end\n     */\n    public static String moveHashToEnd(String str) {\n        if (str == null || str.isEmpty()) {\n            return str;\n        }\n\n        char[] arr = str.toCharArray();\n        int insertPos = 0;\n\n        // Place all non-# characters at the beginning\n        for (char ch : arr) {\n            if (ch != '#') {\n                arr[insertPos++] = ch;\n            }\n        }\n\n        // Fill remaining positions with '#'\n        while (insertPos < arr.length) {\n            arr[insertPos++] = '#';\n        }\n\n        return new String(arr);\n    }\n}\n"
+}

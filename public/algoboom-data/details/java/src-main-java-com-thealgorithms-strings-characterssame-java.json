@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-characterssame-java",
+  "slug": "characterssame",
+  "title": "CharactersSame",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/CharactersSame.java",
+  "content": "package com.thealgorithms.strings;\n\npublic final class CharactersSame {\n    private CharactersSame() {\n    }\n\n    /**\n     * Checks if all characters in the string are the same.\n     *\n     * @param s the string to check\n     * @return {@code true} if all characters in the string are the same or if the string is empty, otherwise {@code false}\n     */\n    public static boolean isAllCharactersSame(String s) {\n        if (s.isEmpty()) {\n            return true; // Empty strings can be considered as having \"all the same characters\"\n        }\n\n        char firstChar = s.charAt(0);\n        for (int i = 1; i < s.length(); i++) {\n            if (s.charAt(i) != firstChar) {\n                return false;\n            }\n        }\n        return true;\n    }\n}\n"
+}

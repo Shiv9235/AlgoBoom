@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-ciphers-a5-utils-java",
+  "slug": "utils",
+  "title": "Utils",
+  "source": "java",
+  "category": "com / thealgorithms / ciphers / a5",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/ciphers/a5/Utils.java",
+  "content": "package com.thealgorithms.ciphers.a5;\n\n// Source\n// http://www.java2s.com/example/java-utility-method/bitset/increment-bitset-bits-int-size-9fd84.html\n// package com.java2s;\n// License from project: Open Source License\n\nimport java.util.BitSet;\n\npublic final class Utils {\n    private Utils() {\n    }\n\n    public static boolean increment(BitSet bits, int size) {\n        int i = size - 1;\n        while (i >= 0 && bits.get(i)) {\n            bits.set(i--, false); /*from w w w  . j a  v a  2s  .c o  m*/\n        }\n        if (i < 0) {\n            return false;\n        }\n        bits.set(i, true);\n        return true;\n    }\n}\n"
+}

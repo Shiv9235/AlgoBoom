@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-eulersfunction-java",
+  "slug": "eulersfunction",
+  "title": "EulersFunction",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/EulersFunction.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Utility class for computing\n * <a href=\"https://en.wikipedia.org/wiki/Euler%27s_totient_function\">Euler's totient function</a>.\n */\npublic final class EulersFunction {\n    private EulersFunction() {\n    }\n\n    /**\n     * Validates that the input is a positive integer.\n     *\n     * @param n the input number to validate\n     * @throws IllegalArgumentException if {@code n} is non-positive\n     */\n    private static void checkInput(int n) {\n        if (n <= 0) {\n            throw new IllegalArgumentException(\"n must be positive.\");\n        }\n    }\n\n    /**\n     * Computes the value of Euler's totient function for a given input.\n     * This function has a time complexity of O(sqrt(n)).\n     *\n     * @param n the input number\n     * @return the value of Euler's totient function for the given input\n     * @throws IllegalArgumentException if {@code n} is non-positive\n     */\n    public static int getEuler(int n) {\n        checkInput(n);\n        int result = n;\n        for (int i = 2; i * i <= n; i++) {\n            if (n % i == 0) {\n                while (n % i == 0) {\n                    n /= i;\n                }\n                result -= result / i;\n            }\n        }\n        if (n > 1) {\n            result -= result / n;\n        }\n        return result;\n    }\n}\n"
+}

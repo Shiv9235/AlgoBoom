@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-toastcontainer-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / ToastContainer",
+  "sourcePath": "AlgoVisualizer/src/components/ToastContainer/index.js",
+  "content": "import React from 'react';\nimport { connect } from 'react-redux';\nimport { actions } from 'reducers';\nimport { classes } from 'common/util';\nimport styles from './ToastContainer.module.scss';\n\nclass ToastContainer extends React.Component {\n  componentWillReceiveProps(nextProps) {\n    const newToasts = nextProps.toast.toasts.filter(toast => !this.props.toast.toasts.includes(toast));\n    newToasts.forEach(toast => {\n      window.setTimeout(() => this.props.hideToast(toast.id), 3000);\n    });\n  }\n\n  render() {\n    const { className } = this.props;\n    const { toasts } = this.props.toast;\n\n    return (\n      <div className={classes(styles.toast_container, className)}>\n        {\n          toasts.map(toast => (\n            <div className={classes(styles.toast, styles[toast.type])} key={toast.id}>\n              {toast.message}\n            </div>\n          ))\n        }\n      </div>\n    );\n  }\n}\n\nexport default connect(({ toast }) => ({ toast }), actions)(\n  ToastContainer,\n);\n\n"
+}

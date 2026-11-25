@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chaptergraph-index-md",
+  "slug": "graphs",
+  "title": "Graphs",
+  "source": "hello",
+  "category": "graph",
+  "sourcePath": "Algorithms/en/docs/chapter_graph/index.md",
+  "content": "# Graphs\n\n![Graphs](../assets/covers/chapter_graph.jpg)\n\n!!! abstract\n\n    On the journey of life, we are like nodes joined by countless invisible edges.\n    \n    Every meeting and parting leaves a unique mark on this vast network.\n"
+}

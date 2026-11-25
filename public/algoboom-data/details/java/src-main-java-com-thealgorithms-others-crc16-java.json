@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-others-crc16-java",
+  "slug": "crc16",
+  "title": "CRC16",
+  "source": "java",
+  "category": "com / thealgorithms / others",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/others/CRC16.java",
+  "content": "package com.thealgorithms.others;\n\n/**\n * Generates a crc16 checksum for a given string\n */\npublic final class CRC16 {\n    private CRC16() {\n    }\n\n    public static void main(String[] args) {\n        System.out.println(crc16(\"Hello World!\"));\n    }\n\n    public static String crc16(String message) {\n        int crc = 0xFFFF; // initial value\n        int polynomial = 0x1021; // 0001 0000 0010 0001 (0, 5, 12)\n        byte[] bytes = message.getBytes();\n\n        for (byte b : bytes) {\n            for (int i = 0; i < 8; i++) {\n                boolean bit = ((b >> (7 - i) & 1) == 1);\n                boolean c15 = ((crc >> 15 & 1) == 1);\n                crc <<= 1;\n                if (c15 ^ bit) {\n                    crc ^= polynomial;\n                }\n            }\n        }\n        crc &= 0xffff;\n        return Integer.toHexString(crc).toUpperCase();\n    }\n}\n"
+}

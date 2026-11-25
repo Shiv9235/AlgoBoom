@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-zigzagpattern-zigzagpattern-java",
+  "slug": "zigzagpattern",
+  "title": "ZigZagPattern",
+  "source": "java",
+  "category": "com / thealgorithms / strings / zigZagPattern",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/zigZagPattern/ZigZagPattern.java",
+  "content": "package com.thealgorithms.strings.zigZagPattern;\n\nfinal class ZigZagPattern {\n\n    private ZigZagPattern() {\n    }\n\n    /**\n     * Encodes a given string into a zig-zag pattern.\n     *\n     * @param s       the input string to be encoded\n     * @param numRows the number of rows in the zigzag pattern\n     * @return the encoded string in zigzag pattern format\n     */\n    public static String encode(String s, int numRows) {\n        if (numRows < 2 || s.length() < numRows) {\n            return s;\n        }\n\n        StringBuilder result = new StringBuilder(s.length());\n        int cycleLength = 2 * numRows - 2;\n\n        for (int row = 0; row < numRows; row++) {\n            for (int j = row; j < s.length(); j += cycleLength) {\n                result.append(s.charAt(j));\n\n                if (row > 0 && row < numRows - 1) {\n                    int diagonal = j + cycleLength - 2 * row;\n                    if (diagonal < s.length()) {\n                        result.append(s.charAt(diagonal));\n                    }\n                }\n            }\n        }\n\n        return result.toString();\n    }\n}\n"
+}

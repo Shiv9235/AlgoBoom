@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-scheduling-fcfsscheduling-java",
+  "slug": "fcfsscheduling",
+  "title": "FCFSScheduling",
+  "source": "java",
+  "category": "com / thealgorithms / scheduling",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/scheduling/FCFSScheduling.java",
+  "content": "package com.thealgorithms.scheduling;\n\nimport com.thealgorithms.devutils.entities.ProcessDetails;\nimport java.util.List;\n\n/**\n * Non-pre-emptive First Come First Serve scheduling. This can be understood here -\n * https://www.scaler.com/topics/first-come-first-serve/\n */\npublic class FCFSScheduling {\n\n    private List<ProcessDetails> processes;\n\n    FCFSScheduling(final List<ProcessDetails> processes) {\n        this.processes = processes;\n    }\n\n    public void scheduleProcesses() {\n        evaluateWaitingTime();\n        evaluateTurnAroundTime();\n    }\n\n    private void evaluateWaitingTime() {\n        int processesNumber = processes.size();\n\n        if (processesNumber == 0) {\n            return;\n        }\n\n        int waitingTime = 0;\n        int burstTime = processes.get(0).getBurstTime();\n\n        processes.get(0).setWaitingTime(waitingTime); // for the first process, waiting time will be 0.\n\n        for (int i = 1; i < processesNumber; i++) {\n            processes.get(i).setWaitingTime(waitingTime + burstTime);\n            waitingTime = processes.get(i).getWaitingTime();\n            burstTime = processes.get(i).getBurstTime();\n        }\n    }\n\n    private void evaluateTurnAroundTime() {\n        for (final var process : processes) {\n            process.setTurnAroundTimeTime(process.getBurstTime() + process.getWaitingTime());\n        }\n    }\n}\n"
+}

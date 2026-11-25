@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-disariumnumber-java",
+  "slug": "disariumnumber",
+  "title": "DisariumNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/DisariumNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Disarium number is a number where the sum of its digits powered\n * with their respective positions is equal to the number itself.\n * Example: 135 = 1^1 + 3^2 + 5^3 = 1 + 9 + 125 = 135\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Disarium_number\">Disarium Number</a>\n */\npublic final class DisariumNumber {\n\n    private DisariumNumber() {\n    }\n\n    /**\n     * Checks if a number is a Disarium number.\n     *\n     * @param number the number to check (must be positive)\n     * @return true if number is Disarium, false otherwise\n     * @throws IllegalArgumentException if number is not positive\n     */\n    public static boolean isDisarium(int number) {\n        if (number <= 0) {\n            throw new IllegalArgumentException(\"Input must be a positive integer.\");\n        }\n        int digits = String.valueOf(number).length();\n        int temp = number;\n        int sum = 0;\n        while (temp > 0) {\n            int lastDigit = temp % 10;\n            sum += (int) Math.pow(lastDigit, digits);\n            digits--;\n            temp /= 10;\n        }\n        return sum == number;\n    }\n}\n"
+}

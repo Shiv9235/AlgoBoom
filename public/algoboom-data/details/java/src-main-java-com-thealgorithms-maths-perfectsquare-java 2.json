@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-perfectsquare-java",
+  "slug": "perfectsquare",
+  "title": "PerfectSquare",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PerfectSquare.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * https://en.wikipedia.org/wiki/Perfect_square\n */\npublic final class PerfectSquare {\n    private PerfectSquare() {\n    }\n\n    /**\n     * Check if a number is perfect square number\n     *\n     * @param number the number to be checked\n     * @return <tt>true</tt> if {@code number} is perfect square, otherwise\n     * <tt>false</tt>\n     */\n    public static boolean isPerfectSquare(final int number) {\n        if (number < 0) {\n            return false;\n        }\n        final int sqrt = (int) Math.sqrt(number);\n        return sqrt * sqrt == number;\n    }\n\n    /**\n     * Check if a number is perfect square or not\n     *\n     * @param number number to be checked\n     * @return {@code true} if {@code number} is perfect square, otherwise\n     * {@code false}\n     */\n    public static boolean isPerfectSquareUsingPow(long number) {\n        if (number < 0) {\n            return false;\n        }\n        long a = (long) Math.pow(number, 1.0 / 2);\n        return a * a == number;\n    }\n}\n"
+}

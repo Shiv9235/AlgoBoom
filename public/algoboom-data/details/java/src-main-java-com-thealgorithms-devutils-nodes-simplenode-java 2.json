@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-devutils-nodes-simplenode-java",
+  "slug": "simplenode",
+  "title": "SimpleNode",
+  "source": "java",
+  "category": "com / thealgorithms / devutils / nodes",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/devutils/nodes/SimpleNode.java",
+  "content": "package com.thealgorithms.devutils.nodes;\n\n/**\n * Simple Node implementation that holds a reference to the next Node.\n *\n * @param <E> The type of the data held in the Node.\n *\n * @author <a href=\"https://github.com/aitorfi\">aitorfi</a>\n */\npublic class SimpleNode<E> extends Node<E> {\n\n    /**\n     * Reference to the next Node.\n     */\n    private SimpleNode<E> nextNode;\n\n    /**\n     * Empty constructor.\n     */\n    public SimpleNode() {\n        super();\n    }\n\n    /**\n     * Initializes the Nodes' data.\n     *\n     * @param data Value to which data will be initialized.\n     * @see Node#Node(Object)\n     */\n    public SimpleNode(E data) {\n        super(data);\n    }\n\n    /**\n     * Initializes the Nodes' data and next node reference.\n     *\n     * @param data Value to which data will be initialized.\n     * @param nextNode Value to which the next node reference will be set.\n     */\n    public SimpleNode(E data, SimpleNode<E> nextNode) {\n        super(data);\n        this.nextNode = nextNode;\n    }\n\n    /**\n     * @return True if there is a next node, otherwise false.\n     */\n    public boolean hasNext() {\n        return (nextNode != null);\n    }\n\n    public SimpleNode<E> getNextNode() {\n        return nextNode;\n    }\n\n    public void setNextNode(SimpleNode<E> nextNode) {\n        this.nextNode = nextNode;\n    }\n}\n"
+}

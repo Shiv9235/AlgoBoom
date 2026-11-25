@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-renderers-logrenderer-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "core / renderers / LogRenderer",
+  "sourcePath": "AlgoVisualizer/src/core/renderers/LogRenderer/index.js",
+  "content": "import React from 'react';\nimport { Renderer } from 'core/renderers';\nimport styles from './LogRenderer.module.scss';\n\nclass LogRenderer extends Renderer {\n  constructor(props) {\n    super(props);\n\n    this.elementRef = React.createRef();\n  }\n\n  componentDidUpdate(prevProps, prevState, snapshot) {\n    super.componentDidUpdate(prevProps, prevState, snapshot);\n    const div = this.elementRef.current;\n    div.scrollTop = div.scrollHeight;\n  }\n\n  renderData() {\n    const { log } = this.props.data;\n\n    return (\n      <div className={styles.log} ref={this.elementRef}>\n        <div className={styles.content} dangerouslySetInnerHTML={{ __html: log }} />\n      </div>\n    );\n  }\n}\n\nexport default LogRenderer;\n\n"
+}

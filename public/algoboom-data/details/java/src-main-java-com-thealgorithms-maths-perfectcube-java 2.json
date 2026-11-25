@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-perfectcube-java",
+  "slug": "perfectcube",
+  "title": "PerfectCube",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PerfectCube.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * https://en.wikipedia.org/wiki/Cube_(algebra)\n */\npublic final class PerfectCube {\n    private PerfectCube() {\n    }\n\n    /**\n     * Check if a number is perfect cube or not\n     *\n     * @param number number to check\n     * @return {@code true} if {@code number} is perfect cube, otherwise\n     * {@code false}\n     */\n    public static boolean isPerfectCube(int number) {\n        number = Math.abs(number); // converting negative number to positive number\n        int a = (int) Math.pow(number, 1.0 / 3);\n        return a * a * a == number;\n    }\n\n    /**\n     * Check if a number is perfect cube or not by using Math.cbrt function\n     *\n     * @param number number to check\n     * @return {@code true} if {@code number} is perfect cube, otherwise\n     * {@code false}\n     */\n    public static boolean isPerfectCubeMathCbrt(int number) {\n        double cubeRoot = Math.cbrt(number);\n        return cubeRoot == (int) cubeRoot;\n    }\n}\n"
+}

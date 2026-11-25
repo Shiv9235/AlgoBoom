@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-countfriendspairing-java",
+  "slug": "countfriendspairing",
+  "title": "CountFriendsPairing",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/CountFriendsPairing.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\n/**\n * @author <a href=\"https://github.com/siddhant2002\">Siddhant Swarup Mallick</a>\n\n * In mathematics, the Golomb sequence is a non-decreasing integer sequence where n-th term is equal\n * to number of times n appears in the sequence.\n\n * <a href=\"https://en.wikipedia.org/wiki/Golomb_sequence\">Wikipedia</a>\n * Program description - To find the Golomb sequence upto n\n */\npublic final class CountFriendsPairing {\n    private CountFriendsPairing() {\n    }\n\n    public static boolean countFriendsPairing(int n, int[] a) {\n        int[] dp = new int[n + 1];\n        // array of n+1 size is created\n        dp[0] = 1;\n        // since 1st index position value is fixed so it's marked as 1\n        for (int i = 1; i < n; i++) {\n            dp[i] = 1 + dp[i - dp[dp[i - 1]]];\n            // formula for ith golomb sequence is dp(i) = 1 + dp(i – dp(dp(i - 1)))\n        }\n        for (int i = 1; i < n; i++) {\n            if (a[i - 1] != dp[i]) {\n                return false;\n                // checks whether the calculated answer matches with the expected answer\n            }\n        }\n        return true;\n        // returns true if calculated answer matches with the expected answer\n    }\n}\n"
+}

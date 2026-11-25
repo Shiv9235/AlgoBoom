@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-others-briankernighanalgorithm-java",
+  "slug": "briankernighanalgorithm",
+  "title": "BrianKernighanAlgorithm",
+  "source": "java",
+  "category": "com / thealgorithms / others",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/others/BrianKernighanAlgorithm.java",
+  "content": "package com.thealgorithms.others;\n\nimport java.util.Scanner;\n\n/**\n * @author Nishita Aggarwal\n * <p>\n * Brian Kernighan’s Algorithm\n * <p>\n * algorithm to count the number of set bits in a given number\n * <p>\n * Subtraction of 1 from a number toggles all the bits (from right to left) till\n * the rightmost set bit(including the rightmost set bit). So if we subtract a\n * number by 1 and do bitwise & with itself i.e. (n & (n-1)), we unset the\n * rightmost set bit.\n * <p>\n * If we do n & (n-1) in a loop and count the no of times loop executes we get\n * the set bit count.\n * <p>\n * <p>\n * Time Complexity: O(logn)\n */\npublic final class BrianKernighanAlgorithm {\n    private BrianKernighanAlgorithm() {\n    }\n\n    /**\n     * @param num: number in which we count the set bits\n     * @return int: Number of set bits\n     */\n    static int countSetBits(int num) {\n        int cnt = 0;\n        while (num != 0) {\n            num = num & (num - 1);\n            cnt++;\n        }\n        return cnt;\n    }\n\n    /**\n     * @param args : command line arguments\n     */\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int num = sc.nextInt();\n        int setBitCount = countSetBits(num);\n        System.out.println(setBitCount);\n        sc.close();\n    }\n}\n"
+}

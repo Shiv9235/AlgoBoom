@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-charttracer-js",
+  "slug": "charttracer",
+  "title": "ChartTracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/ChartTracer.js",
+  "content": "import { Array1DTracer } from 'core/tracers';\nimport { ChartRenderer } from 'core/renderers';\n\nclass ChartTracer extends Array1DTracer {\n  getRendererClass() {\n    return ChartRenderer;\n  }\n}\n\nexport default ChartTracer;\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-divider-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / Divider",
+  "sourcePath": "AlgoVisualizer/src/components/Divider/index.js",
+  "content": "import React from 'react';\nimport { classes } from 'common/util';\nimport styles from './Divider.module.scss';\n\nclass Divider extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.handleMouseDown = this.handleMouseDown.bind(this);\n    this.handleMouseMove = this.handleMouseMove.bind(this);\n    this.handleMouseUp = this.handleMouseUp.bind(this);\n  }\n\n  handleMouseDown(e) {\n    this.target = e.target;\n    document.addEventListener('mousemove', this.handleMouseMove);\n    document.addEventListener('mouseup', this.handleMouseUp);\n  }\n\n  handleMouseMove(e) {\n    const { onResize } = this.props;\n    if (onResize) onResize(this.target.parentElement, e.clientX, e.clientY);\n  }\n\n  handleMouseUp(e) {\n    document.removeEventListener('mousemove', this.handleMouseMove);\n    document.removeEventListener('mouseup', this.handleMouseUp);\n  }\n\n  render() {\n    const { className, horizontal } = this.props;\n\n    return (\n      <div className={classes(styles.divider, horizontal ? styles.horizontal : styles.vertical, className)}\n           onMouseDown={this.handleMouseDown} />\n    );\n  }\n}\n\nexport default Divider;\n"
+}

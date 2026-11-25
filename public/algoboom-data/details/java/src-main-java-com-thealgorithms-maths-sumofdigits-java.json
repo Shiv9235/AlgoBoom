@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-sumofdigits-java",
+  "slug": "sumofdigits",
+  "title": "SumOfDigits",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SumOfDigits.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class SumOfDigits {\n    private SumOfDigits() {\n    }\n\n    /**\n     * Calculate the sum of digits of a number\n     *\n     * @param number the number contains digits\n     * @return sum of digits of given {@code number}\n     */\n    public static int sumOfDigits(int number) {\n        final int base = 10;\n        number = Math.abs(number);\n        int sum = 0;\n        while (number != 0) {\n            sum += number % base;\n            number /= base;\n        }\n        return sum;\n    }\n\n    /**\n     * Calculate the sum of digits of a number using recursion\n     *\n     * @param number the number contains digits\n     * @return sum of digits of given {@code number}\n     */\n    public static int sumOfDigitsRecursion(int number) {\n        final int base = 10;\n        number = Math.abs(number);\n        return number < base ? number : number % base + sumOfDigitsRecursion(number / base);\n    }\n\n    /**\n     * Calculate the sum of digits of a number using char array\n     *\n     * @param number the number contains digits\n     * @return sum of digits of given {@code number}\n     */\n    public static int sumOfDigitsFast(final int number) {\n        return String.valueOf(Math.abs(number)).chars().map(c -> c - '0').reduce(0, Integer::sum);\n    }\n}\n"
+}

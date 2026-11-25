@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-lists-middleoflinkedlist-java",
+  "slug": "middleoflinkedlist",
+  "title": "MiddleOfLinkedList",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / lists",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/lists/MiddleOfLinkedList.java",
+  "content": "package com.thealgorithms.datastructures.lists;\n\n/**\n * Returns the middle node of a singly linked list using the two-pointer technique.\n *\n * <p>The {@code slow} pointer advances by one node per iteration while {@code fast} advances by two.\n * When {@code fast == null} or {@code fast.next == null}, {@code slow} points to the middle node.\n * For even-length lists, this returns the <em>second</em> middle node.</p>\n *\n * <p>This method does not modify the input list.</p>\n *\n * <p>Reference: https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare</p>\n *\n * <p>Complexity:</p>\n * <ul>\n *   <li>Time: {@code O(n)}</li>\n *   <li>Space: {@code O(1)}</li>\n * </ul>\n */\npublic final class MiddleOfLinkedList {\n\n    private MiddleOfLinkedList() {\n    }\n\n    /**\n     * Returns the middle node of the list.\n     *\n     * @param head the head of the singly linked list; may be {@code null}\n     * @return the middle node (second middle for even-sized lists), or {@code null} if {@code head} is {@code null}\n     */\n    public static SinglyLinkedListNode middleNode(final SinglyLinkedListNode head) {\n        if (head == null) {\n            return null;\n        }\n\n        SinglyLinkedListNode slow = head;\n        SinglyLinkedListNode fast = head;\n\n        while (fast != null && fast.next != null) {\n            slow = slow.next;\n            fast = fast.next.next;\n        }\n\n        return slow;\n    }\n}\n"
+}

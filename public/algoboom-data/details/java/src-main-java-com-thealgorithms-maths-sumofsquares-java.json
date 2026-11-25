@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-sumofsquares-java",
+  "slug": "sumofsquares",
+  "title": "SumOfSquares",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SumOfSquares.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Implementation of Lagrange's Four Square Theorem\n * Find minimum number of perfect squares that sum to given number\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem\">Lagrange's Four Square Theorem</a>\n */\npublic final class SumOfSquares {\n\n    private SumOfSquares() {\n        // Utility class\n    }\n\n    /**\n     * Find minimum number of perfect squares that sum to n\n     *\n     * @param n the target number (must be non-negative)\n     * @return minimum number of squares needed\n     * @throws IllegalArgumentException if n is negative\n     */\n    public static int minSquares(int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"Input must be non-negative\");\n        }\n\n        if (isPerfectSquare(n)) {\n            return 1;\n        }\n\n        for (int i = 1; i * i <= n; i++) {\n            int remaining = n - i * i;\n            if (isPerfectSquare(remaining)) {\n                return 2;\n            }\n        }\n\n        // Legendre's three-square theorem\n        int temp = n;\n        while (temp % 4 == 0) {\n            temp /= 4;\n        }\n        if (temp % 8 == 7) {\n            return 4;\n        }\n\n        return 3;\n    }\n\n    private static boolean isPerfectSquare(int n) {\n        if (n < 0) {\n            return false;\n        }\n        int root = (int) Math.sqrt(n);\n        return root * root == n;\n    }\n}\n"
+}

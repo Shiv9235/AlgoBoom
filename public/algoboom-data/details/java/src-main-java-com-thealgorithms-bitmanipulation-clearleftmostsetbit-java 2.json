@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-clearleftmostsetbit-java",
+  "slug": "clearleftmostsetbit",
+  "title": "ClearLeftmostSetBit",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/ClearLeftmostSetBit.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * ClearLeftmostSetBit class contains a method to clear the leftmost set bit of a number.\n * The leftmost set bit is the leftmost bit that is set to 1 in the binary representation of a number.\n *\n * Example:\n * 26 (11010) -> 10 (01010)\n * 1 (1) -> 0 (0)\n * 7 (111) -> 3 (011)\n * 6 (0110) -> 2 (0010)\n *\n * @author Hardvan\n */\npublic final class ClearLeftmostSetBit {\n    private ClearLeftmostSetBit() {\n    }\n\n    /**\n     * Clears the leftmost set bit (1) of a given number.\n     * Step 1: Find the position of the leftmost set bit\n     * Step 2: Create a mask with all bits set except for the leftmost set bit\n     * Step 3: Clear the leftmost set bit using AND with the mask\n     *\n     * @param num The input number.\n     * @return The number after clearing the leftmost set bit.\n     */\n    public static int clearLeftmostSetBit(int num) {\n        int pos = 0;\n        int temp = num;\n        while (temp > 0) {\n            temp >>= 1;\n            pos++;\n        }\n\n        int mask = ~(1 << (pos - 1));\n        return num & mask;\n    }\n}\n"
+}

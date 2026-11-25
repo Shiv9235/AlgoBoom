@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-squarerootwithbabylonianmethod-java",
+  "slug": "squarerootwithbabylonianmethod",
+  "title": "SquareRootWithBabylonianMethod",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SquareRootWithBabylonianMethod.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class SquareRootWithBabylonianMethod {\n    private SquareRootWithBabylonianMethod() {\n    }\n\n    /**\n     * get the value, return the square root\n     *\n     * @param num contains elements\n     * @return the square root of num\n     */\n    public static float squareRoot(float num) {\n        float a = num;\n        float b = 1;\n        double e = 0.000001;\n        while (a - b > e) {\n            a = (a + b) / 2;\n            b = num / a;\n        }\n        return a;\n    }\n}\n"
+}

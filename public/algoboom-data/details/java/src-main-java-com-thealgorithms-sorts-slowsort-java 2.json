@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-slowsort-java",
+  "slug": "slowsort",
+  "title": "SlowSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/SlowSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * @author Amir Hassan (https://github.com/ahsNT)\n * @see SortAlgorithm\n */\npublic class SlowSort implements SortAlgorithm {\n\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] unsortedArray) {\n        sort(unsortedArray, 0, unsortedArray.length - 1);\n        return unsortedArray;\n    }\n\n    private <T extends Comparable<T>> void sort(T[] array, int i, int j) {\n        if (SortUtils.greaterOrEqual(i, j)) {\n            return;\n        }\n        final int m = (i + j) >>> 1;\n        sort(array, i, m);\n        sort(array, m + 1, j);\n        if (SortUtils.less(array[j], array[m])) {\n            SortUtils.swap(array, j, m);\n        }\n        sort(array, i, j - 1);\n    }\n}\n"
+}

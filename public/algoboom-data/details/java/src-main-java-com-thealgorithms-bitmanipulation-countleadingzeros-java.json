@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-countleadingzeros-java",
+  "slug": "countleadingzeros",
+  "title": "CountLeadingZeros",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/CountLeadingZeros.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * CountLeadingZeros class contains a method to count the number of leading zeros in the binary representation of a number.\n * The number of leading zeros is the number of zeros before the leftmost 1 bit.\n * For example, the number 5 has 29 leading zeros in its 32-bit binary representation.\n * The number 0 has 32 leading zeros.\n * The number 1 has 31 leading zeros.\n * The number -1 has no leading zeros.\n *\n * @author Hardvan\n */\npublic final class CountLeadingZeros {\n    private CountLeadingZeros() {\n    }\n\n    /**\n     * Counts the number of leading zeros in the binary representation of a number.\n     * Method: Keep shifting the mask to the right until the leftmost bit is 1.\n     * The number of shifts is the number of leading zeros.\n     *\n     * @param num The input number.\n     * @return The number of leading zeros.\n     */\n    public static int countLeadingZeros(int num) {\n        if (num == 0) {\n            return 32;\n        }\n\n        int count = 0;\n        int mask = 1 << 31;\n        while ((mask & num) == 0) {\n            count++;\n            mask >>>= 1;\n        }\n\n        return count;\n    }\n}\n"
+}

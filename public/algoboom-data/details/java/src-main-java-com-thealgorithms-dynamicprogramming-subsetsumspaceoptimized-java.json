@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-subsetsumspaceoptimized-java",
+  "slug": "subsetsumspaceoptimized",
+  "title": "SubsetSumSpaceOptimized",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/SubsetSumSpaceOptimized.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\n/**\n * Utility class for solving the Subset Sum problem using a space-optimized dynamic programming approach.\n *\n * <p>This algorithm determines whether any subset of a given array sums up to a specific target value.</p>\n *\n * <p><b>Time Complexity:</b> O(n * sum)</p>\n * <p><b>Space Complexity:</b> O(sum)</p>\n */\npublic final class SubsetSumSpaceOptimized {\n    private SubsetSumSpaceOptimized() {\n    }\n\n    /**\n     * Determines whether there exists a subset of the given array that adds up to the specified sum.\n     * This method uses a space-optimized dynamic programming approach with a 1D boolean array.\n     *\n     * @param nums The array of non-negative integers\n     * @param targetSum The desired subset sum\n     * @return {@code true} if such a subset exists, {@code false} otherwise\n     */\n    public static boolean isSubsetSum(int[] nums, int targetSum) {\n        if (targetSum < 0) {\n            return false; // Subset sum can't be negative\n        }\n\n        boolean[] dp = new boolean[targetSum + 1];\n        dp[0] = true; // Empty subset always sums to 0\n\n        for (int number : nums) {\n            for (int j = targetSum; j >= number; j--) {\n                dp[j] = dp[j] || dp[j - number];\n            }\n        }\n\n        return dp[targetSum];\n    }\n}\n"
+}

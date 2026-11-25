@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-common-config-js",
+  "slug": "config",
+  "title": "Config",
+  "source": "visualizer",
+  "category": "common",
+  "sourcePath": "AlgoVisualizer/src/common/config.js",
+  "content": "import { CODE_CPP, CODE_JAVA, CODE_JS } from 'files';\n\nconst languages = [{\n  name: 'JavaScript',\n  ext: 'js',\n  mode: 'javascript',\n  skeleton: CODE_JS,\n}, {\n  name: 'C++',\n  ext: 'cpp',\n  mode: 'c_cpp',\n  skeleton: CODE_CPP,\n}, {\n  name: 'Java',\n  ext: 'java',\n  mode: 'java',\n  skeleton: CODE_JAVA,\n}];\n\nconst exts = languages.map(language => language.ext);\n\nexport {\n  languages,\n  exts,\n};\n"
+}

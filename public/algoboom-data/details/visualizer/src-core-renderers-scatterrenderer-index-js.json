@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-renderers-scatterrenderer-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "core / renderers / ScatterRenderer",
+  "sourcePath": "AlgoVisualizer/src/core/renderers/ScatterRenderer/index.js",
+  "content": "import React from 'react'\nimport {Scatter} from 'react-chartjs-2'\nimport Array2DRenderer from '../Array2DRenderer'\n\nconst convertToObjectArray = ([x, y]) => ({ x, y })\nconst colors = ['white', 'green', 'blue', 'red', 'yellow', 'cyan']\n\nclass ScatterRenderer extends Array2DRenderer {\n  renderData() {\n    const { data } = this.props.data\n\n    const datasets = data.map((series, index) => (\n        {\n          backgroundColor: colors[index],\n          data: series.map(s => convertToObjectArray(s.value)),\n          label: Math.random(),\n          radius: (index + 1) * 2,\n        }))\n\n    const chartData = {\n      datasets,\n    }\n\n    return <Scatter data={chartData} options={{\n      legend: false,\n      animation: false,\n      layout: {\n        padding: {\n          left: 20,\n          right: 20,\n          top: 20,\n          bottom: 20,\n        },\n      },\n      scales: {\n        yAxes: [\n          {\n            ticks: {\n              beginAtZero: false,\n            },\n          }],\n        xAxes: [\n          {\n            ticks: {\n              beginAtZero: false,\n            },\n          }],\n      },\n    }}/>\n  }\n}\n\nexport default ScatterRenderer\n"
+}

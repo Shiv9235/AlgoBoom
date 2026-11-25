@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-binaryinsertionsort-java",
+  "slug": "binaryinsertionsort",
+  "title": "BinaryInsertionSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/BinaryInsertionSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * BinaryInsertionSort class implements the SortAlgorithm interface using the binary insertion sort technique.\n * Binary Insertion Sort improves upon the simple insertion sort by using binary search to find the appropriate\n * location to insert the new element, reducing the number of comparisons in the insertion step.\n */\npublic class BinaryInsertionSort implements SortAlgorithm {\n\n    /**\n     * Sorts the given array using the Binary Insertion Sort algorithm.\n     *\n     * @param <T> the type of elements in the array, which must implement the Comparable interface\n     * @param array the array to be sorted\n     * @return the sorted array\n     */\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        for (int i = 1; i < array.length; i++) {\n            final T temp = array[i];\n            int low = 0;\n            int high = i - 1;\n\n            while (low <= high) {\n                final int mid = (low + high) >>> 1;\n                if (SortUtils.less(temp, array[mid])) {\n                    high = mid - 1;\n                } else {\n                    low = mid + 1;\n                }\n            }\n\n            for (int j = i; j >= low + 1; j--) {\n                array[j] = array[j - 1];\n            }\n\n            array[low] = temp;\n        }\n        return array;\n    }\n}\n"
+}

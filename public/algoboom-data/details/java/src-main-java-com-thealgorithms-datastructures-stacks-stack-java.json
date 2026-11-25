@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-stacks-stack-java",
+  "slug": "stack",
+  "title": "Stack",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / stacks",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/stacks/Stack.java",
+  "content": "package com.thealgorithms.datastructures.stacks;\n\n/**\n * A generic interface for Stack data structures.\n *\n * @param <T> the type of elements in this stack\n */\npublic interface Stack<T> {\n\n    /**\n     * Adds an element to the top of the stack.\n     *\n     * @param value The element to add.\n     */\n    void push(T value);\n\n    /**\n     * Removes the element at the top of this stack and returns it.\n     *\n     * @return The element popped from the stack.\n     * @throws IllegalStateException if the stack is empty.\n     */\n    T pop();\n\n    /**\n     * Returns the element at the top of this stack without removing it.\n     *\n     * @return The element at the top of this stack.\n     * @throws IllegalStateException if the stack is empty.\n     */\n    T peek();\n\n    /**\n     * Tests if this stack is empty.\n     *\n     * @return {@code true} if this stack is empty; {@code false} otherwise.\n     */\n    boolean isEmpty();\n\n    /**\n     * Returns the size of this stack.\n     *\n     * @return The number of elements in this stack.\n     */\n    int size();\n\n    /**\n     * Removes all elements from this stack.\n     */\n    void makeEmpty();\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-trinomialtriangle-java",
+  "slug": "trinomialtriangle",
+  "title": "TrinomialTriangle",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/TrinomialTriangle.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * The trinomial triangle is a variation of Pascal’s triangle. The difference\n * between the two is that an entry in the trinomial triangle is the sum of the\n * three (rather than the two in Pasacal’s triangle) entries above it\n *\n * Example Input: n = 4 Output 1 1 1 1 1 2 3 2 1 1 3 6 7 6 3 1\n */\npublic final class TrinomialTriangle {\n    private TrinomialTriangle() {\n    }\n\n    public static int trinomialValue(int n, int k) {\n        if (n == 0 && k == 0) {\n            return 1;\n        }\n\n        if (k < -n || k > n) {\n            return 0;\n        }\n\n        return (trinomialValue(n - 1, k - 1) + trinomialValue(n - 1, k) + trinomialValue(n - 1, k + 1));\n    }\n\n    public static void printTrinomial(int n) {\n        for (int i = 0; i < n; i++) {\n            for (int j = -i; j <= 0; j++) {\n                System.out.print(trinomialValue(i, j) + \" \");\n            }\n\n            for (int j = 1; j <= i; j++) {\n                System.out.print(trinomialValue(i, j) + \" \");\n            }\n\n            System.out.println();\n        }\n    }\n\n    public static void main(String[] argc) {\n        int n = 6;\n        printTrinomial(n);\n    }\n}\n"
+}

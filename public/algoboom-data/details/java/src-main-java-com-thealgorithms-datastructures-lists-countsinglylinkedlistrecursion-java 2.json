@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-lists-countsinglylinkedlistrecursion-java",
+  "slug": "countsinglylinkedlistrecursion",
+  "title": "CountSinglyLinkedListRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / lists",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/lists/CountSinglyLinkedListRecursion.java",
+  "content": "package com.thealgorithms.datastructures.lists;\n\n/**\n * CountSinglyLinkedListRecursion extends a singly linked list to include a\n * recursive count method, which calculates the number of nodes in the list.\n */\npublic class CountSinglyLinkedListRecursion extends SinglyLinkedList {\n\n    /**\n     * Recursively calculates the number of nodes in the list.\n     *\n     * @param head the head node of the list segment being counted.\n     * @return the count of nodes from the given head node onward.\n     */\n    private int countRecursion(SinglyLinkedListNode head) {\n        return head == null ? 0 : 1 + countRecursion(head.next);\n    }\n\n    /**\n     * Returns the total number of nodes in the list by invoking the recursive\n     * count helper method.\n     *\n     * @return the total node count in the list.\n     */\n    @Override\n    public int count() {\n        return countRecursion(getHead());\n    }\n}\n"
+}

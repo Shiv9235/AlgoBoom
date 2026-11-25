@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-evilnumber-java",
+  "slug": "evilnumber",
+  "title": "EvilNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/EvilNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * In number theory, an evil number is a non-negative integer that has an even number of 1s in its binary expansion.\n * Non-negative integers that are not evil are called odious numbers.\n *\n * Evil Number Wiki: https://en.wikipedia.org/wiki/Evil_number\n * Odious Number Wiki: https://en.wikipedia.org/wiki/Odious_number\n */\npublic final class EvilNumber {\n\n    private EvilNumber() {\n    }\n\n    // Function to count number of one bits in a number using bitwise operators\n    private static int countOneBits(int number) {\n        int oneBitCounter = 0;\n        while (number > 0) {\n            oneBitCounter += number & 1; // increment count if last bit is 1\n            number >>= 1; // right shift to next bit\n        }\n        return oneBitCounter;\n    }\n\n    /**\n     * Check either {@code number} is an Evil number or Odious number\n     *\n     * @param number the number\n     * @return {@code true} if {@code number} is an Evil number, otherwise false (in case of Odious number)\n     */\n    public static boolean isEvilNumber(int number) {\n        if (number < 0) {\n            throw new IllegalArgumentException(\"Negative numbers are not allowed.\");\n        }\n\n        int noOfOneBits = countOneBits(number);\n        return noOfOneBits % 2 == 0;\n    }\n}\n"
+}

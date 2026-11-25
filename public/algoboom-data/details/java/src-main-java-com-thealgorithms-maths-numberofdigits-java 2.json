@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-numberofdigits-java",
+  "slug": "numberofdigits",
+  "title": "NumberOfDigits",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/NumberOfDigits.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Find the number of digits in a number.\n */\npublic final class NumberOfDigits {\n    private NumberOfDigits() {\n    }\n    /**\n     * Find the number of digits in a number.\n     *\n     * @param number number to find\n     * @return number of digits of given number\n     */\n    public static int numberOfDigits(int number) {\n        int digits = 0;\n        do {\n            digits++;\n            number /= 10;\n        } while (number != 0);\n        return digits;\n    }\n\n    /**\n     * Find the number of digits in a number fast version.\n     *\n     * @param number number to find\n     * @return number of digits of given number\n     */\n    public static int numberOfDigitsFast(int number) {\n        return number == 0 ? 1 : (int) Math.floor(Math.log10(Math.abs(number)) + 1);\n    }\n\n    /**\n     * Find the number of digits in a number faster version.\n     *\n     * @param number number to find\n     * @return number of digits of given number\n     */\n    public static int numberOfDigitsFaster(int number) {\n        return number < 0 ? (-number + \"\").length() : (number + \"\").length();\n    }\n\n    /**\n     * Find the number of digits in a number using recursion.\n     *\n     * @param number number to find\n     * @return number of digits of given number\n     */\n    public static int numberOfDigitsRecursion(int number) {\n        return number / 10 == 0 ? 1 : 1 + numberOfDigitsRecursion(number / 10);\n    }\n}\n"
+}

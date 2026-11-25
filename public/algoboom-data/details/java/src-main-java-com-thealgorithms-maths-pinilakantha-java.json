@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-pinilakantha-java",
+  "slug": "pinilakantha",
+  "title": "PiNilakantha",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PiNilakantha.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class PiNilakantha {\n    private PiNilakantha() {\n    }\n\n    // Calculates Pi using Nilakantha's infinite series\n    // Method 2 in the following link explains the algorithm\n    // https://en.scratch-wiki.info/wiki/Calculating_Pi\n    public static void main(String[] args) {\n        assert calculatePi(0) == 3.0;\n        assert calculatePi(10) > 3.0;\n        assert calculatePi(100) < 4.0;\n\n        System.out.println(calculatePi(500));\n    }\n\n    /**\n     * @param iterations number of times the infinite series gets repeated Pi\n     * get more accurate the higher the value of iterations is Values from 0 up\n     * to 500 are allowed since double precision is not sufficient for more than\n     * about 500 repetitions of this algorithm\n     * @return the pi value of the calculation with a precision of x iteration\n     */\n    public static double calculatePi(int iterations) {\n        if (iterations < 0 || iterations > 500) {\n            throw new IllegalArgumentException(\"Please input Integer Number between 0 and 500\");\n        }\n\n        double pi = 3;\n        int divCounter = 2;\n\n        for (int i = 0; i < iterations; i++) {\n            if (i % 2 == 0) {\n                pi = pi + 4.0 / (divCounter * (divCounter + 1) * (divCounter + 2));\n            } else {\n                pi = pi - 4.0 / (divCounter * (divCounter + 1) * (divCounter + 2));\n            }\n\n            divCounter += 2;\n        }\n        return pi;\n    }\n}\n"
+}

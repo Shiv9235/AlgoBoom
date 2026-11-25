@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-darksort-java",
+  "slug": "darksort",
+  "title": "DarkSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/DarkSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * Dark Sort algorithm implementation.\n *\n * Dark Sort uses a temporary array to count occurrences of elements and\n * reconstructs the sorted array based on the counts.\n */\nclass DarkSort {\n\n    /**\n     * Sorts the array using the Dark Sort algorithm.\n     *\n     * @param unsorted the array to be sorted\n     * @return sorted array\n     */\n    public Integer[] sort(Integer[] unsorted) {\n        if (unsorted == null || unsorted.length <= 1) {\n            return unsorted;\n        }\n\n        int max = findMax(unsorted); // Find the maximum value in the array\n\n        // Create a temporary array for counting occurrences\n        int[] temp = new int[max + 1];\n\n        // Count occurrences of each element\n        for (int value : unsorted) {\n            temp[value]++;\n        }\n\n        // Reconstruct the sorted array\n        int index = 0;\n        for (int i = 0; i < temp.length; i++) {\n            while (temp[i] > 0) {\n                unsorted[index++] = i;\n                temp[i]--;\n            }\n        }\n\n        return unsorted;\n    }\n\n    /**\n     * Helper method to find the maximum value in an array.\n     *\n     * @param arr the array\n     * @return the maximum value\n     */\n    private int findMax(Integer[] arr) {\n        int max = arr[0];\n        for (int value : arr) {\n            if (value > max) {\n                max = value;\n            }\n        }\n        return max;\n    }\n}\n"
+}

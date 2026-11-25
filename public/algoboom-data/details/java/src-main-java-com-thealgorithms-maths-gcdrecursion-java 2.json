@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-gcdrecursion-java",
+  "slug": "gcdrecursion",
+  "title": "GCDRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/GCDRecursion.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * @author https://github.com/shellhub/\n */\npublic final class GCDRecursion {\n    private GCDRecursion() {\n    }\n\n    public static void main(String[] args) {\n        System.out.println(gcd(20, 15));\n        /* output: 5 */\n        System.out.println(gcd(10, 8));\n        /* output: 2 */\n        System.out.println(gcd(gcd(10, 5), gcd(5, 10)));\n        /* output: 5 */\n    }\n\n    /**\n     * get greatest common divisor\n     *\n     * @param a the first number\n     * @param b the second number\n     * @return gcd\n     */\n    public static int gcd(int a, int b) {\n        if (a < 0 || b < 0) {\n            throw new ArithmeticException();\n        }\n\n        if (a == 0 || b == 0) {\n            return Math.abs(a - b);\n        }\n\n        if (a % b == 0) {\n            return b;\n        } else {\n            return gcd(b, a % b);\n        }\n    }\n}\n"
+}

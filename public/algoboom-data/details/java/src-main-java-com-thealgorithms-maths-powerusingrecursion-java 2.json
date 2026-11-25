@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-powerusingrecursion-java",
+  "slug": "powerusingrecursion",
+  "title": "PowerUsingRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PowerUsingRecursion.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * calculate Power using Recursion\n * @author Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n */\n\npublic final class PowerUsingRecursion {\n    private PowerUsingRecursion() {\n    }\n\n    public static double power(double base, int exponent) {\n        // Base case: anything raised to the power of 0 is 1\n        if (exponent == 0) {\n            return 1;\n        }\n\n        // Recursive case: base ^ exponent = base * base ^ (exponent - 1)\n        // Recurse with a smaller exponent and multiply with base\n        return base * power(base, exponent - 1);\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-josephusproblem-java",
+  "slug": "josephusproblem",
+  "title": "JosephusProblem",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/JosephusProblem.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * There are n friends that are playing a game. The friends are sitting in a circle and are\n * numbered from 1 to n in clockwise order. More formally, moving clockwise from the ith friend\n * brings you to the (i+1)th friend for 1 <= i < n, and moving clockwise from the nth friend brings\n * you to the 1st friend.\n\n   The rules of the game are as follows:\n\n        1.Start at the 1st friend.\n        2.Count the next k friends in the clockwise direction including the friend you started at.\n   The counting wraps around the circle and may count some friends more than once. 3.The last friend\n   you counted leaves the circle and loses the game. 4.If there is still more than one friend in the\n   circle, go back to step 2 starting from the friend immediately clockwise of the friend who just\n   lost and repeat. 5.Else, the last friend in the circle wins the game.\n\n        @author Kunal\n    */\npublic final class JosephusProblem {\n    private JosephusProblem() {\n    }\n\n    /**\n     * Find the Winner of the Circular Game.\n     *\n     * @param number of friends, n, and an integer k\n     * @return return the winner of the game\n     */\n\n    public static int findTheWinner(int n, int k) {\n        return winner(n, k) + 1;\n    }\n\n    public static int winner(int n, int k) {\n        if (n == 1) {\n            return 0;\n        }\n        return (winner(n - 1, k) + k) % n;\n    }\n}\n"
+}

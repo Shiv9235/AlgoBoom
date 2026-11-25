@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-stacks-trappingrainwater-java",
+  "slug": "trappingrainwater",
+  "title": "TrappingRainwater",
+  "source": "java",
+  "category": "com / thealgorithms / stacks",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/stacks/TrappingRainwater.java",
+  "content": "package com.thealgorithms.stacks;\n/**\n * Trapping Rainwater Problem\n * Given an array of non-negative integers representing the height of bars,\n * compute how much water it can trap after raining.\n *\n * Example:\n * Input: [4,2,0,3,2,5]\n * Output: 9\n *\n * Time Complexity: O(n)\n * Space Complexity: O(1)\n *\n * Reference: https://en.wikipedia.org/wiki/Trapping_rain_water\n */\npublic final class TrappingRainwater {\n\n    private TrappingRainwater() {\n        throw new UnsupportedOperationException(\"Utility class\");\n    }\n\n    public static int trap(int[] height) {\n        int left = 0;\n        int right = height.length - 1;\n        int leftMax = 0;\n        int rightMax = 0;\n        int result = 0;\n\n        while (left < right) {\n            if (height[left] < height[right]) {\n                if (height[left] >= leftMax) {\n                    leftMax = height[left];\n                } else {\n                    result += leftMax - height[left];\n                }\n                left++;\n            } else {\n                if (height[right] >= rightMax) {\n                    rightMax = height[right];\n                } else {\n                    result += rightMax - height[right];\n                }\n                right--;\n            }\n        }\n        return result;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-turkishtolatinconversion-java",
+  "slug": "turkishtolatinconversion",
+  "title": "TurkishToLatinConversion",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/TurkishToLatinConversion.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * Converts turkish character to latin character\n *\n * @author Özgün Gökşenli\n */\npublic final class TurkishToLatinConversion {\n    private TurkishToLatinConversion() {\n    }\n\n    /**\n     * This method converts a turkish character to latin character.\n     * Steps:\n     * 1. Define turkish characters and their corresponding latin characters\n     * 2. Replace all turkish characters with their corresponding latin characters\n     * 3. Return the converted string\n     *\n     * @param param String parameter\n     * @return String\n     */\n    public static String convertTurkishToLatin(String param) {\n        char[] turkishChars = new char[] {\n            0x131,\n            0x130,\n            0xFC,\n            0xDC,\n            0xF6,\n            0xD6,\n            0x15F,\n            0x15E,\n            0xE7,\n            0xC7,\n            0x11F,\n            0x11E,\n        };\n        char[] latinChars = new char[] {\n            'i',\n            'I',\n            'u',\n            'U',\n            'o',\n            'O',\n            's',\n            'S',\n            'c',\n            'C',\n            'g',\n            'G',\n        };\n        for (int i = 0; i < turkishChars.length; i++) {\n            param = param.replaceAll(String.valueOf(turkishChars[i]), String.valueOf(latinChars[i]));\n        }\n        return param;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-expandablelistitem-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / ExpandableListItem",
+  "sourcePath": "AlgoVisualizer/src/components/ExpandableListItem/index.js",
+  "content": "import React from 'react';\nimport { FontAwesomeIcon } from '@fortawesome/react-fontawesome'\nimport faCaretDown from '@fortawesome/fontawesome-free-solid/faCaretDown';\nimport faCaretRight from '@fortawesome/fontawesome-free-solid/faCaretRight';\nimport styles from './ExpandableListItem.module.scss';\nimport { ListItem } from 'components';\nimport { classes } from 'common/util';\n\nclass ExpandableListItem extends React.Component {\n  render() {\n    const { className, children, opened, ...props } = this.props;\n\n    return opened ? (\n      <div className={classes(styles.expandable_list_item, className)}>\n        <ListItem className={styles.category} {...props}>\n          <FontAwesomeIcon className={styles.icon} fixedWidth icon={faCaretDown} />\n        </ListItem>\n        {children}\n      </div>\n    ) : (\n      <ListItem className={classes(styles.category, className)} {...props}>\n        <FontAwesomeIcon className={styles.icon} fixedWidth icon={faCaretRight} />\n      </ListItem>\n    );\n  }\n}\n\nexport default ExpandableListItem;\n\n"
+}

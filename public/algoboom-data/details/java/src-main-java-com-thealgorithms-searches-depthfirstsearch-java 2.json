@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-searches-depthfirstsearch-java",
+  "slug": "depthfirstsearch",
+  "title": "DepthFirstSearch",
+  "source": "java",
+  "category": "com / thealgorithms / searches",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/searches/DepthFirstSearch.java",
+  "content": "package com.thealgorithms.searches;\n\nimport com.thealgorithms.datastructures.Node;\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.Optional;\n\n/**\n * @author: caos321\n * @date: 31 October 2021 (Sunday)\n * @wiki: https://en.wikipedia.org/wiki/Depth-first_search\n */\npublic class DepthFirstSearch<T> {\n\n    private final List<T> visited = new ArrayList<>();\n\n    public Optional<Node<T>> recursiveSearch(final Node<T> node, final Integer value) {\n        if (node == null) {\n            return Optional.empty();\n        }\n        visited.add(node.getValue());\n        if (node.getValue().equals(value)) {\n            return Optional.of(node);\n        }\n\n        return node.getChildren().stream().map(v -> recursiveSearch(v, value)).flatMap(Optional::stream).findAny();\n    }\n\n    public List<T> getVisited() {\n        return visited;\n    }\n}\n"
+}

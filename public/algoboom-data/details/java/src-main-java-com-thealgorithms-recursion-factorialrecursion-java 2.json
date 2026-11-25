@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-recursion-factorialrecursion-java",
+  "slug": "factorialrecursion",
+  "title": "FactorialRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / recursion",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/recursion/FactorialRecursion.java",
+  "content": "package com.thealgorithms.recursion;\n\npublic final class FactorialRecursion {\n    private FactorialRecursion() {\n    }\n    /**\n     * Recursive FactorialRecursion Method\n     *\n     * @param n The number to factorial\n     * @return The factorial of the number\n     */\n    public static long factorial(int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"number is negative\");\n        }\n        return n == 0 || n == 1 ? 1 : n * factorial(n - 1);\n    }\n}\n"
+}

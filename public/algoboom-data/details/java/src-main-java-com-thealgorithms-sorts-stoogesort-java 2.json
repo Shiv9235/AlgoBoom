@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-stoogesort-java",
+  "slug": "stoogesort",
+  "title": "StoogeSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/StoogeSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * @author Amir Hassan (https://github.com/ahsNT)\n * @see SortAlgorithm\n */\npublic class StoogeSort implements SortAlgorithm {\n\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        if (array.length == 0) {\n            return array;\n        }\n        sort(array, 0, array.length);\n        return array;\n    }\n\n    public <T extends Comparable<T>> T[] sort(final T[] array, final int start, final int end) {\n        if (SortUtils.less(array[end - 1], array[start])) {\n            final T temp = array[start];\n            array[start] = array[end - 1];\n            array[end - 1] = temp;\n        }\n\n        final int length = end - start;\n        if (length > 2) {\n            int third = length / 3;\n            sort(array, start, end - third);\n            sort(array, start + third, end);\n            sort(array, start, end - third);\n        }\n        return array;\n    }\n}\n"
+}

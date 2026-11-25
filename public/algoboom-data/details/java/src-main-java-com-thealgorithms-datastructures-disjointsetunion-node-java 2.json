@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-disjointsetunion-node-java",
+  "slug": "node",
+  "title": "Node",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / disjointsetunion",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/disjointsetunion/Node.java",
+  "content": "package com.thealgorithms.datastructures.disjointsetunion;\n\npublic class Node<T> {\n\n    /**\n     * The rank of the node, used for optimizing union operations.\n     */\n    public int rank;\n\n    /**\n     * Reference to the parent node in the set.\n     * Initially, a node is its own parent (represents a singleton set).\n     */\n    public Node<T> parent;\n\n    /**\n     * The data element associated with the node.\n     */\n    public T data;\n\n    public Node(final T data) {\n        this.data = data;\n        parent = this; // Initially, a node is its own parent.\n    }\n}\n"
+}

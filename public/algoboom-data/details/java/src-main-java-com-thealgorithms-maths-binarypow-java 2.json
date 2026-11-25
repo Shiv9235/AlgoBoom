@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-binarypow-java",
+  "slug": "binarypow",
+  "title": "BinaryPow",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/BinaryPow.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class BinaryPow {\n    private BinaryPow() {\n    }\n\n    /**\n     * Calculate a^p using binary exponentiation\n     * [Binary-Exponentiation](https://cp-algorithms.com/algebra/binary-exp.html)\n     *\n     * @param a the base for exponentiation\n     * @param p the exponent - must be greater than 0\n     * @return a^p\n     */\n    public static int binPow(int a, int p) {\n        int res = 1;\n        while (p > 0) {\n            if ((p & 1) == 1) {\n                res = res * a;\n            }\n            a = a * a;\n            p >>>= 1;\n        }\n        return res;\n    }\n}\n"
+}

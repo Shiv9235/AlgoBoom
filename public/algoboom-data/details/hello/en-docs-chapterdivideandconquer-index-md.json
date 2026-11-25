@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterdivideandconquer-index-md",
+  "slug": "divide-and-conquer",
+  "title": "Divide and conquer",
+  "source": "hello",
+  "category": "divide_and_conquer",
+  "sourcePath": "Algorithms/en/docs/chapter_divide_and_conquer/index.md",
+  "content": "# Divide and conquer\n\n![Divide and conquer](../assets/covers/chapter_divide_and_conquer.jpg)\n\n!!! abstract\n\n    A difficult problem is broken down layer by layer, becoming simpler with each division.\n    \n    Divide and conquer reveals an important truth: start with the simple parts, and complexity becomes manageable.\n"
+}

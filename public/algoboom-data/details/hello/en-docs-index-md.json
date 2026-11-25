@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-index-md",
+  "slug": "hello-algo",
+  "title": "Hello Algo",
+  "source": "hello",
+  "category": "index.md",
+  "sourcePath": "Algorithms/en/docs/index.md",
+  "content": "# Hello Algo\n\nAn introduction to data structures and algorithms, with animated illustrations and code you can run with one click.\n\n[Start reading](chapter_hello_algo/)\n"
+}

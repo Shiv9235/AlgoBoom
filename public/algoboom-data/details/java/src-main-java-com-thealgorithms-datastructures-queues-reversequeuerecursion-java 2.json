@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-queues-reversequeuerecursion-java",
+  "slug": "reversequeuerecursion",
+  "title": "ReverseQueueRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / queues",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/queues/ReverseQueueRecursion.java",
+  "content": "package com.thealgorithms.datastructures.queues;\n\nimport java.util.Queue;\n\n/**\n * Reverse a queue using recursion.\n */\npublic final class ReverseQueueRecursion {\n    private ReverseQueueRecursion() {\n        // private constructor to prevent instantiation\n    }\n\n    /**\n     * Reverses the given queue recursively.\n     *\n     * @param queue the queue to reverse\n     * @param <T> the type of elements in the queue\n     */\n    public static <T> void reverseQueue(final Queue<T> queue) {\n        if (queue == null || queue.isEmpty()) {\n            return;\n        }\n\n        final T front = queue.poll();\n        reverseQueue(queue);\n        queue.add(front);\n    }\n}\n"
+}

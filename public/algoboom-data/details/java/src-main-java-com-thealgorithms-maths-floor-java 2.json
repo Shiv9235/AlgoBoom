@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-floor-java",
+  "slug": "floor",
+  "title": "Floor",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Floor.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class Floor {\n\n    private Floor() {\n    }\n\n    /**\n     * Returns the largest (closest to positive infinity)\n     *\n     * @param number the number\n     * @return the largest (closest to positive infinity) of given\n     * {@code number}\n     */\n    public static double floor(double number) {\n        if (number - (int) number == 0) {\n            return number;\n        } else if (number - (int) number > 0) {\n            return (int) number;\n        } else {\n            return (int) number - 1;\n        }\n    }\n}\n"
+}

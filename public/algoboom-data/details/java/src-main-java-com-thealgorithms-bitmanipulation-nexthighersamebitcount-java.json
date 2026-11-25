@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-nexthighersamebitcount-java",
+  "slug": "nexthighersamebitcount",
+  "title": "NextHigherSameBitCount",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/NextHigherSameBitCount.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to find the next higher number\n * with the same number of set bits as the given number.\n *\n * @author Hardvan\n */\npublic final class NextHigherSameBitCount {\n    private NextHigherSameBitCount() {\n    }\n\n    /**\n     * Finds the next higher integer with the same number of set bits.\n     * Steps:\n     * 1. Find {@code c}, the rightmost set bit of {@code n}.\n     * 2. Find {@code r}, the rightmost set bit of {@code n + c}.\n     * 3. Swap the bits of {@code r} and {@code n} to the right of {@code c}.\n     * 4. Shift the bits of {@code r} and {@code n} to the right of {@code c} to the rightmost.\n     * 5. Combine the results of steps 3 and 4.\n     *\n     * @param n the input number\n     * @return the next higher integer with the same set bit count\n     */\n    public static int nextHigherSameBitCount(int n) {\n        int c = n & -n;\n        int r = n + c;\n        return (((r ^ n) >> 2) / c) | r;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-genericroot-java",
+  "slug": "genericroot",
+  "title": "GenericRoot",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/GenericRoot.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Calculates the generic root (repeated digital sum) of a non-negative integer.\n * <p>\n * For example, the generic root of 12345 is calculated as:\n * 1 + 2 + 3 + 4 + 5 = 15,\n * then 1 + 5 = 6, so the generic root is 6.\n * <p>\n * Reference:\n * https://technotip.com/6774/c-program-to-find-generic-root-of-a-number/\n */\npublic final class GenericRoot {\n\n    private static final int BASE = 10;\n\n    private GenericRoot() {\n    }\n\n    /**\n     * Computes the sum of the digits of a non-negative integer in base 10.\n     *\n     * @param n non-negative integer\n     * @return sum of digits of {@code n}\n     */\n    private static int sumOfDigits(final int n) {\n        assert n >= 0;\n        if (n < BASE) {\n            return n;\n        }\n        return (n % BASE) + sumOfDigits(n / BASE);\n    }\n\n    /**\n     * Computes the generic root (repeated digital sum) of an integer.\n     * For negative inputs, the absolute value is used.\n     *\n     * @param n integer input\n     * @return generic root of {@code n}\n     */\n    public static int genericRoot(final int n) {\n        int number = Math.abs(n);\n        if (number < BASE) {\n            return number;\n        }\n        return genericRoot(sumOfDigits(number));\n    }\n}\n"
+}

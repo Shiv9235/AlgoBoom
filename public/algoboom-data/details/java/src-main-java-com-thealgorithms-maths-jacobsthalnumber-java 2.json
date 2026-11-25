@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-jacobsthalnumber-java",
+  "slug": "jacobsthalnumber",
+  "title": "JacobsthalNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/JacobsthalNumber.java",
+  "content": "package com.thealgorithms.maths;\n// author: Vraj Prajapati @Rosander0\n\n/**\n * The Jacobsthal Sequence is a sequence of integers defined by the recurrence relation:\n * J(n) = J(n-1) + 2*J(n-2) with initial values J(0) = 0, J(1) = 1.\n * Example: 0, 1, 1, 3, 5, 11, 21, 43, 85, 171, 341...\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Jacobsthal_number\">\n *     Wikipedia: Jacobsthal Number</a>\n */\npublic final class JacobsthalNumber {\n\n    private JacobsthalNumber() {\n        // Utility class\n    }\n\n    /**\n     * Calculates the nth term of the Jacobsthal Sequence.\n     *\n     * @param n the index of the sequence (must be non-negative)\n     * @return the nth term of the Jacobsthal Sequence\n     */\n    public static long jacobsthal(final int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"Input must be non-negative!\");\n        }\n        if (n == 0) {\n            return 0;\n        }\n        if (n == 1) {\n            return 1;\n        }\n        long a = 0;\n        long b = 1;\n        long result = 0;\n        for (int i = 2; i <= n; i++) {\n            result = b + 2 * a;\n            a = b;\n            b = result;\n        }\n        return result;\n    }\n}\n"
+}

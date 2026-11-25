@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-greedyalgorithms-minimizinglateness-java",
+  "slug": "minimizinglateness",
+  "title": "MinimizingLateness",
+  "source": "java",
+  "category": "com / thealgorithms / greedyalgorithms",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/greedyalgorithms/MinimizingLateness.java",
+  "content": "package com.thealgorithms.greedyalgorithms;\n\nimport java.util.Arrays;\n\npublic final class MinimizingLateness {\n    private MinimizingLateness() {\n    }\n\n    public static class Job {\n        String jobName;\n        int startTime = 0;\n        int lateness = 0;\n        int processingTime;\n        int deadline;\n\n        public Job(String jobName, int processingTime, int deadline) {\n            this.jobName = jobName;\n            this.processingTime = processingTime;\n            this.deadline = deadline;\n        }\n\n        public static Job of(String jobName, int processingTime, int deadline) {\n            return new Job(jobName, processingTime, deadline);\n        }\n\n        @Override\n        public String toString() {\n            return String.format(\"%s, startTime: %d, endTime: %d, lateness: %d\", jobName, startTime, processingTime + startTime, lateness);\n        }\n    }\n\n    static void calculateLateness(Job... jobs) {\n\n        // sort the jobs based on their deadline\n        Arrays.sort(jobs, (a, b) -> a.deadline - b.deadline);\n\n        int startTime = 0;\n\n        for (Job job : jobs) {\n            job.startTime = startTime;\n            startTime += job.processingTime;\n            job.lateness = Math.max(0, startTime - job.deadline); // if the job finishes before deadline the lateness is 0\n        }\n    }\n}\n"
+}

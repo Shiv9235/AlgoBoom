@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-swapsort-java",
+  "slug": "swapsort",
+  "title": "SwapSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/SwapSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * The idea of Swap-Sort is to count the number m of smaller values (that are in\n * A) from each element of an array A(1...n) and then swap the element with the\n * element in A(m+1). This ensures that the exchanged element is already in the\n * correct, i.e. final, position. The disadvantage of this algorithm is that\n * each element may only occur once, otherwise there is no termination.\n */\npublic class SwapSort implements SortAlgorithm {\n\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        int index = 0;\n\n        while (index < array.length - 1) {\n            final int amountSmallerElements = this.getSmallerElementCount(array, index);\n\n            if (amountSmallerElements > 0) {\n                int target = index + amountSmallerElements;\n                // Skip slots that already hold an equal element, otherwise two equal values swap forever\n                while (array[target].compareTo(array[index]) == 0) {\n                    target++;\n                }\n                SortUtils.swap(array, index, target);\n            } else {\n                index++;\n            }\n        }\n\n        return array;\n    }\n\n    private <T extends Comparable<T>> int getSmallerElementCount(final T[] array, final int index) {\n        int counter = 0;\n        for (int i = index + 1; i < array.length; i++) {\n            if (SortUtils.less(array[i], array[index])) {\n                counter++;\n            }\n        }\n\n        return counter;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-ciphers-a5-baselfsr-java",
+  "slug": "baselfsr",
+  "title": "BaseLFSR",
+  "source": "java",
+  "category": "com / thealgorithms / ciphers / a5",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/ciphers/a5/BaseLFSR.java",
+  "content": "package com.thealgorithms.ciphers.a5;\n\nimport java.util.BitSet;\n\npublic interface BaseLFSR {\n    void initialize(BitSet sessionKey, BitSet frameCounter);\n    boolean clock();\n    int SESSION_KEY_LENGTH = 64;\n    int FRAME_COUNTER_LENGTH = 22;\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-files-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "files",
+  "sourcePath": "AlgoVisualizer/src/files/index.js",
+  "content": "import { createProjectFile, createUserFile } from 'common/util';\n\nconst getName = filePath => filePath.split('/').pop();\nconst getContent = filePath => require('!raw-loader!./' + filePath).default;\nconst readProjectFile = filePath => createProjectFile(getName(filePath), getContent(filePath));\nconst readUserFile = filePath => createUserFile(getName(filePath), getContent(filePath));\n\nexport const CODE_CPP = readUserFile('skeletons/code.cpp');\nexport const CODE_JAVA = readUserFile('skeletons/code.java');\nexport const CODE_JS = readUserFile('skeletons/code.js');\nexport const ROOT_README_MD = readProjectFile('algorithm-visualizer/README.md');\nexport const SCRATCH_PAPER_README_MD = readProjectFile('scratch-paper/README.md');\n"
+}

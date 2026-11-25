@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-exchangesort-java",
+  "slug": "exchangesort",
+  "title": "ExchangeSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/ExchangeSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * ExchangeSort is an implementation of the Exchange Sort algorithm.\n *\n * <p>\n * Exchange sort works by comparing each element with all subsequent elements,\n * swapping where needed, to ensure the correct placement of each element\n * in the final sorted order. It iteratively performs this process for each\n * element in the array. While it lacks the advantage of bubble sort in\n * detecting sorted lists in one pass, it can be more efficient than bubble sort\n * due to a constant factor (one less pass over the data to be sorted; half as\n * many total comparisons) in worst-case scenarios.\n * </p>\n *\n * <p>\n * Reference: https://en.wikipedia.org/wiki/Sorting_algorithm#Exchange_sort\n * </p>\n *\n * @author 555vedant (Vedant Kasar)\n */\nclass ExchangeSort implements SortAlgorithm {\n    /**\n     * Implementation of Exchange Sort Algorithm\n     *\n     * @param array the array to be sorted.\n     * @param <T>   the type of elements in the array.\n     * @return the sorted array.\n     */\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        for (int i = 0; i < array.length - 1; i++) {\n            for (int j = i + 1; j < array.length; j++) {\n                if (SortUtils.greater(array[i], array[j])) {\n                    SortUtils.swap(array, i, j);\n                }\n            }\n        }\n        return array;\n    }\n}\n"
+}

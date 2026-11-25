@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-happynumber-java",
+  "slug": "happynumber",
+  "title": "HappyNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/HappyNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * A Happy Number is defined as a number which eventually reaches 1 when replaced\n * by the sum of the squares of each digit.\n * If it falls into a cycle that does not include 1, then it is not a happy number.\n\n * Example:\n * 19 → 1² + 9² = 82\n * 82 → 8² + 2² = 68\n * 68 → 6² + 8² = 100\n * 100 → 1² + 0² + 0² = 1 → Happy Number!\n */\npublic final class HappyNumber {\n\n    private HappyNumber() {\n    }\n\n    /**\n     * Checks whether the given number is a Happy Number.\n     * Uses Floyd’s Cycle Detection algorithm (tortoise and hare method)\n     * to detect loops efficiently.\n     *\n     * @param n The number to check\n     * @return true if n is a Happy Number, false otherwise\n     */\n    public static boolean isHappy(int n) {\n        int slow = n;\n        int fast = n;\n\n        do {\n            slow = sumOfSquares(slow); // move 1 step\n            fast = sumOfSquares(sumOfSquares(fast)); // move 2 steps\n        } while (slow != fast);\n\n        return slow == 1; // If cycle ends in 1 → Happy number\n    }\n\n    /**\n     * Calculates the sum of squares of the digits of a number.\n     *\n     * Example:\n     * num = 82 → 8² + 2² = 64 + 4 = 68\n     *\n     * @param num The number to calculate sum of squares of digits\n     * @return The sum of squares of the digits\n     */\n    private static int sumOfSquares(int num) {\n        int sum = 0;\n        while (num > 0) {\n            int digit = num % 10;\n            sum += digit * digit;\n            num /= 10;\n        }\n        return sum;\n    }\n}\n"
+}

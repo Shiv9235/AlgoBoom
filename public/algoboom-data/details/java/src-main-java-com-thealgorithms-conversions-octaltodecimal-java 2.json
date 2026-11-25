@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-octaltodecimal-java",
+  "slug": "octaltodecimal",
+  "title": "OctalToDecimal",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/OctalToDecimal.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * Class for converting an octal number to a decimal number. Octal numbers are based on 8, using digits from 0 to 7.\n *\n */\npublic final class OctalToDecimal {\n    private static final int OCTAL_BASE = 8;\n\n    private OctalToDecimal() {\n    }\n\n    /**\n     * Converts a given octal number (as a string) to its decimal representation.\n     * If the input is not a valid octal number (i.e., contains characters other than 0-7),\n     * the method throws an IllegalArgumentException.\n     *\n     * @param inputOctal The octal number as a string\n     * @return The decimal equivalent of the octal number\n     * @throws IllegalArgumentException if the input is not a valid octal number\n     */\n    public static int convertOctalToDecimal(String inputOctal) {\n        if (inputOctal == null || inputOctal.isEmpty()) {\n            throw new IllegalArgumentException(\"Input cannot be null or empty\");\n        }\n\n        int decimalValue = 0;\n\n        for (int i = 0; i < inputOctal.length(); i++) {\n            char currentChar = inputOctal.charAt(i);\n\n            if (currentChar < '0' || currentChar > '7') {\n                throw new IllegalArgumentException(\"Incorrect input: Expecting an octal number (digits 0-7)\");\n            }\n\n            int currentDigit = currentChar - '0';\n            decimalValue = decimalValue * OCTAL_BASE + currentDigit;\n        }\n\n        return decimalValue;\n    }\n}\n"
+}

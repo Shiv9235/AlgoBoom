@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-tracer-jsx",
+  "slug": "tracer",
+  "title": "Tracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/Tracer.jsx",
+  "content": "import React from 'react';\nimport { Renderer } from 'core/renderers';\n\nclass Tracer {\n  constructor(key, getObject, title) {\n    this.key = key;\n    this.getObject = getObject;\n    this.title = title;\n    this.init();\n    this.reset();\n  }\n\n  getRendererClass() {\n    return Renderer;\n  }\n\n  init() {\n  }\n\n  render() {\n    const RendererClass = this.getRendererClass();\n    return (\n      <RendererClass key={this.key} title={this.title} data={this} />\n    );\n  }\n\n  set() {\n  }\n\n  reset() {\n    this.set();\n  }\n}\n\nexport default Tracer;\n"
+}

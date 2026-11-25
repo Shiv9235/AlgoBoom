@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-ellipsis-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / Ellipsis",
+  "sourcePath": "AlgoVisualizer/src/components/Ellipsis/index.js",
+  "content": "import React from 'react';\nimport styles from './Ellipsis.module.scss';\nimport { classes } from 'common/util';\n\nclass Ellipsis extends React.Component {\n  render() {\n    const { className, children } = this.props;\n\n    return (\n      <span className={classes(styles.ellipsis, className)}>\n        {children}\n      </span>\n    );\n  }\n}\n\nexport default Ellipsis;\n\n"
+}

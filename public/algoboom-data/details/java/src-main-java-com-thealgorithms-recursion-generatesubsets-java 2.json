@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-recursion-generatesubsets-java",
+  "slug": "generatesubsets",
+  "title": "GenerateSubsets",
+  "source": "java",
+  "category": "com / thealgorithms / recursion",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/recursion/GenerateSubsets.java",
+  "content": "package com.thealgorithms.recursion;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * Utility class to generate all subsets (power set) of a given string using recursion.\n *\n * <p>For example, the string \"ab\" will produce: [\"ab\", \"a\", \"b\", \"\"]\n */\npublic final class GenerateSubsets {\n\n    private GenerateSubsets() {\n    }\n\n    /**\n     * Generates all subsets (power set) of the given string using recursion.\n     *\n     * @param str the input string to generate subsets for\n     * @return a list of all subsets of the input string\n     */\n    public static List<String> subsetRecursion(String str) {\n        return generateSubsets(\"\", str);\n    }\n\n    /**\n     * Recursive helper method to generate subsets by including or excluding characters.\n     *\n     * @param current the current prefix being built\n     * @param remaining the remaining string to process\n     * @return list of subsets formed from current and remaining\n     */\n    private static List<String> generateSubsets(String current, String remaining) {\n        if (remaining.isEmpty()) {\n            List<String> result = new ArrayList<>();\n            result.add(current);\n            return result;\n        }\n\n        char ch = remaining.charAt(0);\n        String next = remaining.substring(1);\n\n        // Include the character\n        List<String> withChar = generateSubsets(current + ch, next);\n\n        // Exclude the character\n        List<String> withoutChar = generateSubsets(current, next);\n\n        withChar.addAll(withoutChar);\n        return withChar;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-onebitdifference-java",
+  "slug": "onebitdifference",
+  "title": "OneBitDifference",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/OneBitDifference.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to detect if two integers\n * differ by exactly one bit flip.\n *\n * Example:\n * 1 (0001) and 2 (0010) differ by exactly one bit flip.\n * 7 (0111) and 3 (0011) differ by exactly one bit flip.\n *\n * @author Hardvan\n */\npublic final class OneBitDifference {\n    private OneBitDifference() {\n    }\n\n    /**\n     * Checks if two integers differ by exactly one bit.\n     *\n     * @param x the first integer\n     * @param y the second integer\n     * @return true if x and y differ by exactly one bit, false otherwise\n     */\n    public static boolean differByOneBit(int x, int y) {\n        if (x == y) {\n            return false;\n        }\n\n        int xor = x ^ y;\n        return (xor & (xor - 1)) == 0;\n    }\n}\n"
+}

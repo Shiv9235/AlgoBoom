@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-decimaltooctal-java",
+  "slug": "decimaltooctal",
+  "title": "DecimalToOctal",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/DecimalToOctal.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * This class converts Decimal numbers to Octal Numbers\n */\npublic final class DecimalToOctal {\n    private static final int OCTAL_BASE = 8;\n    private static final int INITIAL_OCTAL_VALUE = 0;\n    private static final int INITIAL_PLACE_VALUE = 1;\n\n    private DecimalToOctal() {\n    }\n\n    /**\n     * Converts a decimal number to its octal equivalent.\n     *\n     * @param decimal The decimal number to convert.\n     * @return The octal equivalent as an integer.\n     * @throws IllegalArgumentException if the decimal number is negative.\n     */\n    public static int convertToOctal(int decimal) {\n        if (decimal < 0) {\n            throw new IllegalArgumentException(\"Decimal number cannot be negative.\");\n        }\n\n        int octal = INITIAL_OCTAL_VALUE;\n        int placeValue = INITIAL_PLACE_VALUE;\n\n        while (decimal != 0) {\n            int remainder = decimal % OCTAL_BASE;\n            octal += remainder * placeValue;\n            decimal /= OCTAL_BASE;\n            placeValue *= 10;\n        }\n\n        return octal;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-medianofrunningarraybyte-java",
+  "slug": "medianofrunningarraybyte",
+  "title": "MedianOfRunningArrayByte",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MedianOfRunningArrayByte.java",
+  "content": "package com.thealgorithms.misc;\n\npublic final class MedianOfRunningArrayByte extends MedianOfRunningArray<Byte> {\n    @Override\n    public Byte calculateAverage(final Byte a, final Byte b) {\n        return (byte) ((a + b) / 2);\n    }\n}\n"
+}

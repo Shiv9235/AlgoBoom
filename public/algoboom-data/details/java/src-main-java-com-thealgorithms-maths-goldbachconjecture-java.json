@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-goldbachconjecture-java",
+  "slug": "goldbachconjecture",
+  "title": "GoldbachConjecture",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/GoldbachConjecture.java",
+  "content": "package com.thealgorithms.maths;\n\nimport static com.thealgorithms.maths.Prime.PrimeCheck.isPrime;\n\n/**\n * This is a representation of the unsolved problem of Goldbach's Projection, according to which every\n * even natural number greater than 2 can be written as the sum of 2 prime numbers\n * More info: https://en.wikipedia.org/wiki/Goldbach%27s_conjecture\n * @author Vasilis Sarantidis (https://github.com/BILLSARAN)\n */\n\npublic final class GoldbachConjecture {\n    private GoldbachConjecture() {\n    }\n    public record Result(int number1, int number2) {\n    }\n\n    public static Result getPrimeSum(int number) {\n        if (number <= 2 || number % 2 != 0) {\n            throw new IllegalArgumentException(\"Number must be even and greater than 2.\");\n        }\n\n        for (int i = 0; i <= number / 2; i++) {\n            if (isPrime(i) && isPrime(number - i)) {\n                return new Result(i, number - i);\n            }\n        }\n        throw new IllegalStateException(\"No valid prime sum found.\"); // Should not occur\n    }\n}\n"
+}

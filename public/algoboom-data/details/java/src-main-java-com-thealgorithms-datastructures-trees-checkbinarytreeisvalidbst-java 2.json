@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-trees-checkbinarytreeisvalidbst-java",
+  "slug": "checkbinarytreeisvalidbst",
+  "title": "CheckBinaryTreeIsValidBST",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / trees",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/trees/CheckBinaryTreeIsValidBST.java",
+  "content": "package com.thealgorithms.datastructures.trees;\n\n/**\n * This code recursively validates whether given Binary Search Tree (BST) is balanced or not.\n * Trees with only distinct values are supported.\n * Key points:\n * 1. According to the definition of a BST, each node in a tree must be in range [min, max],\n *    where 'min' and 'max' values represent the child nodes (left, right).\n * 2. The smallest possible node value is Integer.MIN_VALUE, the biggest - Integer.MAX_VALUE.\n */\npublic final class CheckBinaryTreeIsValidBST {\n    private CheckBinaryTreeIsValidBST() {\n    }\n    public static boolean isBST(BinaryTree.Node root) {\n        return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);\n    }\n\n    private static boolean isBSTUtil(BinaryTree.Node node, int min, int max) {\n        // empty tree is a BST\n        if (node == null) {\n            return true;\n        }\n\n        if (node.data < min || node.data > max) {\n            return false;\n        }\n\n        return (isBSTUtil(node.left, min, node.data - 1) && isBSTUtil(node.right, node.data + 1, max));\n    }\n}\n"
+}

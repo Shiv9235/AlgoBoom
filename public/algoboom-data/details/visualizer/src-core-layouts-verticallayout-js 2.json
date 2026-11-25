@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-layouts-verticallayout-js",
+  "slug": "verticallayout",
+  "title": "VerticalLayout",
+  "source": "visualizer",
+  "category": "core / layouts",
+  "sourcePath": "AlgoVisualizer/src/core/layouts/VerticalLayout.js",
+  "content": "import { Layout } from 'core/layouts';\n\nclass VerticalLayout extends Layout {\n}\n\nexport default VerticalLayout;\n"
+}

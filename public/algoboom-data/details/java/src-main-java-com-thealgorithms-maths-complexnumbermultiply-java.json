@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-complexnumbermultiply-java",
+  "slug": "complexnumbermultiply",
+  "title": "ComplexNumberMultiply",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/ComplexNumberMultiply.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Multiplies two complex numbers represented as strings in the form \"a+bi\".\n * Supports negative values and validates input format.\n */\npublic final class ComplexNumberMultiply {\n\n    private ComplexNumberMultiply() {\n    }\n\n    private static int[] parse(String num) {\n        if (num == null || !num.matches(\"-?\\\\d+\\\\+-?\\\\d+i\")) {\n            throw new IllegalArgumentException(\"Invalid complex number format: \" + num);\n        }\n\n        String[] parts = num.split(\"\\\\+\");\n        int real = Integer.parseInt(parts[0]);\n        int imaginary = Integer.parseInt(parts[1].replace(\"i\", \"\"));\n        return new int[] {real, imaginary};\n    }\n\n    public static String multiply(String num1, String num2) {\n        int[] a = parse(num1);\n        int[] b = parse(num2);\n\n        int real = a[0] * b[0] - a[1] * b[1];\n        int imaginary = a[0] * b[1] + a[1] * b[0];\n\n        return real + \"+\" + imaginary + \"i\";\n    }\n}\n"
+}

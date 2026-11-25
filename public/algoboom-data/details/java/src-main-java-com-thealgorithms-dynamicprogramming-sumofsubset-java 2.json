@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-sumofsubset-java",
+  "slug": "sumofsubset",
+  "title": "SumOfSubset",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/SumOfSubset.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\n/**\n * A utility class that contains the Sum of Subset problem solution using\n * recursion.\n *\n * The Sum of Subset problem determines whether a subset of elements from a\n * given array sums up to a specific target value.\n *\n * Wikipedia: https://en.wikipedia.org/wiki/Subset_sum_problem\n */\npublic final class SumOfSubset {\n\n    private SumOfSubset() {\n    }\n\n    /**\n     * Determines if there exists a subset of elements in the array `arr` that\n     * adds up to the given `key` value using recursion.\n     *\n     * @param arr The array of integers.\n     * @param num The index of the current element being considered.\n     * @param key The target sum we are trying to achieve.\n     * @return true if a subset of `arr` adds up to `key`, false otherwise.\n     *\n     *         This is a recursive solution that checks for two possibilities at\n     *         each step:\n     *         1. Include the current element in the subset and check if the\n     *         remaining elements can sum up to the remaining target.\n     *         2. Exclude the current element and check if the remaining elements\n     *         can sum up to the target without this element.\n     */\n    public static boolean subsetSum(int[] arr, int num, int key) {\n        if (key == 0) {\n            return true;\n        }\n        if (num < 0 || key < 0) {\n            return false;\n        }\n\n        boolean include = subsetSum(arr, num - 1, key - arr[num]);\n        boolean exclude = subsetSum(arr, num - 1, key);\n        return include || exclude;\n    }\n}\n"
+}

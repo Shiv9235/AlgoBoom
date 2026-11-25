@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-matrix-medianofmatrix-java",
+  "slug": "medianofmatrix",
+  "title": "MedianOfMatrix",
+  "source": "java",
+  "category": "com / thealgorithms / matrix",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/matrix/MedianOfMatrix.java",
+  "content": "package com.thealgorithms.matrix;\n\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\n\n/**\n * Median of Matrix (https://medium.com/@vaibhav.yadav8101/median-in-a-row-wise-sorted-matrix-901737f3e116)\n * Author: Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n */\n\npublic final class MedianOfMatrix {\n    private MedianOfMatrix() {\n    }\n\n    public static int median(Iterable<List<Integer>> matrix) {\n        List<Integer> flattened = new ArrayList<>();\n\n        for (List<Integer> row : matrix) {\n            if (row != null) {\n                flattened.addAll(row);\n            }\n        }\n\n        if (flattened.isEmpty()) {\n            throw new IllegalArgumentException(\"Matrix must contain at least one element.\");\n        }\n\n        Collections.sort(flattened);\n        return flattened.get((flattened.size() - 1) / 2);\n    }\n}\n"
+}

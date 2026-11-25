@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-squarerootwithnewtonraphsonmethod-java",
+  "slug": "squarerootwithnewtonraphsonmethod",
+  "title": "SquareRootWithNewtonRaphsonMethod",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SquareRootWithNewtonRaphsonMethod.java",
+  "content": "package com.thealgorithms.maths;\n\n/*\n *To learn about the method, visit the link below :\n * https://en.wikipedia.org/wiki/Newton%27s_method\n *\n * To obtain the square root, no built-in functions should be used\n *\n * The formula to calculate the root is : root = 0.5(x + n/x),\n * here, n is the no. whose square root has to be calculated and\n * x has to be guessed such that, the calculation should result into\n * the square root of n.\n * And the root will be obtained when the error < 0.5 or the precision value can also\n * be changed according to the user preference.\n */\n\npublic final class SquareRootWithNewtonRaphsonMethod {\n    private SquareRootWithNewtonRaphsonMethod() {\n    }\n\n    public static double squareRoot(int n) {\n        double x = n; // initially taking a guess that x = n.\n        double root = 0.5 * (x + n / x); // applying Newton-Raphson Method.\n\n        while (Math.abs(root - x) > 0.0000001) { // root - x = error and error < 0.0000001, 0.0000001\n                                                 // is the precision value taken over here.\n            x = root; // decreasing the value of x to root, i.e. decreasing the guess.\n            root = 0.5 * (x + n / x);\n        }\n\n        return root;\n    }\n}\n"
+}

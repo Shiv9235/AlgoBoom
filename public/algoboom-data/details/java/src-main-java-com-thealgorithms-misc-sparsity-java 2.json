@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-sparsity-java",
+  "slug": "sparsity",
+  "title": "Sparsity",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/Sparsity.java",
+  "content": "package com.thealgorithms.misc;\n\n/**\n * Utility class for calculating the sparsity of a matrix.\n * A matrix is considered sparse if a large proportion of its elements are zero.\n * Typically, if more than 2/3 of the elements are zero, the matrix is considered sparse.\n *\n * Sparsity is defined as:\n * sparsity = (number of zero elements) / (total number of elements)\n *\n * This can lead to significant computational optimizations.\n */\npublic final class Sparsity {\n\n    private Sparsity() {\n    }\n\n    /**\n     * Calculates the sparsity of a given 2D matrix.\n     *\n     * @param matrix the input matrix\n     * @return the sparsity value between 0 and 1\n     * @throws IllegalArgumentException if the matrix is null, empty, or contains empty rows\n     */\n    public static double sparsity(double[][] matrix) {\n        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {\n            throw new IllegalArgumentException(\"Matrix cannot be null or empty\");\n        }\n\n        int zeroCount = 0;\n        int totalElements = 0;\n\n        // Count the number of zero elements and total elements\n        for (double[] row : matrix) {\n            for (double value : row) {\n                if (value == 0.0) {\n                    zeroCount++;\n                }\n                totalElements++;\n            }\n        }\n\n        // Return sparsity as a double\n        return (double) zeroCount / totalElements;\n    }\n}\n"
+}

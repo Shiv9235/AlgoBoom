@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-trees-rightsideviewofbinarytree-java",
+  "slug": "rightsideviewofbinarytree",
+  "title": "RightSideViewOfBinaryTree",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / trees",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/trees/RightSideViewOfBinaryTree.java",
+  "content": "package com.thealgorithms.datastructures.trees;\n\nimport java.util.ArrayList;\nimport java.util.LinkedList;\nimport java.util.List;\nimport java.util.Queue;\n\n/**\n * Given the root of a binary tree, returns the values of the nodes visible\n * from the right side (the last node of each level in a level-order traversal).\n *\n * <p>Example:\n * <pre>\n *      1\n *     / \\\n *    2   3\n *     \\   \\\n *      5   4\n * Right side view: [1, 3, 4]\n * </pre>\n *\n * <p>Time complexity: O(n), Space complexity: O(n)\n *\n * @see <a href=\"https://leetcode.com/problems/binary-tree-right-side-view/\">LeetCode #199</a>\n */\npublic final class RightSideViewOfBinaryTree {\n    private RightSideViewOfBinaryTree() {\n    }\n\n    public static List<Integer> rightSideView(BinaryTree.Node root) {\n        List<Integer> result = new ArrayList<>();\n        if (root == null) {\n            return result;\n        }\n\n        Queue<BinaryTree.Node> queue = new LinkedList<>();\n        queue.add(root);\n\n        while (!queue.isEmpty()) {\n            int levelSize = queue.size();\n            for (int i = 0; i < levelSize; i++) {\n                BinaryTree.Node node = queue.poll();\n                if (i == levelSize - 1) {\n                    result.add(node.data);\n                }\n                if (node.left != null) {\n                    queue.add(node.left);\n                }\n                if (node.right != null) {\n                    queue.add(node.right);\n                }\n            }\n        }\n        return result;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-generatesubsets-java",
+  "slug": "generatesubsets",
+  "title": "GenerateSubsets",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/GenerateSubsets.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * This class provides a method to generate all subsets (power set)\n * of a given set using bit manipulation.\n *\n * @author Hardvan\n */\npublic final class GenerateSubsets {\n    private GenerateSubsets() {\n    }\n\n    /**\n     * Generates all subsets of a given set using bit manipulation.\n     * Steps:\n     * 1. Iterate over all numbers from 0 to 2^n - 1.\n     * 2. For each number, iterate over all bits from 0 to n - 1.\n     * 3. If the i-th bit of the number is set, add the i-th element of the set to the current subset.\n     * 4. Add the current subset to the list of subsets.\n     * 5. Return the list of subsets.\n     *\n     * @param set the input set of integers\n     * @return a list of all subsets represented as lists of integers\n     */\n    public static List<List<Integer>> generateSubsets(int[] set) {\n        int n = set.length;\n        List<List<Integer>> subsets = new ArrayList<>();\n\n        for (int mask = 0; mask < (1 << n); mask++) {\n            List<Integer> subset = new ArrayList<>();\n            for (int i = 0; i < n; i++) {\n                if ((mask & (1 << i)) != 0) {\n                    subset.add(set[i]);\n                }\n            }\n            subsets.add(subset);\n        }\n\n        return subsets;\n    }\n}\n"
+}

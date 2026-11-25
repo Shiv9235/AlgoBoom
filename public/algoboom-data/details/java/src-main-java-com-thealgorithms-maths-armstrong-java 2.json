@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-armstrong-java",
+  "slug": "armstrong",
+  "title": "Armstrong",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Armstrong.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * This class checks whether a given number is an Armstrong number or not.\n * An Armstrong number is a number that is equal to the sum of its own digits,\n * each raised to the power of the number of digits.\n *\n * For example, 370 is an Armstrong number because 3^3 + 7^3 + 0^3 = 370.\n * 1634 is an Armstrong number because 1^4 + 6^4 + 3^4 + 4^4 = 1634.\n * An Armstrong number is often called a Narcissistic number.\n *\n * @author satyabarghav\n * @modifier rahul katteda - (13/01/2025) - [updated the logic for getting total number of digits]\n */\npublic class Armstrong {\n\n    /**\n     * Checks whether a given number is an Armstrong number or not.\n     *\n     * @param number the number to check\n     * @return {@code true} if the given number is an Armstrong number, {@code false} otherwise\n     */\n    public boolean isArmstrong(int number) {\n        if (number < 0) {\n            return false; // Negative numbers cannot be Armstrong numbers\n        }\n        long sum = 0;\n        int totalDigits = (int) Math.log10(number) + 1; // get the length of the number (number of digits)\n        long originalNumber = number;\n\n        while (originalNumber > 0) {\n            long digit = originalNumber % 10;\n            sum += (long) Math.pow(digit, totalDigits); // The digit raised to the power of total number of digits and added to the sum.\n            originalNumber /= 10;\n        }\n\n        return sum == number;\n    }\n}\n"
+}

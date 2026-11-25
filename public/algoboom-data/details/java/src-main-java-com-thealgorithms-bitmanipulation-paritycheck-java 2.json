@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-paritycheck-java",
+  "slug": "paritycheck",
+  "title": "ParityCheck",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/ParityCheck.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * The ParityCheck class provides a method to check the parity of a given number.\n * <p>\n * Parity is a mathematical term that describes the property of an integer's binary representation.\n * The parity of a binary number is the number of 1s in its binary representation.\n * If the number of 1s is even, the parity is even; otherwise, it is odd.\n * <p>\n * For example, the binary representation of 5 is 101, which has two 1s, so the parity of 5 is even.\n * The binary representation of 6 is 110, which has two 1s, so the parity of 6 is even.\n * The binary representation of 7 is 111, which has three 1s, so the parity of 7 is odd.\n *\n * @author Hardvan\n */\npublic final class ParityCheck {\n    private ParityCheck() {\n    }\n\n    /**\n     * This method checks the parity of the given number.\n     *\n     * @param n the number to check the parity of\n     * @return true if the number has even parity, false otherwise\n     */\n    public static boolean checkParity(int n) {\n        int count = 0;\n        while (n > 0) {\n            count += n & 1;\n            n >>= 1;\n        }\n        return count % 2 == 0;\n    }\n}\n"
+}

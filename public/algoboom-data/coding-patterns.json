@@ -1,0 +1,132 @@
+{
+  "patterns": [
+    {
+      "id": "patterns:pattern-01-sliding-window-md",
+      "slug": "pattern-1-sliding-window",
+      "title": "Pattern 1: Sliding Window",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-01-sliding-window-md.json"
+    },
+    {
+      "id": "patterns:pattern-02-two-pointers-md",
+      "slug": "pattern-2-two-pointers",
+      "title": "Pattern 2: Two Pointers",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-02-two-pointers-md.json"
+    },
+    {
+      "id": "patterns:pattern-03-fast-slow-pointers-md",
+      "slug": "pattern-3-fast-slow-pointers",
+      "title": "Pattern 3: Fast & Slow pointers",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-03-fast-slow-pointers-md.json"
+    },
+    {
+      "id": "patterns:pattern-04-merge-intervals-md",
+      "slug": "pattern-4-merge-intervals",
+      "title": "Pattern 4 : Merge Intervals",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-04-merge-intervals-md.json"
+    },
+    {
+      "id": "patterns:pattern-05-cyclic-sort-md",
+      "slug": "pattern-5-cyclic-sort",
+      "title": "Pattern 5: Cyclic Sort",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-05-cyclic-sort-md.json"
+    },
+    {
+      "id": "patterns:pattern-06-in-place-reversal-of-a-linkedlist-md",
+      "slug": "pattern-6-in-place-reversal-of-a-linkedlist",
+      "title": "Pattern 6: In-place Reversal of a LinkedList",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-06-in-place-reversal-of-a-linkedlist-md.json"
+    },
+    {
+      "id": "patterns:pattern-07-tree-breadth-first-search-md",
+      "slug": "pattern-7-tree-breadth-first-search",
+      "title": "Pattern 7: Tree Breadth First Search",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-07-tree-breadth-first-search-md.json"
+    },
+    {
+      "id": "patterns:pattern-08-tree-depth-first-search-md",
+      "slug": "pattern-8-tree-depth-first-search-dfs",
+      "title": "Pattern 8: Tree Depth First Search (DFS)",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-08-tree-depth-first-search-md.json"
+    },
+    {
+      "id": "patterns:pattern-10-subsets-md",
+      "slug": "pattern-10-subsets",
+      "title": "Pattern 10: Subsets",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-10-subsets-md.json"
+    },
+    {
+      "id": "patterns:pattern-11-modified-binary-search-md",
+      "slug": "pattern-11-modified-binary-search",
+      "title": "Pattern 11: Modified Binary Search",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-11-modified-binary-search-md.json"
+    },
+    {
+      "id": "patterns:pattern-12-bitwise-xor-md",
+      "slug": "pattern-12-bitwise-xor",
+      "title": "Pattern 12: Bitwise XOR",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-12-bitwise-xor-md.json"
+    },
+    {
+      "id": "patterns:pattern-13-top-k-elements-md",
+      "slug": "pattern-13-top-k-elements",
+      "title": "Pattern 13: Top 'K' Elements",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-13-top-k-elements-md.json"
+    },
+    {
+      "id": "patterns:pattern-14-k-way-merge-md",
+      "slug": "pattern-14-k-way-merge",
+      "title": "Pattern 14: K-way merge",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-14-k-way-merge-md.json"
+    },
+    {
+      "id": "patterns:pattern-15-0-1-knapsack-dynamic-programming-md",
+      "slug": "pattern-15-0-1-knapsack-dynamic-programming",
+      "title": "Pattern 15: 0-1 Knapsack (Dynamic Programming)",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-15-0-1-knapsack-dynamic-programming-md.json"
+    },
+    {
+      "id": "patterns:pattern-16-topological-sort-graph-md",
+      "slug": "pattern-16-topological-sort-graph",
+      "title": "🔎 Pattern 16: Topological Sort (Graph)",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-16-topological-sort-graph-md.json"
+    },
+    {
+      "id": "patterns:pattern-09-two-heaps-md",
+      "slug": "pattern-9-two-heaps",
+      "title": "Pattern 9: Two Heaps",
+      "source": "patterns",
+      "category": "interview-pattern",
+      "detailPath": "details/patterns/pattern-09-two-heaps-md.json"
+    }
+  ]
+}

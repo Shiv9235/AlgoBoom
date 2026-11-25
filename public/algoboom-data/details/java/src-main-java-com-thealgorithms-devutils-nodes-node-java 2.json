@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-devutils-nodes-node-java",
+  "slug": "node",
+  "title": "Node",
+  "source": "java",
+  "category": "com / thealgorithms / devutils / nodes",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/devutils/nodes/Node.java",
+  "content": "package com.thealgorithms.devutils.nodes;\n\n/**\n * Base class for any node implementation which contains a generic type\n * variable.\n *\n * All known subclasses: {@link TreeNode}, {@link SimpleNode}.\n *\n * @param <E> The type of the data held in the Node.\n *\n * @author <a href=\"https://github.com/aitorfi\">aitorfi</a>\n */\npublic abstract class Node<E> {\n\n    /**\n     * Generic type data stored in the Node.\n     */\n    private E data;\n\n    /**\n     * Empty constructor.\n     */\n    public Node() {\n    }\n\n    /**\n     * Initializes the Nodes' data.\n     *\n     * @param data Value to which data will be initialized.\n     */\n    public Node(E data) {\n        this.data = data;\n    }\n\n    public E getData() {\n        return data;\n    }\n\n    public void setData(E data) {\n        this.data = data;\n    }\n}\n"
+}

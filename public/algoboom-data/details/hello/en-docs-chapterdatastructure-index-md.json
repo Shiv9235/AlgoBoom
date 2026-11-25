@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterdatastructure-index-md",
+  "slug": "data-structures",
+  "title": "Data structures",
+  "source": "hello",
+  "category": "data_structure",
+  "sourcePath": "Algorithms/en/docs/chapter_data_structure/index.md",
+  "content": "# Data structures\n\n![Data structures](../assets/covers/chapter_data_structure.jpg)\n\n!!! abstract\n\n    Data structures provide a framework that is both sturdy and versatile.\n    \n    They offer a blueprint for organizing data, a foundation on which algorithms come to life.\n"
+}

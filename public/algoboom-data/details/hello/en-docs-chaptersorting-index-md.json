@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chaptersorting-index-md",
+  "slug": "sorting",
+  "title": "Sorting",
+  "source": "hello",
+  "category": "sorting",
+  "sourcePath": "Algorithms/en/docs/chapter_sorting/index.md",
+  "content": "# Sorting\n\n![Sorting](../assets/covers/chapter_sorting.jpg)\n\n!!! abstract\n\n    Sorting is like a magic key that turns chaos into order, helping us understand and process data more efficiently.\n\n    From a simple ascending sequence to a complex arrangement by category, sorting reveals the harmonious beauty of data.\n"
+}

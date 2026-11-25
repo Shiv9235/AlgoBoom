@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-factorial-java",
+  "slug": "factorial",
+  "title": "Factorial",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Factorial.java",
+  "content": "package com.thealgorithms.maths;\n\nimport java.math.BigInteger;\n\npublic final class Factorial {\n    private Factorial() {\n    }\n\n    public static BigInteger factorial(int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"Input number cannot be negative\");\n        }\n        BigInteger result = BigInteger.ONE;\n        for (int i = 1; i <= n; i++) {\n            result = result.multiply(BigInteger.valueOf(i));\n        }\n        return result;\n    }\n}\n"
+}

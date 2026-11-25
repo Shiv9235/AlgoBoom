@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-common-util-js",
+  "slug": "util",
+  "title": "Util",
+  "source": "visualizer",
+  "category": "common",
+  "sourcePath": "AlgoVisualizer/src/common/util.js",
+  "content": "const classes = (...arr) => arr.filter(v => v).join(' ');\n\nconst distance = (a, b) => {\n  const dx = a.x - b.x;\n  const dy = a.y - b.y;\n  return Math.sqrt(dx * dx + dy * dy);\n};\n\nconst extension = fileName => /(?:\\.([^.]+))?$/.exec(fileName)[1];\n\nconst refineGist = gist => {\n  const gistId = gist.id;\n  const title = gist.description;\n  delete gist.files['algorithm-visualizer'];\n  const { login, avatar_url } = gist.owner;\n  const files = Object.values(gist.files).map(file => ({\n    name: file.filename,\n    content: file.content,\n    contributors: [{ login, avatar_url }],\n  }));\n  return { login, gistId, title, files };\n};\n\nconst createFile = (name, content, contributors) => ({ name, content, contributors });\n\nconst createProjectFile = (name, content) => createFile(name, content, [{\n  login: 'algorithm-visualizer',\n  avatar_url: 'https://github.com/algorithm-visualizer.png',\n}]);\n\nconst createUserFile = (name, content) => createFile(name, content, undefined);\n\nconst isSaved = ({ titles, files, lastTitles, lastFiles }) => {\n  const serialize = (titles, files) => JSON.stringify({\n    titles,\n    files: files.map(({ name, content }) => ({ name, content })),\n  });\n  return serialize(titles, files) === serialize(lastTitles, lastFiles);\n};\n\nexport {\n  classes,\n  distance,\n  extension,\n  refineGist,\n  createFile,\n  createProjectFile,\n  createUserFile,\n  isSaved,\n};\n"
+}

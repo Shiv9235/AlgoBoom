@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-bogosort-java",
+  "slug": "bogosort",
+  "title": "BogoSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/BogoSort.java",
+  "content": "package com.thealgorithms.sorts;\n\nimport java.util.Random;\n\n/**\n * @author Podshivalov Nikita (https://github.com/nikitap492)\n * @see SortAlgorithm\n */\npublic class BogoSort implements SortAlgorithm {\n\n    private static final Random RANDOM = new Random();\n\n    private static <T extends Comparable<T>> boolean isSorted(T[] array) {\n        for (int i = 0; i < array.length - 1; i++) {\n            if (SortUtils.less(array[i + 1], array[i])) {\n                return false;\n            }\n        }\n        return true;\n    }\n\n    // Randomly shuffles the array\n    private static <T> void nextPermutation(T[] array) {\n        int length = array.length;\n\n        for (int i = 0; i < array.length; i++) {\n            int randomIndex = i + RANDOM.nextInt(length - i);\n            SortUtils.swap(array, randomIndex, i);\n        }\n    }\n\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        while (!isSorted(array)) {\n            nextPermutation(array);\n        }\n        return array;\n    }\n\n    // Driver Program\n    public static void main(String[] args) {\n        // Integer Input\n        Integer[] integers = {4, 23, 6, 78, 1, 54, 231, 9, 12};\n\n        BogoSort bogoSort = new BogoSort();\n\n        // print a sorted array\n        SortUtils.print(bogoSort.sort(integers));\n\n        // String Input\n        String[] strings = {\"c\", \"a\", \"e\", \"b\", \"d\"};\n\n        SortUtils.print(bogoSort.sort(strings));\n    }\n}\n"
+}

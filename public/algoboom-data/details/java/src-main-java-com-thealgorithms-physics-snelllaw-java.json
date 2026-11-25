@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-physics-snelllaw-java",
+  "slug": "snelllaw",
+  "title": "SnellLaw",
+  "source": "java",
+  "category": "com / thealgorithms / physics",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/physics/SnellLaw.java",
+  "content": "package com.thealgorithms.physics;\n\n/**\n * Calculates refraction angle using Snell's Law:\n * n1 * sin(theta1) = n2 * sin(theta2)\n * @see <a href=\"https://en.wikipedia.org/wiki/Snell%27s_law\">Snell's Law</a>\n */\npublic final class SnellLaw {\n\n    private SnellLaw() {\n        throw new AssertionError(\"No instances.\");\n    }\n\n    /**\n     * Computes the refracted angle (theta2) in radians.\n     *\n     * @param n1 index of refraction of medium 1\n     * @param n2 index of refraction of medium 2\n     * @param theta1 incident angle in radians\n     * @return refracted angle (theta2) in radians\n     * @throws IllegalArgumentException if total internal reflection occurs\n     */\n    public static double refractedAngle(double n1, double n2, double theta1) {\n        double ratio = n1 / n2;\n        double sinTheta2 = ratio * Math.sin(theta1);\n\n        if (Math.abs(sinTheta2) > 1.0) {\n            throw new IllegalArgumentException(\"Total internal reflection: no refraction possible.\");\n        }\n\n        return Math.asin(sinTheta2);\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-ciphers-diffiehellman-java",
+  "slug": "diffiehellman",
+  "title": "DiffieHellman",
+  "source": "java",
+  "category": "com / thealgorithms / ciphers",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/ciphers/DiffieHellman.java",
+  "content": "package com.thealgorithms.ciphers;\n\nimport java.math.BigInteger;\n\npublic final class DiffieHellman {\n\n    private final BigInteger base;\n    private final BigInteger secret;\n    private final BigInteger prime;\n\n    // Constructor to initialize base, secret, and prime\n    public DiffieHellman(BigInteger base, BigInteger secret, BigInteger prime) {\n        // Check for non-null and positive values\n        if (base == null || secret == null || prime == null || base.signum() <= 0 || secret.signum() <= 0 || prime.signum() <= 0) {\n            throw new IllegalArgumentException(\"Base, secret, and prime must be non-null and positive values.\");\n        }\n        this.base = base;\n        this.secret = secret;\n        this.prime = prime;\n    }\n\n    // Method to calculate public value (g^x mod p)\n    public BigInteger calculatePublicValue() {\n        // Returns g^x mod p\n        return base.modPow(secret, prime);\n    }\n\n    // Method to calculate the shared secret key (otherPublic^secret mod p)\n    public BigInteger calculateSharedSecret(BigInteger otherPublicValue) {\n        if (otherPublicValue == null || otherPublicValue.signum() <= 0) {\n            throw new IllegalArgumentException(\"Other public value must be non-null and positive.\");\n        }\n        // Returns b^x mod p or a^y mod p\n        return otherPublicValue.modPow(secret, prime);\n    }\n}\n"
+}

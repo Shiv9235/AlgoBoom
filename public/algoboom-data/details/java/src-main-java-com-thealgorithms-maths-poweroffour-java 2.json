@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-poweroffour-java",
+  "slug": "poweroffour",
+  "title": "PowerOfFour",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PowerOfFour.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Utility class for checking if a number is a power of four.\n * A power of four is a number that can be expressed as 4^n where n is a non-negative integer.\n * This class provides a method to determine if a given integer is a power of four using bit manipulation.\n *\n * @author krishna-medapati (https://github.com/krishna-medapati)\n */\npublic final class PowerOfFour {\n    private PowerOfFour() {\n    }\n\n    /**\n     * Checks if the given integer is a power of four.\n     *\n     * A number is considered a power of four if:\n     * 1. It is greater than zero\n     * 2. It has exactly one '1' bit in its binary representation (power of two)\n     * 3. The '1' bit is at an even position (0, 2, 4, 6, ...)\n     *\n     * The method uses the mask 0x55555555 (binary: 01010101010101010101010101010101)\n     * to check if the set bit is at an even position.\n     *\n     * @param number the integer to check\n     * @return true if the number is a power of four, false otherwise\n     */\n    public static boolean isPowerOfFour(int number) {\n        if (number <= 0) {\n            return false;\n        }\n        boolean isPowerOfTwo = (number & (number - 1)) == 0;\n        boolean hasEvenBitPosition = (number & 0x55555555) != 0;\n        return isPowerOfTwo && hasEvenBitPosition;\n    }\n}\n"
+}

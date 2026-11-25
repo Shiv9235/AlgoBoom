@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-stacks-nextgreaterelement-java",
+  "slug": "nextgreaterelement",
+  "title": "NextGreaterElement",
+  "source": "java",
+  "category": "com / thealgorithms / stacks",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/stacks/NextGreaterElement.java",
+  "content": "package com.thealgorithms.stacks;\n\nimport java.util.Stack;\n\n/**\n * Utility class to find the next greater element for each element in a given integer array.\n *\n * <p>The next greater element for an element x is the first greater element on the right side of x in the array.\n * If no such element exists, the result will contain 0 for that position.</p>\n *\n * <p>Example:</p>\n * <pre>\n * Input:  {2, 7, 3, 5, 4, 6, 8}\n * Output: {7, 0, 5, 6, 6, 8, 0}\n * </pre>\n */\npublic final class NextGreaterElement {\n    private NextGreaterElement() {\n    }\n\n    /**\n     * Finds the next greater element for each element in the given array.\n     *\n     * @param array the input array of integers\n     * @return an array where each element is replaced by the next greater element on the right side in the input array,\n     * or 0 if there is no greater element.\n     * @throws IllegalArgumentException if the input array is null\n     */\n    public static int[] findNextGreaterElements(int[] array) {\n        if (array == null) {\n            throw new IllegalArgumentException(\"Input array cannot be null\");\n        }\n\n        int[] result = new int[array.length];\n        Stack<Integer> stack = new Stack<>();\n\n        for (int i = 0; i < array.length; i++) {\n            while (!stack.isEmpty() && array[stack.peek()] < array[i]) {\n                result[stack.pop()] = array[i];\n            }\n            stack.push(i);\n        }\n\n        return result;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-adaptivemergesort-java",
+  "slug": "adaptivemergesort",
+  "title": "AdaptiveMergeSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/AdaptiveMergeSort.java",
+  "content": "package com.thealgorithms.sorts;\n\npublic class AdaptiveMergeSort implements SortAlgorithm {\n    @SuppressWarnings(\"unchecked\")\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        if (array.length <= 1) {\n            return array;\n        }\n        T[] aux = array.clone();\n        sort(array, aux, 0, array.length - 1);\n        return array;\n    }\n\n    private <T extends Comparable<T>> void sort(T[] array, T[] aux, int low, int high) {\n        if (low >= high) {\n            return;\n        }\n        int mid = low + (high - low) / 2;\n        sort(array, aux, low, mid);\n        sort(array, aux, mid + 1, high);\n        merge(array, aux, low, mid, high);\n    }\n\n    private <T extends Comparable<T>> void merge(T[] array, T[] aux, int low, int mid, int high) {\n        System.arraycopy(array, low, aux, low, high - low + 1);\n        int i = low;\n        int j = mid + 1;\n        for (int k = low; k <= high; k++) {\n            if (i > mid) {\n                array[k] = aux[j++];\n            } else if (j > high) {\n                array[k] = aux[i++];\n            } else if (SortUtils.less(aux[j], aux[i])) {\n                array[k] = aux[j++];\n            } else {\n                array[k] = aux[i++];\n            }\n        }\n    }\n}\n"
+}

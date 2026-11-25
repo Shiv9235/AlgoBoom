@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-determinantofmatrix-java",
+  "slug": "determinantofmatrix",
+  "title": "DeterminantOfMatrix",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/DeterminantOfMatrix.java",
+  "content": "package com.thealgorithms.maths;\n\n/*\n * @author Ojasva Jain\n * Determinant of a Matrix Wikipedia link: https://en.wikipedia.org/wiki/Determinant\n */\npublic final class DeterminantOfMatrix {\n    private DeterminantOfMatrix() {\n    }\n\n    /**\n     * Calculates the determinant of a given matrix.\n     *\n     * @param a the input matrix\n     * @param n the size of the matrix\n     * @return the determinant of the matrix\n     */\n    static int determinant(int[][] a, int n) {\n        int det = 0;\n        int sign = 1;\n        int p = 0;\n        int q = 0;\n        if (n == 1) {\n            det = a[0][0];\n        } else {\n            int[][] b = new int[n - 1][n - 1];\n            for (int x = 0; x < n; x++) {\n                p = 0;\n                q = 0;\n                for (int i = 1; i < n; i++) {\n                    for (int j = 0; j < n; j++) {\n                        if (j != x) {\n                            b[p][q++] = a[i][j];\n                            if (q % (n - 1) == 0) {\n                                p++;\n                                q = 0;\n                            }\n                        }\n                    }\n                }\n                det = det + a[0][x] * determinant(b, n - 1) * sign;\n                sign = -sign;\n            }\n        }\n        return det;\n    }\n}\n"
+}

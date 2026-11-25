@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-layouts-layout-js",
+  "slug": "layout",
+  "title": "Layout",
+  "source": "visualizer",
+  "category": "core / layouts",
+  "sourcePath": "AlgoVisualizer/src/core/layouts/Layout.js",
+  "content": "import React from 'react';\nimport { ResizableContainer } from 'components';\nimport { HorizontalLayout } from 'core/layouts';\n\nclass Layout {\n  constructor(key, getObject, children) {\n    this.key = key;\n    this.getObject = getObject;\n    this.children = children.map(key => this.getObject(key));\n    this.weights = children.map(() => 1);\n    this.ref = React.createRef();\n\n    this.handleChangeWeights = this.handleChangeWeights.bind(this);\n  }\n\n  add(key, index = this.children.length) {\n    const child = this.getObject(key);\n    this.children.splice(index, 0, child);\n    this.weights.splice(index, 0, 1);\n  }\n\n  remove(key) {\n    const child = this.getObject(key);\n    const index = this.children.indexOf(child);\n    if (~index) {\n      this.children.splice(index, 1);\n      this.weights.splice(index, 1);\n    }\n  }\n\n  removeAll() {\n    this.children = [];\n    this.weights = [];\n  }\n\n  handleChangeWeights(weights) {\n    this.weights.splice(0, this.weights.length, ...weights);\n    this.ref.current.forceUpdate();\n  }\n\n  render() {\n    const horizontal = this instanceof HorizontalLayout;\n\n    return (\n      <ResizableContainer key={this.key} ref={this.ref} weights={this.weights} horizontal={horizontal}\n                          onChangeWeights={this.handleChangeWeights}>\n        {\n          this.children.map(tracer => tracer && tracer.render())\n        }\n      </ResizableContainer>\n    );\n  }\n}\n\nexport default Layout;\n"
+}

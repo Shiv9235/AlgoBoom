@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-devutils-searches-searchalgorithm-java",
+  "slug": "searchalgorithm",
+  "title": "SearchAlgorithm",
+  "source": "java",
+  "category": "com / thealgorithms / devutils / searches",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/devutils/searches/SearchAlgorithm.java",
+  "content": "package com.thealgorithms.devutils.searches;\n\n/**\n * The common interface of most searching algorithms\n *\n * @author Podshivalov Nikita (https://github.com/nikitap492)\n */\npublic interface SearchAlgorithm {\n    /**\n     * @param key is an element which should be found\n     * @param array is an array where the element should be found\n     * @param <T> Comparable type\n     * @return first found index of the element\n     */\n    <T extends Comparable<T>> int find(T[] array, T key);\n}\n"
+}

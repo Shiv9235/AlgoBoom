@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-11-25T15:50:16.787Z",
+  "sourceRoot": "/Users/shivrajupadhyay/Downloads/DSA - Practice",
+  "counts": {
+    "companies": 470,
+    "companyProblems": 3396,
+    "algorithms": 1022,
+    "patterns": 16,
+    "details": 1038
+  },
+  "files": [
+    "company-problems.json",
+    "algorithms.json",
+    "coding-patterns.json",
+    "index.js"
+  ]
+}

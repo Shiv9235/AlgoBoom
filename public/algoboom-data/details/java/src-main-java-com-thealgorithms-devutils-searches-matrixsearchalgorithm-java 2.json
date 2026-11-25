@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-devutils-searches-matrixsearchalgorithm-java",
+  "slug": "matrixsearchalgorithm",
+  "title": "MatrixSearchAlgorithm",
+  "source": "java",
+  "category": "com / thealgorithms / devutils / searches",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/devutils/searches/MatrixSearchAlgorithm.java",
+  "content": "package com.thealgorithms.devutils.searches;\n\n/**\n * The common interface of most searching algorithms that search in matrixes.\n *\n * @author Aitor Fidalgo (https://github.com/aitorfi)\n */\npublic interface MatrixSearchAlgorithm {\n    /**\n     * @param key is an element which should be found\n     * @param matrix is a matrix where the element should be found\n     * @param <T> Comparable type\n     * @return array containing the first found coordinates of the element\n     */\n    <T extends Comparable<T>> int[] find(T[][] matrix, T key);\n}\n"
+}

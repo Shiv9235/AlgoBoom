@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-indexofrightmostsetbit-java",
+  "slug": "indexofrightmostsetbit",
+  "title": "IndexOfRightMostSetBit",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/IndexOfRightMostSetBit.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * Utility class for bit manipulation operations.\n * This class provides methods to work with bitwise operations.\n * Specifically, it includes a method to find the index of the rightmost set bit\n * in an integer.\n * This class is not meant to be instantiated.\n *\n * Author: Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n */\npublic final class IndexOfRightMostSetBit {\n\n    private IndexOfRightMostSetBit() {\n    }\n\n    /**\n     * Finds the index of the rightmost set bit in the given integer.\n     * The index is zero-based, meaning the rightmost bit has an index of 0.\n     *\n     * @param n the integer to check for the rightmost set bit\n     * @return the index of the rightmost set bit; -1 if there are no set bits\n     *         (i.e., the input integer is 0)\n     */\n    public static int indexOfRightMostSetBit(int n) {\n        if (n == 0) {\n            return -1; // No set bits\n        }\n\n        // Handle negative numbers by finding the two's complement\n        if (n < 0) {\n            n = -n;\n            n = n & (~n + 1); // Isolate the rightmost set bit\n        }\n\n        int index = 0;\n        while ((n & 1) == 0) {\n            n = n >> 1;\n            index++;\n        }\n\n        return index;\n    }\n}\n"
+}

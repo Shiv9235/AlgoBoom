@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-numbersdifferentsigns-java",
+  "slug": "numbersdifferentsigns",
+  "title": "NumbersDifferentSigns",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/NumbersDifferentSigns.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to determine whether two integers have\n * different signs. It utilizes the XOR operation on the two numbers:\n *\n * - If two numbers have different signs, their most significant bits\n *   (sign bits) will differ, resulting in a negative XOR result.\n * - If two numbers have the same sign, the XOR result will be non-negative.\n *\n * Time Complexity: O(1) - Constant time operation.\n * Space Complexity: O(1) - No extra space used.\n *\n * @author Bama Charan Chhandogi\n */\npublic final class NumbersDifferentSigns {\n    private NumbersDifferentSigns() {\n    }\n\n    /**\n     * Determines if two integers have different signs using bitwise XOR.\n     *\n     * @param num1 the first integer\n     * @param num2 the second integer\n     * @return true if the two numbers have different signs, false otherwise\n     */\n    public static boolean differentSigns(int num1, int num2) {\n        return (num1 ^ num2) < 0;\n    }\n}\n"
+}

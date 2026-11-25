@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-bubblesort-java",
+  "slug": "bubblesort",
+  "title": "BubbleSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/BubbleSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * @author Varun Upadhyay (https://github.com/varunu28)\n * @author Podshivalov Nikita (https://github.com/nikitap492)\n * @see SortAlgorithm\n */\nclass BubbleSort implements SortAlgorithm {\n\n    /**\n     * Implements generic bubble sort algorithm.\n     *\n     * Time Complexity:\n     * - Best case: O(n) – array is already sorted.\n     * - Average case: O(n^2)\n     * - Worst case: O(n^2)\n     *\n     * Space Complexity: O(1) – in-place sorting.\n     *\n     * @param array the array to be sorted.\n     * @param <T> the type of elements in the array.\n     * @return the sorted array.\n     */\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        for (int i = 1, size = array.length; i < size; ++i) {\n            boolean swapped = false;\n            for (int j = 0; j < size - i; ++j) {\n                if (SortUtils.greater(array[j], array[j + 1])) {\n                    SortUtils.swap(array, j, j + 1);\n                    swapped = true;\n                }\n            }\n            if (!swapped) {\n                break;\n            }\n        }\n        return array;\n    }\n}\n"
+}

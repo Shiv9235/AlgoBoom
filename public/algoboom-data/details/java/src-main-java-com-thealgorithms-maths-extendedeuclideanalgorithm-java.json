@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-extendedeuclideanalgorithm-java",
+  "slug": "extendedeuclideanalgorithm",
+  "title": "ExtendedEuclideanAlgorithm",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/ExtendedEuclideanAlgorithm.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * In mathematics, the extended Euclidean algorithm is an extension to the\n * Euclidean algorithm, and computes, in addition to the greatest common divisor\n * (gcd) of integers a and b, also the coefficients of Bézout's identity, which\n * are integers x and y such that ax + by = gcd(a, b).\n *\n * <p>\n * For more details, see\n * https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm\n */\npublic final class ExtendedEuclideanAlgorithm {\n\n    private ExtendedEuclideanAlgorithm() {\n    }\n\n    /**\n     * This method implements the extended Euclidean algorithm.\n     *\n     * @param a The first number.\n     * @param b The second number.\n     * @return An array of three integers:\n     *         <ul>\n     *         <li>Index 0: The greatest common divisor (gcd) of a and b.</li>\n     *         <li>Index 1: The value of x in the equation ax + by = gcd(a, b).</li>\n     *         <li>Index 2: The value of y in the equation ax + by = gcd(a, b).</li>\n     *         </ul>\n     */\n    public static long[] extendedGCD(long a, long b) {\n        if (b == 0) {\n            // Base case: gcd(a, 0) = a. The equation is a*1 + 0*0 = a.\n            return new long[] {a, 1, 0};\n        }\n\n        // Recursive call\n        long[] result = extendedGCD(b, a % b);\n        long gcd = result[0];\n        long x1 = result[1];\n        long y1 = result[2];\n\n        // Update coefficients using the results from the recursive call\n        long x = y1;\n        long y = x1 - a / b * y1;\n\n        return new long[] {gcd, x, y};\n    }\n}\n"
+}

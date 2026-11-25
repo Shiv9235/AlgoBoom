@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-reducers-env-js",
+  "slug": "env",
+  "title": "Env",
+  "source": "visualizer",
+  "category": "reducers",
+  "sourcePath": "AlgoVisualizer/src/reducers/env.js",
+  "content": "import Cookies from 'js-cookie';\nimport { combineActions, createAction, handleActions } from 'redux-actions';\n\nconst prefix = 'ENV';\n\nconst setExt = createAction(`${prefix}/SET_EXT`, ext => {\n  Cookies.set('ext', ext);\n  return { ext };\n});\nconst setUser = createAction(`${prefix}/SET_USER`, user => ({ user }));\n\nexport const actions = {\n  setExt,\n  setUser,\n};\n\nconst defaultState = {\n  ext: Cookies.get('ext') || 'js',\n  user: undefined,\n};\n\nexport default handleActions({\n  [combineActions(\n    setExt,\n    setUser,\n  )]: (state, { payload }) => ({\n    ...state,\n    ...payload,\n  }),\n}, defaultState);\n"
+}

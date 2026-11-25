@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-tracers-array1dtracer-js",
+  "slug": "array1dtracer",
+  "title": "Array1DTracer",
+  "source": "visualizer",
+  "category": "core / tracers",
+  "sourcePath": "AlgoVisualizer/src/core/tracers/Array1DTracer.js",
+  "content": "import { Array2DTracer } from 'core/tracers';\nimport { Array1DRenderer } from 'core/renderers';\n\nclass Array1DTracer extends Array2DTracer {\n  getRendererClass() {\n    return Array1DRenderer;\n  }\n\n  init() {\n    super.init();\n    this.chartTracer = null;\n  }\n\n  set(array1d = []) {\n    const array2d = [array1d];\n    super.set(array2d);\n    this.syncChartTracer();\n  }\n\n  patch(x, v) {\n    super.patch(0, x, v);\n  }\n\n  depatch(x) {\n    super.depatch(0, x);\n  }\n\n  select(sx, ex = sx) {\n    super.select(0, sx, 0, ex);\n  }\n\n  deselect(sx, ex = sx) {\n    super.deselect(0, sx, 0, ex);\n  }\n\n  chart(key) {\n    this.chartTracer = key ? this.getObject(key) : null;\n    this.syncChartTracer();\n  }\n\n  syncChartTracer() {\n    if (this.chartTracer) this.chartTracer.data = this.data;\n  }\n}\n\nexport default Array1DTracer;\n"
+}

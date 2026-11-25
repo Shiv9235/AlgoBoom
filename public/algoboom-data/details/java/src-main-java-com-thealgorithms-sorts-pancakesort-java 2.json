@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-pancakesort-java",
+  "slug": "pancakesort",
+  "title": "PancakeSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/PancakeSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * Implementation of pancake sort\n *\n * @author Podshivalov Nikita (https://github.com/nikitap492)\n * @since 2018-04-10\n */\npublic class PancakeSort implements SortAlgorithm {\n\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        if (array.length < 2) {\n            return array;\n        }\n\n        for (int currentSize = 0; currentSize < array.length; currentSize++) {\n            int maxIndex = findIndexOfMax(array, currentSize);\n            SortUtils.flip(array, maxIndex, array.length - 1 - currentSize);\n        }\n\n        return array;\n    }\n\n    /**\n     * Finds the index of the maximum element in the array up to the given size.\n     *\n     * @param array      the array to be searched\n     * @param currentSize the current size of the unsorted portion of the array\n     * @param <T>        the type of elements in the array\n     * @return the index of the maximum element\n     */\n    private <T extends Comparable<T>> int findIndexOfMax(T[] array, int currentSize) {\n        T max = array[0];\n        int maxIndex = 0;\n        for (int i = 0; i < array.length - currentSize; i++) {\n            if (SortUtils.less(max, array[i])) {\n                max = array[i];\n                maxIndex = i;\n            }\n        }\n        return maxIndex;\n    }\n}\n"
+}

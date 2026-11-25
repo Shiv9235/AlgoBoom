@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-checkvowels-java",
+  "slug": "checkvowels",
+  "title": "CheckVowels",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/CheckVowels.java",
+  "content": "package com.thealgorithms.strings;\n\nimport java.util.Set;\n\n/**\n * Vowel Count is a system whereby character strings are placed in order based\n * on the position of the characters in the conventional ordering of an\n * alphabet. Wikipedia: https://en.wikipedia.org/wiki/Alphabetical_order\n */\npublic final class CheckVowels {\n    private static final Set<Character> VOWELS = Set.of('a', 'e', 'i', 'o', 'u');\n\n    private CheckVowels() {\n    }\n\n    /**\n     * Checks if a string contains any vowels.\n     *\n     * @param input a string to check\n     * @return {@code true} if the given string contains at least one vowel, otherwise {@code false}\n     */\n    public static boolean hasVowels(String input) {\n        if (input == null || input.isEmpty()) {\n            return false;\n        }\n\n        for (char c : input.toLowerCase().toCharArray()) {\n            if (VOWELS.contains(c)) {\n                return true;\n            }\n        }\n        return false;\n    }\n}\n"
+}

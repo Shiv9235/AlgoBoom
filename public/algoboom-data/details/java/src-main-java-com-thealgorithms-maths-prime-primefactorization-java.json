@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-prime-primefactorization-java",
+  "slug": "primefactorization",
+  "title": "PrimeFactorization",
+  "source": "java",
+  "category": "com / thealgorithms / maths / Prime",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Prime/PrimeFactorization.java",
+  "content": "package com.thealgorithms.maths.Prime;\n\n/*\n * Authors:\n * (1) Aitor Fidalgo Sánchez (https://github.com/aitorfi)\n * (2) Akshay Dubey (https://github.com/itsAkshayDubey)\n */\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic final class PrimeFactorization {\n    private PrimeFactorization() {\n    }\n\n    public static List<Integer> pfactors(int n) {\n        List<Integer> primeFactors = new ArrayList<>();\n\n        if (n == 0) {\n            return primeFactors;\n        }\n\n        while (n % 2 == 0) {\n            primeFactors.add(2);\n            n /= 2;\n        }\n\n        for (int i = 3; i <= Math.sqrt(n); i += 2) {\n            while (n % i == 0) {\n                primeFactors.add(i);\n                n /= i;\n            }\n        }\n\n        if (n > 2) {\n            primeFactors.add(n);\n        }\n        return primeFactors;\n    }\n}\n"
+}

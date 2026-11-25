@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-numberappearingoddtimes-java",
+  "slug": "numberappearingoddtimes",
+  "title": "NumberAppearingOddTimes",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/NumberAppearingOddTimes.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to find the element that appears an\n * odd number of times in an array. All other elements in the array\n * must appear an even number of times for the logic to work.\n *\n * The solution uses the XOR operation, which has the following properties:\n * - a ^ a = 0 (XOR-ing the same numbers cancels them out)\n * - a ^ 0 = a\n * - XOR is commutative and associative.\n *\n * Time Complexity: O(n), where n is the size of the array.\n * Space Complexity: O(1), as no extra space is used.\n *\n * Usage Example:\n * int result = NumberAppearingOddTimes.findOddOccurrence(new int[]{1, 2, 1, 2, 3});\n * // result will be 3\n *\n * @author Lakshyajeet Singh Goyal (https://github.com/DarkMatter-999)\n */\n\npublic final class NumberAppearingOddTimes {\n    private NumberAppearingOddTimes() {\n    }\n\n    /**\n     * Finds the element in the array that appears an odd number of times.\n     *\n     * @param arr the input array containing integers, where all elements\n     *            except one appear an even number of times.\n     * @return the integer that appears an odd number of times.\n     */\n    public static int findOddOccurrence(int[] arr) {\n        int result = 0;\n        for (int num : arr) {\n            result ^= num;\n        }\n        return result;\n    }\n}\n"
+}

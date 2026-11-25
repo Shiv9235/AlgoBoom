@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-gnomesort-java",
+  "slug": "gnomesort",
+  "title": "GnomeSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/GnomeSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * Implementation of gnome sort\n *\n * @author Podshivalov Nikita (https://github.com/nikitap492)\n * @since 2018-04-10\n */\npublic class GnomeSort implements SortAlgorithm {\n\n    @Override\n    public <T extends Comparable<T>> T[] sort(final T[] array) {\n        int i = 1;\n        int j = 2;\n        while (i < array.length) {\n            if (SortUtils.less(array[i - 1], array[i])) {\n                i = j++;\n            } else {\n                SortUtils.swap(array, i - 1, i);\n                if (--i == 0) {\n                    i = j++;\n                }\n            }\n        }\n\n        return array;\n    }\n}\n"
+}

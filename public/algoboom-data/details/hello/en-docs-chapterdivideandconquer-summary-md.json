@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterdivideandconquer-summary-md",
+  "slug": "summary",
+  "title": "Summary",
+  "source": "hello",
+  "category": "divide_and_conquer",
+  "sourcePath": "Algorithms/en/docs/chapter_divide_and_conquer/summary.md",
+  "content": "# Summary\n\n### Key takeaways\n\n- Divide and conquer is a common algorithm design strategy with two stages: dividing the problem and combining solutions. It is usually implemented recursively.\n- To recognize a divide-and-conquer problem, ask whether it can be divided, whether the subproblems are independent, and whether their solutions can be combined.\n- Merge sort is a classic example. It recursively divides an array into two equally sized subarrays until each contains one element, then merges them level by level to complete the sort.\n- Divide and conquer often improves efficiency by reducing the number of operations and making it easier to parallelize the work.\n- Divide and conquer solves many algorithmic problems and appears widely in the design of data structures and algorithms.\n- Adaptive search is more efficient than brute-force search. Search algorithms with $O(\\log n)$ time complexity are usually based on divide and conquer.\n- Binary search is another classic example, with no step for combining subproblem solutions. It can be implemented through recursive divide and conquer.\n- Reconstructing a binary tree can be divided into building its left and right subtrees. This is achieved by partitioning index intervals in the preorder and inorder traversals.\n- A Tower of Hanoi problem of size $n$ can be divided into two subproblems of size $n-1$ and one of size $1$. Solving these three subproblems in order solves the original problem.\n"
+}

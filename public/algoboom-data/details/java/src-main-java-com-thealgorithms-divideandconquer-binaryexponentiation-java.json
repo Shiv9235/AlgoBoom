@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-divideandconquer-binaryexponentiation-java",
+  "slug": "binaryexponentiation",
+  "title": "BinaryExponentiation",
+  "source": "java",
+  "category": "com / thealgorithms / divideandconquer",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/divideandconquer/BinaryExponentiation.java",
+  "content": "package com.thealgorithms.divideandconquer;\n\n// Java Program to Implement Binary Exponentiation (power in log n)\n\n// Reference Link: https://en.wikipedia.org/wiki/Exponentiation_by_squaring\n\n/*\n * Binary Exponentiation is a method to calculate a to the power of b.\n * It is used to calculate a^n in O(log n) time.\n *\n * Reference:\n * https://iq.opengenus.org/binary-exponentiation/\n */\n\npublic class BinaryExponentiation {\n\n    // recursive function to calculate a to the power of b\n    public static long calculatePower(long x, long y) {\n        // Base Case\n        if (y == 0) {\n            return 1;\n        }\n        if (y % 2 == 1) { // odd power\n            return x * calculatePower(x, y - 1);\n        }\n        return calculatePower(x * x, y / 2); // even power\n    }\n\n    // iterative function to calculate a to the power of b\n    long power(long n, long m) {\n        long power = n;\n        long sum = 1;\n        while (m > 0) {\n            if ((m & 1) == 1) {\n                sum *= power;\n            }\n            power = power * power;\n            m = m >> 1;\n        }\n        return sum;\n    }\n}\n"
+}

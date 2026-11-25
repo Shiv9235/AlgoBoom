@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-subsetsum-java",
+  "slug": "subsetsum",
+  "title": "SubsetSum",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/SubsetSum.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\npublic final class SubsetSum {\n    private SubsetSum() {\n    }\n\n    /**\n     * Test if a set of integers contains a subset that sums to a given integer.\n     *\n     * @param arr the array containing integers.\n     * @param sum the target sum of the subset.\n     * @return {@code true} if a subset exists that sums to the given value,\n     *         otherwise {@code false}.\n     */\n    public static boolean subsetSum(int[] arr, int sum) {\n        int n = arr.length;\n\n        // Initialize a single array to store the possible sums\n        boolean[] isSum = new boolean[sum + 1];\n\n        // Mark isSum[0] = true since a sum of 0 is always possible with 0 elements\n        isSum[0] = true;\n\n        // Iterate through each Element in the array\n        for (int i = 0; i < n; i++) {\n            // Traverse the isSum array backwards to prevent overwriting values\n            for (int j = sum; j >= arr[i]; j--) {\n                isSum[j] = isSum[j] || isSum[j - arr[i]];\n            }\n        }\n        return isSum[sum];\n    }\n}\n"
+}

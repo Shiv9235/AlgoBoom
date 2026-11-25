@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-endianconverter-java",
+  "slug": "endianconverter",
+  "title": "EndianConverter",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/EndianConverter.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * Utility class for converting integers between big-endian and little-endian formats.\n * <p>\n * Endianness defines how byte sequences represent multi-byte data types:\n * <ul>\n *   <li><b>Big-endian</b>: The most significant byte (MSB) comes first.</li>\n *   <li><b>Little-endian</b>: The least significant byte (LSB) comes first.</li>\n * </ul>\n * <p>\n * Example conversion:\n * <ul>\n *   <li>Big-endian to little-endian: {@code 0x12345678} → {@code 0x78563412}</li>\n *   <li>Little-endian to big-endian: {@code 0x78563412} → {@code 0x12345678}</li>\n * </ul>\n *\n * <p>Note: Both conversions in this utility are equivalent since reversing the bytes is symmetric.</p>\n *\n * <p>This class only supports 32-bit integers.</p>\n *\n * @author Hardvan\n */\npublic final class EndianConverter {\n    private EndianConverter() {\n    }\n\n    /**\n     * Converts a 32-bit integer from big-endian to little-endian.\n     *\n     * @param value the integer in big-endian format\n     * @return the integer in little-endian format\n     */\n    public static int bigToLittleEndian(int value) {\n        return Integer.reverseBytes(value);\n    }\n\n    /**\n     * Converts a 32-bit integer from little-endian to big-endian.\n     *\n     * @param value the integer in little-endian format\n     * @return the integer in big-endian format\n     */\n    public static int littleToBigEndian(int value) {\n        return Integer.reverseBytes(value);\n    }\n}\n"
+}

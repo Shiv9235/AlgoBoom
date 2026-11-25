@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-layouts-horizontallayout-js",
+  "slug": "horizontallayout",
+  "title": "HorizontalLayout",
+  "source": "visualizer",
+  "category": "core / layouts",
+  "sourcePath": "AlgoVisualizer/src/core/layouts/HorizontalLayout.js",
+  "content": "import { Layout } from 'core/layouts';\n\nclass HorizontalLayout extends Layout {\n}\n\nexport default HorizontalLayout;\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-tribonacci-java",
+  "slug": "tribonacci",
+  "title": "Tribonacci",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/Tribonacci.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\n/**\n * The {@code Tribonacci} class provides a method to compute the n-th number in the Tribonacci sequence.\n * N-th Tribonacci Number - https://leetcode.com/problems/n-th-tribonacci-number/description/\n */\npublic final class Tribonacci {\n    private Tribonacci() {\n    }\n\n    /**\n     * Computes the n-th Tribonacci number.\n     *\n     * @param n the index of the Tribonacci number to compute\n     * @return the n-th Tribonacci number\n     */\n    public static int compute(int n) {\n        if (n == 0) {\n            return 0;\n        }\n        if (n == 1 || n == 2) {\n            return 1;\n        }\n\n        int first = 0;\n        int second = 1;\n        int third = 1;\n\n        for (int i = 3; i <= n; i++) {\n            int next = first + second + third;\n            first = second;\n            second = third;\n            third = next;\n        }\n\n        return third;\n    }\n}\n"
+}

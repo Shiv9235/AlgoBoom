@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-frizzynumber-java",
+  "slug": "frizzynumber",
+  "title": "FrizzyNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/FrizzyNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * @author <a href=\"https://github.com/siddhant2002\">Siddhant Swarup Mallick</a>\n * Program description - To find the FrizzyNumber\n */\npublic final class FrizzyNumber {\n    private FrizzyNumber() {\n    }\n\n    /**\n     * Returns the n-th number that is a sum of powers\n     * of the given base.\n     * Example: base = 3 and n = 4\n     * Ascending order of sums of powers of 3 =\n     * 3^0 = 1, 3^1 = 3, 3^1 + 3^0 = 4, 3^2 + 3^0 = 9\n     * Ans = 9\n     *\n     * @param base The base whose n-th sum of powers is required\n     * @param n    Index from ascending order of sum of powers of base\n     * @return n-th sum of powers of base\n     */\n    public static double getNthFrizzy(int base, int n) {\n        double final1 = 0.0;\n        int i = 0;\n        do {\n            final1 += Math.pow(base, i++) * (n % 2);\n        } while ((n /= 2) > 0);\n        return final1;\n    }\n}\n"
+}

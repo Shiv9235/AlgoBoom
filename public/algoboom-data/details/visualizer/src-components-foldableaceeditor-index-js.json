@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-foldableaceeditor-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / FoldableAceEditor",
+  "sourcePath": "AlgoVisualizer/src/components/FoldableAceEditor/index.js",
+  "content": "import { connect } from 'react-redux';\nimport AceEditor from 'react-ace';\nimport 'brace/mode/plain_text';\nimport 'brace/mode/markdown';\nimport 'brace/mode/json';\nimport 'brace/mode/javascript';\nimport 'brace/mode/c_cpp';\nimport 'brace/mode/java';\nimport 'brace/theme/tomorrow_night_eighties';\nimport 'brace/ext/searchbox';\nimport { actions } from 'reducers';\n\nclass FoldableAceEditor extends AceEditor {\n  componentDidMount() {\n    super.componentDidMount();\n\n    const { shouldBuild } = this.props.current;\n    if (shouldBuild) this.foldTracers();\n  }\n\n  componentDidUpdate(prevProps, prevState, snapshot) {\n    super.componentDidUpdate(prevProps, prevState, snapshot);\n\n    const { editingFile, shouldBuild } = this.props.current;\n    if (editingFile !== prevProps.current.editingFile) {\n      if (shouldBuild) this.foldTracers();\n    }\n  }\n\n  foldTracers() {\n    const session = this.editor.getSession();\n    for (let row = 0; row < session.getLength(); row++) {\n      if (!/^\\s*\\/\\/.+{\\s*$/.test(session.getLine(row))) continue;\n      const range = session.getFoldWidgetRange(row);\n      if (range) {\n        session.addFold('...', range);\n        row = range.end.row;\n      }\n    }\n  }\n\n  resize() {\n    this.editor.resize();\n  }\n}\n\nexport default connect(({ current }) => ({ current }), actions, null, { forwardRef: true })(\n  FoldableAceEditor,\n);\n"
+}

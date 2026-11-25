@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-sortalgorithm-java",
+  "slug": "sortalgorithm",
+  "title": "SortAlgorithm",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/SortAlgorithm.java",
+  "content": "package com.thealgorithms.sorts;\n\nimport java.util.Arrays;\nimport java.util.List;\n\n/**\n * The common interface of most sorting algorithms\n *\n * @author Podshivalov Nikita (https://github.com/nikitap492)\n */\n@SuppressWarnings(\"rawtypes\")\npublic interface SortAlgorithm {\n    /**\n     * Main method arrays sorting algorithms\n     *\n     * @param unsorted - an array should be sorted\n     * @return a sorted array\n     */\n    <T extends Comparable<T>> T[] sort(T[] unsorted);\n\n    /**\n     * Auxiliary method for algorithms what wanted to work with lists from JCF\n     *\n     * @param unsorted - a list should be sorted\n     * @return a sorted list\n     */\n    @SuppressWarnings(\"unchecked\")\n    default<T extends Comparable<T>> List<T> sort(List<T> unsorted) {\n        return Arrays.asList(sort(unsorted.toArray((T[]) new Comparable[unsorted.size()])));\n    }\n}\n"
+}

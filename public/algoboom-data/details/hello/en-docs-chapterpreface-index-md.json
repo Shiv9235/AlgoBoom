@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterpreface-index-md",
+  "slug": "preface",
+  "title": "Preface",
+  "source": "hello",
+  "category": "preface",
+  "sourcePath": "Algorithms/en/docs/chapter_preface/index.md",
+  "content": "# Preface\n\n![Preface](../assets/covers/chapter_preface.jpg)\n\n!!! abstract\n\n    Algorithms are like a beautiful symphony, with each line of code flowing to its rhythm.\n    \n    May this book play softly in your mind, leaving a melody that is both distinctive and lasting.\n"
+}

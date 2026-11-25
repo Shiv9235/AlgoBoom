@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-hammingdistance-java",
+  "slug": "hammingdistance",
+  "title": "HammingDistance",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/HammingDistance.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * The Hamming distance between two integers is the number of positions at which the corresponding bits are different.\n * Given two integers x and y, calculate the Hamming distance.\n * Example:\n * Input: x = 1, y = 4\n * Output: 2\n * Explanation: 1 (0001) and 4 (0100) have 2 differing bits.\n *\n * @author Hardvan\n */\npublic final class HammingDistance {\n    private HammingDistance() {\n    }\n\n    /**\n     * Calculates the Hamming distance between two integers.\n     * The Hamming distance is the number of differing bits between the two integers.\n     *\n     * @param x The first integer.\n     * @param y The second integer.\n     * @return The Hamming distance (number of differing bits).\n     */\n    public static int hammingDistance(int x, int y) {\n        int xor = x ^ y;\n        return Integer.bitCount(xor);\n    }\n}\n"
+}

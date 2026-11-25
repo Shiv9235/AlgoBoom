@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-eggdropping-java",
+  "slug": "eggdropping",
+  "title": "EggDropping",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/EggDropping.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\n/**\n * DynamicProgramming solution for the Egg Dropping Puzzle\n */\npublic final class EggDropping {\n    private EggDropping() {\n    }\n\n    // min trials with n eggs and m floors\n    public static int minTrials(int n, int m) {\n        int[][] eggFloor = new int[n + 1][m + 1];\n        int result;\n        int x;\n\n        for (int i = 1; i <= n; i++) {\n            eggFloor[i][0] = 0; // Zero trial for zero floor.\n            eggFloor[i][1] = 1; // One trial for one floor\n        }\n\n        // j trials for only 1 egg\n        for (int j = 1; j <= m; j++) {\n            eggFloor[1][j] = j;\n        }\n\n        // Using bottom-up approach in DP\n        for (int i = 2; i <= n; i++) {\n            for (int j = 2; j <= m; j++) {\n                eggFloor[i][j] = Integer.MAX_VALUE;\n                for (x = 1; x <= j; x++) {\n                    result = 1 + Math.max(eggFloor[i - 1][x - 1], eggFloor[i][j - x]);\n\n                    // choose min of all values for particular x\n                    if (result < eggFloor[i][j]) {\n                        eggFloor[i][j] = result;\n                    }\n                }\n            }\n        }\n\n        return eggFloor[n][m];\n    }\n\n    public static void main(String[] args) {\n        int n = 2;\n        int m = 4;\n        // result outputs min no. of trials in worst case for n eggs and m floors\n        int result = minTrials(n, m);\n        System.out.println(result);\n    }\n}\n"
+}

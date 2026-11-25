@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-reducers-toast-js",
+  "slug": "toast",
+  "title": "Toast",
+  "source": "visualizer",
+  "category": "reducers",
+  "sourcePath": "AlgoVisualizer/src/reducers/toast.js",
+  "content": "import { combineActions, createAction, handleActions } from 'redux-actions';\nimport uuid from 'uuid';\n\nconst prefix = 'TOAST';\n\nconst showSuccessToast = createAction(`${prefix}/SHOW_SUCCESS_TOAST`, message => ({ type: 'success', message }));\nconst showErrorToast = createAction(`${prefix}/SHOW_ERROR_TOAST`, message => ({ type: 'error', message }));\nconst hideToast = createAction(`${prefix}/HIDE_TOAST`, id => ({ id }));\n\nexport const actions = {\n  showSuccessToast,\n  showErrorToast,\n  hideToast,\n};\n\nconst defaultState = {\n  toasts: [],\n};\n\nexport default handleActions({\n  [combineActions(\n    showSuccessToast,\n    showErrorToast,\n  )]: (state, { payload }) => {\n    const id = uuid.v4();\n    const toast = {\n      id,\n      ...payload,\n    };\n    const toasts = [\n      ...state.toasts,\n      toast,\n    ];\n    return {\n      ...state,\n      toasts,\n    };\n  },\n  [hideToast]: (state, { payload }) => {\n    const { id } = payload;\n    const toasts = state.toasts.filter(toast => toast.id !== id);\n    return {\n      ...state,\n      toasts,\n    };\n  },\n}, defaultState);\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-minvalue-java",
+  "slug": "minvalue",
+  "title": "MinValue",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/MinValue.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class MinValue {\n    private MinValue() {\n    }\n    /**\n     * Returns the smaller of two {@code int} values. That is, the result the\n     * argument closer to the value of {@link Integer#MIN_VALUE}. If the\n     * arguments have the same value, the result is that same value.\n     *\n     * @param a an argument.\n     * @param b another argument.\n     * @return the smaller of {@code a} and {@code b}.\n     */\n    public static int min(int a, int b) {\n        return a <= b ? a : b;\n    }\n}\n"
+}

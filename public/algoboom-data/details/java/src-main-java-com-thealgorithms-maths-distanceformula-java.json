@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-distanceformula-java",
+  "slug": "distanceformula",
+  "title": "DistanceFormula",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/DistanceFormula.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class DistanceFormula {\n    private DistanceFormula() {\n    }\n\n    public static double euclideanDistance(double x1, double y1, double x2, double y2) {\n        double dX = Math.pow(x2 - x1, 2);\n        double dY = Math.pow(y2 - y1, 2);\n        return Math.sqrt(dX + dY);\n    }\n\n    public static double manhattanDistance(double x1, double y1, double x2, double y2) {\n        return Math.abs(x1 - x2) + Math.abs(y1 - y2);\n    }\n\n    public static int hammingDistance(int[] b1, int[] b2) {\n        int d = 0;\n\n        if (b1.length != b2.length) {\n            return -1; // error, both arrays must have the same length\n        }\n\n        for (int i = 0; i < b1.length; i++) {\n            d += Math.abs(b1[i] - b2[i]);\n        }\n\n        return d;\n    }\n\n    public static double minkowskiDistance(double[] p1, double[] p2, int p) {\n        double d = 0;\n        double distance = 0.0;\n\n        if (p1.length != p2.length) {\n            return -1; // error, both arrays must have the same length\n        }\n\n        for (int i = 0; i < p1.length; i++) {\n            distance += Math.abs(Math.pow(p1[i] - p2[i], p));\n        }\n\n        distance = Math.pow(distance, (double) 1 / p);\n        d = distance;\n        return d;\n    }\n}\n"
+}

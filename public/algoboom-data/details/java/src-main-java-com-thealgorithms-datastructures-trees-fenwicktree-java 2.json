@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-trees-fenwicktree-java",
+  "slug": "fenwicktree",
+  "title": "FenwickTree",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / trees",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/trees/FenwickTree.java",
+  "content": "package com.thealgorithms.datastructures.trees;\n\n/**\n * Fenwick Tree for point updates and prefix-sum queries in O(log n).\n *\n * @see <a href=\"https://cp-algorithms.com/data_structures/fenwick.html\">Fenwick Tree</a>\n */\npublic class FenwickTree {\n\n    private final int n;\n    private final int[] fenTree;\n\n    /** Creates a Fenwick tree with n elements, all initialized to zero. */\n    public FenwickTree(int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"Size must be non-negative\");\n        }\n        this.n = n;\n        this.fenTree = new int[n + 1];\n    }\n\n    /** Adds val to the element at index i. */\n    public void update(int i, int val) {\n        checkIndex(i);\n        i += 1; // Convert to the internal 1-based index\n        while (i <= n) {\n            fenTree[i] += val;\n            i += i & (-i);\n        }\n    }\n\n    /** Returns the sum of elements from index 0 to i. */\n    public int query(int i) {\n        checkIndex(i);\n        i += 1;\n        int cumSum = 0;\n        while (i > 0) {\n            cumSum += fenTree[i];\n            i -= i & (-i);\n        }\n        return cumSum;\n    }\n\n    // Check that the index is within the valid range.\n    private void checkIndex(int i) {\n        if (i < 0 || i >= n) {\n            throw new IndexOutOfBoundsException(\"Index \" + i + \" out of bounds for size \" + n);\n        }\n    }\n}\n"
+}

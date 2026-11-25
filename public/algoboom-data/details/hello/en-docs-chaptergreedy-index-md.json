@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chaptergreedy-index-md",
+  "slug": "greedy-algorithms",
+  "title": "Greedy algorithms",
+  "source": "hello",
+  "category": "greedy",
+  "sourcePath": "Algorithms/en/docs/chapter_greedy/index.md",
+  "content": "# Greedy algorithms\n\n![Greedy algorithms](../assets/covers/chapter_greedy.jpg)\n\n!!! abstract\n\n    A sunflower turns toward the sun, always seeking the greatest opportunity to grow.\n\n    Through a series of simple choices, a greedy strategy leads us step by step toward the best answer.\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-medianofrunningarraydouble-java",
+  "slug": "medianofrunningarraydouble",
+  "title": "MedianOfRunningArrayDouble",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MedianOfRunningArrayDouble.java",
+  "content": "package com.thealgorithms.misc;\n\npublic final class MedianOfRunningArrayDouble extends MedianOfRunningArray<Double> {\n    @Override\n    public Double calculateAverage(final Double a, final Double b) {\n        return (a + b) / 2.0d;\n    }\n}\n"
+}

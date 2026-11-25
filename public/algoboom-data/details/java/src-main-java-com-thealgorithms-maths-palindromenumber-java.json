@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-palindromenumber-java",
+  "slug": "palindromenumber",
+  "title": "PalindromeNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PalindromeNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * A class to check if a given number is a palindrome.\n * A palindromic number is a number that remains the same when its digits are reversed.\n *\n * @see com.thealgorithms.strings.Palindrome\n * @see com.thealgorithms.stacks.PalindromeWithStack\n * @see com.thealgorithms.bitmanipulation.BinaryPalindromeCheck\n * @see com.thealgorithms.maths.LowestBasePalindrome\n * @see com.thealgorithms.datastructures.lists.PalindromeSinglyLinkedList\n * @see com.thealgorithms.maths.PalindromePrime\n */\npublic final class PalindromeNumber {\n    private PalindromeNumber() {\n    }\n    /**\n     * Check if {@code n} is palindrome number or not\n     *\n     * @param number the number\n     * @return {@code true} if {@code n} is palindrome number, otherwise\n     * {@code false}\n     */\n    public static boolean isPalindrome(int number) {\n        if (number < 0) {\n            throw new IllegalArgumentException(\"Input parameter must not be negative!\");\n        }\n        int numberCopy = number;\n        int reverseNumber = 0;\n        while (numberCopy != 0) {\n            int remainder = numberCopy % 10;\n            reverseNumber = reverseNumber * 10 + remainder;\n            numberCopy /= 10;\n        }\n        return number == reverseNumber;\n    }\n}\n"
+}

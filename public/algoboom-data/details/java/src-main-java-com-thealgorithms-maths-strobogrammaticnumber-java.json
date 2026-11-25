@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-strobogrammaticnumber-java",
+  "slug": "strobogrammaticnumber",
+  "title": "StrobogrammaticNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/StrobogrammaticNumber.java",
+  "content": "package com.thealgorithms.maths;\n\nimport java.util.HashMap;\nimport java.util.Map;\n\n/**\n * A strobogrammatic number is a number that remains the same when rotated 180 degrees.\n * In other words, the number looks the same when rotated upside down.\n * Examples of strobogrammatic numbers are \"69\", \"88\", \"818\", and \"101\".\n * Numbers like \"609\" or \"120\" are not strobogrammatic because they do not look the same when rotated.\n */\npublic class StrobogrammaticNumber {\n    /**\n     * Check if a number is strobogrammatic\n     * @param number the number to be checked\n     * @return true if the number is strobogrammatic, false otherwise\n     */\n    public boolean isStrobogrammatic(String number) {\n        Map<Character, Character> strobogrammaticMap = new HashMap<>();\n        strobogrammaticMap.put('0', '0');\n        strobogrammaticMap.put('1', '1');\n        strobogrammaticMap.put('6', '9');\n        strobogrammaticMap.put('8', '8');\n        strobogrammaticMap.put('9', '6');\n\n        int left = 0;\n        int right = number.length() - 1;\n\n        while (left <= right) {\n            char leftChar = number.charAt(left);\n            char rightChar = number.charAt(right);\n\n            if (!strobogrammaticMap.containsKey(leftChar) || strobogrammaticMap.get(leftChar) != rightChar) {\n                return false;\n            }\n\n            left++;\n            right--;\n        }\n\n        return true;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-onescomplement-java",
+  "slug": "onescomplement",
+  "title": "OnesComplement",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/OnesComplement.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * @author - https://github.com/Monk-AbhinayVerma\n * @Wikipedia - https://en.wikipedia.org/wiki/Ones%27_complement\n *            The class OnesComplement computes the complement of binary number\n *            and returns\n *            the complemented binary string.\n * @return the complimented binary string\n */\npublic final class OnesComplement {\n    private OnesComplement() {\n    }\n\n    /**\n     * Returns the 1's complement of a binary string.\n     *\n     * @param binary A string representing a binary number (e.g., \"1010\").\n     * @return A string representing the 1's complement.\n     * @throws IllegalArgumentException if the input is null or contains characters other than '0' or '1'.\n     */\n    public static String onesComplement(String binary) {\n        if (binary == null || binary.isEmpty()) {\n            throw new IllegalArgumentException(\"Input must be a non-empty binary string.\");\n        }\n\n        StringBuilder complement = new StringBuilder(binary.length());\n        for (char bit : binary.toCharArray()) {\n            switch (bit) {\n                case '0' -> complement.append('1');\n                case '1' -> complement.append('0');\n                default -> throw new IllegalArgumentException(\"Input must contain only '0' and '1'. Found: \" + bit);\n            }\n        }\n        return complement.toString();\n    }\n}\n"
+}

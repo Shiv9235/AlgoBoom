@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-temperatureconverter-java",
+  "slug": "temperatureconverter",
+  "title": "TemperatureConverter",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/TemperatureConverter.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * A utility class to convert between different temperature units.\n *\n * <p>This class supports conversions between the following units:\n * <ul>\n *   <li>Celsius</li>\n *   <li>Fahrenheit</li>\n *   <li>Kelvin</li>\n * </ul>\n *\n * <p>This class is final and cannot be instantiated.\n *\n * @author krishna-medapati (https://github.com/krishna-medapati)\n * @see <a href=\"https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature\">Wikipedia: Temperature Conversion</a>\n */\npublic final class TemperatureConverter {\n\n    private TemperatureConverter() {\n    }\n\n    public static double celsiusToFahrenheit(double celsius) {\n        return celsius * 9.0 / 5.0 + 32.0;\n    }\n\n    public static double celsiusToKelvin(double celsius) {\n        return celsius + 273.15;\n    }\n\n    public static double fahrenheitToCelsius(double fahrenheit) {\n        return (fahrenheit - 32.0) * 5.0 / 9.0;\n    }\n\n    public static double fahrenheitToKelvin(double fahrenheit) {\n        return (fahrenheit - 32.0) * 5.0 / 9.0 + 273.15;\n    }\n\n    public static double kelvinToCelsius(double kelvin) {\n        return kelvin - 273.15;\n    }\n\n    public static double kelvinToFahrenheit(double kelvin) {\n        return (kelvin - 273.15) * 9.0 / 5.0 + 32.0;\n    }\n}\n"
+}

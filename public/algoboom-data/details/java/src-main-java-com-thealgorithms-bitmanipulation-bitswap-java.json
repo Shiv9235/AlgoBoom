@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-bitswap-java",
+  "slug": "bitswap",
+  "title": "BitSwap",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/BitSwap.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * Utility class for performing bit-swapping operations on integers.\n * This class cannot be instantiated.\n */\npublic final class BitSwap {\n    private BitSwap() {\n    }\n\n    /**\n     * Swaps two bits at specified positions in an integer.\n     *\n     * @param data The input integer whose bits need to be swapped\n     * @param posA The position of the first bit (0-based, from least significant)\n     * @param posB The position of the second bit (0-based, from least significant)\n     * @return The modified value with swapped bits\n     * @throws IllegalArgumentException if either position is negative or ≥ 32\n     */\n\n    public static int bitSwap(int data, final int posA, final int posB) {\n        if (posA < 0 || posA >= Integer.SIZE || posB < 0 || posB >= Integer.SIZE) {\n            throw new IllegalArgumentException(\"Bit positions must be between 0 and 31\");\n        }\n\n        boolean bitA = ((data >> posA) & 1) != 0;\n        boolean bitB = ((data >> posB) & 1) != 0;\n        if (bitA != bitB) {\n            data ^= (1 << posA) ^ (1 << posB);\n        }\n        return data;\n    }\n}\n"
+}

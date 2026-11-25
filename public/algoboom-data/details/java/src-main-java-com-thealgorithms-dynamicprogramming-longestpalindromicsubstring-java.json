@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-longestpalindromicsubstring-java",
+  "slug": "longestpalindromicsubstring",
+  "title": "LongestPalindromicSubstring",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/LongestPalindromicSubstring.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\n\n/**\n * Class for finding the longest palindromic substring within a given string.\n * <p>\n * A palindromic substring is a sequence of characters that reads the same backward as forward.\n * This class uses a dynamic programming approach to efficiently find the longest palindromic substring.\n *\n */\npublic final class LongestPalindromicSubstring {\n    private LongestPalindromicSubstring() {\n    }\n\n    public static String lps(String input) {\n        if (input == null || input.isEmpty()) {\n            return input;\n        }\n        boolean[][] arr = new boolean[input.length()][input.length()];\n        int start = 0;\n        int end = 0;\n        for (int g = 0; g < input.length(); g++) {\n            for (int i = 0, j = g; j < input.length(); i++, j++) {\n                if (g == 0) {\n                    arr[i][j] = true;\n                } else if (g == 1) {\n                    arr[i][j] = input.charAt(i) == input.charAt(j);\n                } else {\n                    arr[i][j] = input.charAt(i) == input.charAt(j) && arr[i + 1][j - 1];\n                }\n\n                if (arr[i][j]) {\n                    start = i;\n                    end = j;\n                }\n            }\n        }\n        return input.substring(start, end + 1);\n    }\n}\n"
+}

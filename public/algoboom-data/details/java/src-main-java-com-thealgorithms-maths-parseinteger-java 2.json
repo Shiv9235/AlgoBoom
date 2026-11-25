@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-parseinteger-java",
+  "slug": "parseinteger",
+  "title": "ParseInteger",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/ParseInteger.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class ParseInteger {\n    private ParseInteger() {\n    }\n\n    private static void checkInput(final String s) {\n        if (s == null) {\n            throw new NumberFormatException(\"Input parameter must not be null!\");\n        }\n        if (s.isEmpty()) {\n            throw new NumberFormatException(\"Input parameter must not be empty!\");\n        }\n    }\n\n    private static void checkDigitAt(final String s, final int pos) {\n        if (!Character.isDigit(s.charAt(pos))) {\n            throw new NumberFormatException(\"Input parameter of incorrect format: \" + s);\n        }\n    }\n\n    private static int digitToInt(final char digit) {\n        return digit - '0';\n    }\n\n    /**\n     * Parse a string to integer\n     *\n     * @param s the string\n     * @return the integer value represented by the argument in decimal.\n     * @throws NumberFormatException if the {@code string} does not contain a\n     *                               parsable integer.\n     */\n    public static int parseInt(final String s) {\n        checkInput(s);\n\n        final boolean isNegative = s.charAt(0) == '-';\n        final boolean isPositive = s.charAt(0) == '+';\n        int number = 0;\n        for (int i = isNegative || isPositive ? 1 : 0, length = s.length(); i < length; ++i) {\n            checkDigitAt(s, i);\n            number = number * 10 + digitToInt(s.charAt(i));\n        }\n        return isNegative ? -number : number;\n    }\n}\n"
+}

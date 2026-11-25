@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-collatzconjecture-java",
+  "slug": "collatzconjecture",
+  "title": "CollatzConjecture",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/CollatzConjecture.java",
+  "content": "package com.thealgorithms.maths;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * <a href=\"https://en.wikipedia.org/wiki/Collatz_conjecture\">...</a>\n */\npublic class CollatzConjecture {\n\n    /**\n     * Calculate the next number of the sequence.\n     *\n     * @param n current number of the sequence\n     * @return next number of the sequence\n     */\n    public int nextNumber(final int n) {\n        if (n % 2 == 0) {\n            return n / 2;\n        }\n        return 3 * n + 1;\n    }\n\n    /**\n     * Calculate the Collatz sequence of any natural number.\n     *\n     * @param firstNumber starting number of the sequence\n     * @return sequence of the Collatz Conjecture\n     */\n    public List<Integer> collatzConjecture(int firstNumber) {\n        if (firstNumber < 1) {\n            throw new IllegalArgumentException(\"Must be a natural number\");\n        }\n        ArrayList<Integer> result = new ArrayList<>();\n        result.add(firstNumber);\n        while (firstNumber != 1) {\n            result.add(nextNumber(firstNumber));\n            firstNumber = nextNumber(firstNumber);\n        }\n        return result;\n    }\n}\n"
+}

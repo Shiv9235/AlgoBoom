@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-scheduling-gangscheduling-java",
+  "slug": "gangscheduling",
+  "title": "GangScheduling",
+  "source": "java",
+  "category": "com / thealgorithms / scheduling",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/scheduling/GangScheduling.java",
+  "content": "package com.thealgorithms.scheduling;\n\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * GangScheduling groups related tasks (gangs) to run simultaneously on multiple processors.\n * All tasks in a gang are executed together or not at all.\n *\n * Use Case: Parallel computing environments where multiple threads of a program\n * need to run concurrently for optimal performance.\n *\n * @author Hardvan\n */\npublic final class GangScheduling {\n\n    static class Gang {\n        String name;\n        List<String> tasks;\n\n        Gang(String name) {\n            this.name = name;\n            this.tasks = new ArrayList<>();\n        }\n\n        void addTask(String task) {\n            tasks.add(task);\n        }\n\n        List<String> getTasks() {\n            return tasks;\n        }\n    }\n\n    private final Map<String, Gang> gangs;\n\n    public GangScheduling() {\n        gangs = new HashMap<>();\n    }\n\n    public void addGang(String gangName) {\n        gangs.putIfAbsent(gangName, new Gang(gangName));\n    }\n\n    public void addTaskToGang(String gangName, String task) {\n        Gang gang = gangs.get(gangName);\n        if (gang != null) {\n            gang.addTask(task);\n        }\n    }\n\n    public Map<String, List<String>> getGangSchedules() {\n        Map<String, List<String>> schedules = new HashMap<>();\n        for (Gang gang : gangs.values()) {\n            schedules.put(gang.name, gang.getTasks());\n        }\n        return schedules;\n    }\n}\n"
+}

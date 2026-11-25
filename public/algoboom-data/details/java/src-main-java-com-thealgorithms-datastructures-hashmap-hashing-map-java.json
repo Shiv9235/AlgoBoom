@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-hashmap-hashing-map-java",
+  "slug": "map",
+  "title": "Map",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / hashmap / hashing",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/hashmap/hashing/Map.java",
+  "content": "package com.thealgorithms.datastructures.hashmap.hashing;\n\npublic abstract class Map<Key, Value> {\n\n    abstract boolean put(Key key, Value value);\n\n    abstract Value get(Key key);\n\n    abstract boolean delete(Key key);\n\n    abstract Iterable<Key> keys();\n\n    abstract int size();\n\n    public boolean contains(Key key) {\n        return get(key) != null;\n    }\n\n    protected int hash(Key key, int size) {\n        return (key.hashCode() & Integer.MAX_VALUE) % size;\n    }\n}\n"
+}

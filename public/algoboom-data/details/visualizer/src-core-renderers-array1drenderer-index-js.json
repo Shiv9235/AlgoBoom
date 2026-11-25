@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-renderers-array1drenderer-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "core / renderers / Array1DRenderer",
+  "sourcePath": "AlgoVisualizer/src/core/renderers/Array1DRenderer/index.js",
+  "content": "import { Array2DRenderer } from 'core/renderers';\n\nclass Array1DRenderer extends Array2DRenderer {\n}\n\nexport default Array1DRenderer;\n\n"
+}

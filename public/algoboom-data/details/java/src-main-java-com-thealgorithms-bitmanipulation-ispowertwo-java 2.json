@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-ispowertwo-java",
+  "slug": "ispowertwo",
+  "title": "IsPowerTwo",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/IsPowerTwo.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * Utility class for checking if a number is a power of two.\n * A power of two is a number that can be expressed as 2^n where n is a non-negative integer.\n * This class provides a method to determine if a given integer is a power of two using bit manipulation.\n *\n * @author Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n */\npublic final class IsPowerTwo {\n    private IsPowerTwo() {\n    }\n\n    /**\n     * Checks if the given integer is a power of two.\n     *\n     * A number is considered a power of two if it is greater than zero and\n     * has exactly one '1' bit in its binary representation. This method\n     * uses the property that for any power of two (n), the expression\n     * (n & (n - 1)) will be zero.\n     *\n     * @param number the integer to check\n     * @return true if the number is a power of two, false otherwise\n     */\n    public static boolean isPowerTwo(int number) {\n        if (number <= 0) {\n            return false;\n        }\n        int ans = number & (number - 1);\n        return ans == 0;\n    }\n}\n"
+}

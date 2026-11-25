@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-stacks-minstackusingtwostacks-java",
+  "slug": "minstackusingtwostacks",
+  "title": "MinStackUsingTwoStacks",
+  "source": "java",
+  "category": "com / thealgorithms / stacks",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/stacks/MinStackUsingTwoStacks.java",
+  "content": "package com.thealgorithms.stacks;\n\nimport java.util.Stack;\n\n/**\n * Min-Stack implementation that supports push, pop, and retrieving the minimum element in constant time.\n *\n * @author Hardvan\n */\npublic final class MinStackUsingTwoStacks {\n    MinStackUsingTwoStacks() {\n    }\n\n    private final Stack<Integer> stack = new Stack<>();\n    private final Stack<Integer> minStack = new Stack<>();\n\n    /**\n     * Pushes a new element onto the {@code stack}.\n     * If the value is less than or equal to the current minimum, it is also pushed onto the {@code minStack}.\n     *\n     * @param value The value to be pushed.\n     */\n    public void push(int value) {\n        stack.push(value);\n        if (minStack.isEmpty() || value <= minStack.peek()) {\n            minStack.push(value);\n        }\n    }\n\n    /**\n     * Removes the top element from the stack.\n     * If the element is the minimum element, it is also removed from the {@code minStack}.\n     */\n    public void pop() {\n        if (stack.pop().equals(minStack.peek())) {\n            minStack.pop();\n        }\n    }\n\n    /**\n     * Retrieves the top element of the stack.\n     *\n     * @return The top element.\n     */\n    public int top() {\n        return stack.peek();\n    }\n\n    /**\n     * Retrieves the minimum element in the stack.\n     *\n     * @return The minimum element.\n     */\n    public int getMin() {\n        return minStack.peek();\n    }\n}\n"
+}

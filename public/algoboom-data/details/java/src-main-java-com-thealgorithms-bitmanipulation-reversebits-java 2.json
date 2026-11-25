@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-reversebits-java",
+  "slug": "reversebits",
+  "title": "ReverseBits",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/ReverseBits.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to reverse the bits of a 32-bit integer.\n * Reversing the bits means that the least significant bit (LSB) becomes\n * the most significant bit (MSB) and vice versa.\n *\n * Example:\n * Input (binary): 00000010100101000001111010011100 (43261596)\n * Output (binary): 00111001011110000010100101000000 (964176192)\n *\n * Time Complexity: O(32) - A fixed number of 32 iterations\n * Space Complexity: O(1) - No extra space used\n *\n * Note:\n * - If the input is negative, Java handles it using two’s complement representation.\n * - This function works on 32-bit integers by default.\n *\n * @author Bama Charan Chhandogi\n */\npublic final class ReverseBits {\n    private ReverseBits() {\n    }\n\n    /**\n     * Reverses the bits of a 32-bit integer.\n     *\n     * @param n the integer whose bits are to be reversed\n     * @return the integer obtained by reversing the bits of the input\n     */\n    public static int reverseBits(int n) {\n        int result = 0;\n        int bitCount = 32;\n        for (int i = 0; i < bitCount; i++) {\n            result <<= 1; // Left shift the result to make space for the next bit\n            result |= (n & 1); // OR operation to set the least significant bit of result with the current bit of n\n            n >>= 1; // Right shift n to move on to the next bit\n        }\n        return result;\n    }\n}\n"
+}

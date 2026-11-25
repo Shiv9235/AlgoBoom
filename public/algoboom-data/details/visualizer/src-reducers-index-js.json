@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-reducers-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "reducers",
+  "sourcePath": "AlgoVisualizer/src/reducers/index.js",
+  "content": "import { actions as currentActions } from './current';\nimport { actions as directoryActions } from './directory';\nimport { actions as envActions } from './env';\nimport { actions as playerActions } from './player';\nimport { actions as toastActions } from './toast';\n\nexport { default as current } from './current';\nexport { default as directory } from './directory';\nexport { default as env } from './env';\nexport { default as player } from './player';\nexport { default as toast } from './toast';\n\nexport const actions = {\n  ...currentActions,\n  ...directoryActions,\n  ...envActions,\n  ...playerActions,\n  ...toastActions,\n};\n"
+}

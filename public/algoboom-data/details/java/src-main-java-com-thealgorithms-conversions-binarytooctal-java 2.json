@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-binarytooctal-java",
+  "slug": "binarytooctal",
+  "title": "BinaryToOctal",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/BinaryToOctal.java",
+  "content": "package com.thealgorithms.conversions;\n\npublic final class BinaryToOctal {\n    private static final int BITS_PER_OCTAL_DIGIT = 3;\n    private static final int BINARY_BASE = 2;\n    private static final int DECIMAL_BASE = 10;\n\n    private BinaryToOctal() {\n    }\n\n    /**\n     * This method converts a binary number to an octal number.\n     *\n     * @param binary The binary number\n     * @return The octal number\n     * @throws IllegalArgumentException if the input is not a valid binary number\n     */\n    public static String convertBinaryToOctal(int binary) {\n        if (binary == 0) {\n            return \"0\";\n        }\n\n        if (!String.valueOf(binary).matches(\"[01]+\")) {\n            throw new IllegalArgumentException(\"Input is not a valid binary number.\");\n        }\n\n        StringBuilder octal = new StringBuilder();\n        int currentBit;\n        int bitValueMultiplier = 1;\n\n        while (binary != 0) {\n            int octalDigit = 0;\n            for (int i = 0; i < BITS_PER_OCTAL_DIGIT && binary != 0; i++) {\n                currentBit = binary % DECIMAL_BASE;\n                binary /= DECIMAL_BASE;\n                octalDigit += currentBit * bitValueMultiplier;\n                bitValueMultiplier *= BINARY_BASE;\n            }\n            octal.insert(0, octalDigit);\n            bitValueMultiplier = 1; // Reset multiplier for the next group\n        }\n\n        return octal.toString();\n    }\n}\n"
+}

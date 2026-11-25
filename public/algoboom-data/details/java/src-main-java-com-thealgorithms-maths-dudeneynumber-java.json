@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-dudeneynumber-java",
+  "slug": "dudeneynumber",
+  "title": "DudeneyNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/DudeneyNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * A number is said to be Dudeney if the sum of the digits, is the cube root of the entered number.\n * Example- Let the number be 512, its sum of digits is 5+1+2=8. The cube root of 512 is also 8.\n *          Since, the sum of the digits is equal to the cube root of the entered number;\n *          it is a Dudeney Number.\n */\npublic final class DudeneyNumber {\n    private DudeneyNumber() {\n    }\n\n    // returns True if the number is a Dudeney number and False if it is not a Dudeney number.\n    public static boolean isDudeney(final int n) {\n        if (n <= 0) {\n            throw new IllegalArgumentException(\"Input must me positive.\");\n        }\n        // Calculating Cube Root\n        final int cubeRoot = (int) Math.round(Math.pow(n, 1.0 / 3.0));\n        // If the number is not a perfect cube the method returns false.\n        if (cubeRoot * cubeRoot * cubeRoot != n) {\n            return false;\n        }\n\n        // If the cube root of the number is not equal to the sum of its digits, we return false.\n        return cubeRoot == SumOfDigits.sumOfDigits(n);\n    }\n}\n"
+}

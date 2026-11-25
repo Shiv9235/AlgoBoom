@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-sortutilsrandomgenerator-java",
+  "slug": "sortutilsrandomgenerator",
+  "title": "SortUtilsRandomGenerator",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/SortUtilsRandomGenerator.java",
+  "content": "package com.thealgorithms.sorts;\n\nimport java.util.Random;\n\npublic final class SortUtilsRandomGenerator {\n    private SortUtilsRandomGenerator() {\n    }\n\n    private static final Random RANDOM;\n    private static final long SEED;\n\n    static {\n        SEED = System.currentTimeMillis();\n        RANDOM = new Random(SEED);\n    }\n\n    /**\n     * Function to generate array of double values, with predefined size.\n     *\n     * @param size result array size\n     * @return array of Double values, randomly generated, each element is between [0, 1)\n     */\n    public static Double[] generateArray(int size) {\n        Double[] arr = new Double[size];\n        for (int i = 0; i < size; i++) {\n            arr[i] = generateDouble();\n        }\n        return arr;\n    }\n\n    /**\n     * Function to generate Double value.\n     *\n     * @return Double value [0, 1)\n     */\n    public static Double generateDouble() {\n        return RANDOM.nextDouble();\n    }\n\n    /**\n     * Function to generate int value.\n     *\n     * @return int value [0, n)\n     */\n    public static int generateInt(int n) {\n        return RANDOM.nextInt(n);\n    }\n}\n"
+}

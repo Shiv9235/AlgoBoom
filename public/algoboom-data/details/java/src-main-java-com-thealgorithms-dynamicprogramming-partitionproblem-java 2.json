@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-dynamicprogramming-partitionproblem-java",
+  "slug": "partitionproblem",
+  "title": "PartitionProblem",
+  "source": "java",
+  "category": "com / thealgorithms / dynamicprogramming",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/dynamicprogramming/PartitionProblem.java",
+  "content": "package com.thealgorithms.dynamicprogramming;\nimport java.util.Arrays;\n/**\n * @author Md Asif Joardar\n *\n * Description: The partition problem is a classic problem in computer science\n * that asks whether a given set can be partitioned into two subsets such that\n * the sum of elements in each subset is the same.\n *\n * Example:\n * Consider nums = {1, 2, 3}\n * We can split the array \"nums\" into two partitions, where each having a sum of 3.\n * nums1 = {1, 2}\n * nums2 = {3}\n *\n * The time complexity of the solution is O(n × sum) and requires O(n × sum) space\n */\npublic final class PartitionProblem {\n    private PartitionProblem() {\n    }\n\n    /**\n     * Test if a set of integers can be partitioned into two subsets such that the sum of elements\n     * in each subset is the same.\n     *\n     * @param nums the array contains integers.\n     * @return {@code true} if two subset exists, otherwise {@code false}.\n     */\n    public static boolean partition(int[] nums) {\n        // calculate the sum of all the elements in the array\n        int sum = Arrays.stream(nums).sum();\n\n        // it will return true if the sum is even and the array can be divided into two\n        // subarrays/subset with equal sum. and here i reuse the SubsetSum class from dynamic\n        // programming section to check if there is exists a subsetsum into nums[] array same as the\n        // given sum\n        return (sum & 1) == 0 && SubsetSum.subsetSum(nums, sum / 2);\n    }\n}\n"
+}

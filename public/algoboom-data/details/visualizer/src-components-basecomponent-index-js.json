@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-components-basecomponent-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "components / BaseComponent",
+  "sourcePath": "AlgoVisualizer/src/components/BaseComponent/index.js",
+  "content": "import React from 'react';\n\nclass BaseComponent extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.handleError = this.handleError.bind(this);\n  }\n\n  handleError(error) {\n    if (error.response) {\n      const { data, statusText } = error.response;\n      const message = data ? typeof data === 'string' ? data : JSON.stringify(data) : statusText;\n      console.error(message);\n      this.props.showErrorToast(message);\n    } else {\n      console.error(error.message);\n      this.props.showErrorToast(error.message);\n    }\n  }\n}\n\nexport default BaseComponent;\n"
+}

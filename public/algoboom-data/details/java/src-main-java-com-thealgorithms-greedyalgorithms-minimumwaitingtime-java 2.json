@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-greedyalgorithms-minimumwaitingtime-java",
+  "slug": "minimumwaitingtime",
+  "title": "MinimumWaitingTime",
+  "source": "java",
+  "category": "com / thealgorithms / greedyalgorithms",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/greedyalgorithms/MinimumWaitingTime.java",
+  "content": "package com.thealgorithms.greedyalgorithms;\n\nimport java.util.Arrays;\n\n/**\n * The MinimumWaitingTime class provides a method to calculate the minimum\n * waiting time for a list of queries using a greedy algorithm.\n *\n * @author Hardvan\n */\npublic final class MinimumWaitingTime {\n    private MinimumWaitingTime() {\n    }\n\n    /**\n     * Calculates the minimum waiting time for a list of queries.\n     * The function sorts the queries in non-decreasing order and then calculates\n     * the waiting time for each query based on its position in the sorted list.\n     *\n     * @param queries an array of integers representing the query times in picoseconds\n     * @return the minimum waiting time in picoseconds\n     */\n    public static int minimumWaitingTime(int[] queries) {\n        int n = queries.length;\n        if (n <= 1) {\n            return 0;\n        }\n\n        Arrays.sort(queries);\n\n        int totalWaitingTime = 0;\n        for (int i = 0; i < n; i++) {\n            totalWaitingTime += queries[i] * (n - i - 1);\n        }\n        return totalWaitingTime;\n    }\n}\n"
+}

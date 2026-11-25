@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-singleelement-java",
+  "slug": "singleelement",
+  "title": "SingleElement",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/SingleElement.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * Utility class to find the single non-duplicate element from an array\n * where all other elements appear twice.\n * <p>\n * The algorithm runs in O(n) time complexity and O(1) space complexity\n * using bitwise XOR.\n * </p>\n *\n * @author <a href=\"http://github.com/tuhinm2002\">Tuhin M</a>\n */\npublic final class SingleElement {\n\n    /**\n     * Private constructor to prevent instantiation of this utility class.\n     * Throws an UnsupportedOperationException if attempted.\n     */\n    private SingleElement() {\n        throw new UnsupportedOperationException(\"Utility Class\");\n    }\n\n    /**\n     * Finds the single non-duplicate element in an array where every other\n     * element appears exactly twice. Uses bitwise XOR to achieve O(n) time\n     * complexity and O(1) space complexity.\n     *\n     * @param arr the input array containing integers where every element\n     *            except one appears exactly twice\n     * @return the single non-duplicate element\n     */\n    public static int findSingleElement(int[] arr) {\n        int ele = 0;\n        for (int i = 0; i < arr.length; i++) {\n            ele ^= arr[i];\n        }\n        return ele;\n    }\n}\n"
+}

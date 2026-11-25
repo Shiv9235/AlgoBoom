@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-scheduling-randomscheduling-java",
+  "slug": "randomscheduling",
+  "title": "RandomScheduling",
+  "source": "java",
+  "category": "com / thealgorithms / scheduling",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/scheduling/RandomScheduling.java",
+  "content": "package com.thealgorithms.scheduling;\n\nimport java.util.ArrayList;\nimport java.util.Collection;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Random;\n\n/**\n * RandomScheduling is an algorithm that assigns tasks in a random order.\n * It doesn't consider priority, deadlines, or burst times, making it\n * inefficient but useful in scenarios where fairness or unpredictability\n * is required (e.g., load balancing in distributed systems).\n *\n * Use Case: Distributed systems where randomness helps avoid task starvation.\n *\n * @author Hardvan\n */\npublic final class RandomScheduling {\n\n    private final List<String> tasks;\n    private final Random random;\n\n    /**\n     * Constructs a new RandomScheduling instance.\n     *\n     * @param tasks A collection of task names to be scheduled.\n     * @param random A Random instance for generating random numbers.\n     */\n    public RandomScheduling(Collection<String> tasks, Random random) {\n        this.tasks = new ArrayList<>(tasks);\n        this.random = random;\n    }\n\n    /**\n     * Schedules the tasks randomly and returns the randomized order.\n     *\n     * @return A list representing the tasks in their randomized execution order.\n     */\n    public List<String> schedule() {\n        List<String> shuffledTasks = new ArrayList<>(tasks);\n        Collections.shuffle(shuffledTasks, random);\n        return shuffledTasks;\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-catalannumbers-java",
+  "slug": "catalannumbers",
+  "title": "CatalanNumbers",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/CatalanNumbers.java",
+  "content": "package com.thealgorithms.maths;\n\nimport java.math.BigInteger;\n\n/**\n * Calculate Catalan Numbers\n */\npublic final class CatalanNumbers {\n    private static final int MAX_SUPPORTED_INDEX = 35;\n\n    private CatalanNumbers() {\n    }\n\n    /**\n     * Calculate the nth Catalan number using the factorial formula.\n     *\n     * @param n the index of the Catalan number to compute\n     * @return the nth Catalan number\n     * @throws IllegalArgumentException if n is negative or exceeds the maximum supported index for long\n     */\n    public static long catalan(final int n) {\n        if (n < 0) {\n            throw new IllegalArgumentException(\"Index must be non-negative\");\n        }\n        if (n > MAX_SUPPORTED_INDEX) {\n            throw new IllegalArgumentException(\"Index exceeds maximum supported value for long\");\n        }\n        return factorial(2 * n).divide(factorial(n + 1).multiply(factorial(n))).longValueExact();\n    }\n\n    /**\n     * Calculate the factorial of a number using BigInteger to prevent integer overflow.\n     *\n     * @param n the number to compute the factorial for\n     * @return the factorial of n as BigInteger\n     */\n    private static BigInteger factorial(final int n) {\n        BigInteger result = BigInteger.ONE;\n        for (int i = 2; i <= n; i++) {\n            result = result.multiply(BigInteger.valueOf(i));\n        }\n        return result;\n    }\n}\n"
+}

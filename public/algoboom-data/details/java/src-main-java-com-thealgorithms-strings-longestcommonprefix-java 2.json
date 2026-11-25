@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-longestcommonprefix-java",
+  "slug": "longestcommonprefix",
+  "title": "LongestCommonPrefix",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/LongestCommonPrefix.java",
+  "content": "package com.thealgorithms.strings;\n\nimport java.util.Arrays;\n\n/**\n * Utility class for string operations.\n * <p>\n * This class provides a method to find the longest common prefix (LCP)\n * among an array of strings.\n * </p>\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Longest_common_prefix\">Longest Common Prefix - Wikipedia</a>\n */\npublic final class LongestCommonPrefix {\n\n    private LongestCommonPrefix() {\n    }\n\n    /**\n     * Finds the longest common prefix among a list of strings using lexicographical sorting.\n     * The prefix is common to the first and last elements after sorting the array.\n     *\n     * @param strs array of input strings\n     * @return the longest common prefix, or empty string if none exists\n     */\n    public static String longestCommonPrefix(String[] strs) {\n        if (strs == null || strs.length == 0) {\n            return \"\";\n        }\n\n        Arrays.sort(strs);\n        String first = strs[0];\n        String last = strs[strs.length - 1];\n\n        int index = 0;\n        while (index < first.length() && index < last.length() && first.charAt(index) == last.charAt(index)) {\n            index++;\n        }\n\n        return first.substring(0, index);\n    }\n}\n"
+}

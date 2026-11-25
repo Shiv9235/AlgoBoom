@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-pow-java",
+  "slug": "pow",
+  "title": "Pow",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/Pow.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * A utility class for computing exponentiation (power) of integers.\n * <p>\n * This class provides a method to calculate the value of a base raised to a given exponent using a simple iterative approach.\n * For example, given a base {@code a} and an exponent {@code b}, the class computes {@code a}<sup>{@code b}</sup>.\n * </p>\n */\npublic final class Pow {\n    private Pow() {\n    }\n\n    /**\n     * Computes the value of the base raised to the power of the exponent.\n     * <p>\n     * The method calculates {@code a}<sup>{@code b}</sup> by iteratively multiplying the base {@code a} with itself {@code b} times.\n     * If the exponent {@code b} is negative, an {@code IllegalArgumentException} is thrown.\n     * </p>\n     *\n     * @param a the base of the exponentiation. Must be a non-negative integer.\n     * @param b the exponent to which the base {@code a} is raised. Must be a non-negative integer.\n     * @return the result of {@code a}<sup>{@code b}</sup> as a {@code long}.\n     * @throws IllegalArgumentException if {@code b} is negative.\n     * @throws ArithmeticException if the result overflows a {@code long}.\n     */\n    public static long pow(int a, int b) {\n        if (b < 0) {\n            throw new IllegalArgumentException(\"Exponent must be non-negative.\");\n        }\n        long result = 1;\n        for (int i = 1; i <= b; i++) {\n            result = Math.multiplyExact(result, (long) a);\n        }\n        return result;\n    }\n}\n"
+}

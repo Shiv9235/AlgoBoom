@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-others-floydtriangle-java",
+  "slug": "floydtriangle",
+  "title": "FloydTriangle",
+  "source": "java",
+  "category": "com / thealgorithms / others",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/others/FloydTriangle.java",
+  "content": "package com.thealgorithms.others;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\nfinal class FloydTriangle {\n    private FloydTriangle() {\n    }\n\n    /**\n     * Generates a Floyd Triangle with the specified number of rows.\n     *\n     * @param rows The number of rows in the triangle.\n     * @return A List representing the Floyd Triangle.\n     */\n    public static List<List<Integer>> generateFloydTriangle(int rows) {\n        List<List<Integer>> triangle = new ArrayList<>();\n        int number = 1;\n\n        for (int i = 0; i < rows; i++) {\n            List<Integer> row = new ArrayList<>();\n            for (int j = 0; j <= i; j++) {\n                row.add(number++);\n            }\n            triangle.add(row);\n        }\n\n        return triangle;\n    }\n}\n"
+}

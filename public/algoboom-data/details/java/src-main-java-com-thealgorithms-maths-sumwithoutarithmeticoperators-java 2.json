@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-sumwithoutarithmeticoperators-java",
+  "slug": "sumwithoutarithmeticoperators",
+  "title": "SumWithoutArithmeticOperators",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SumWithoutArithmeticOperators.java",
+  "content": "package com.thealgorithms.maths;\n\npublic class SumWithoutArithmeticOperators {\n\n    /**\n     * Calculate the sum of two numbers a and b without using any arithmetic operators (+, -, *, /).\n     * All the integers associated are unsigned 32-bit integers\n     *https://stackoverflow.com/questions/365522/what-is-the-best-way-to-add-two-numbers-without-using-the-operator\n     *@param a - It is the first number\n     *@param b - It is the second number\n     *@return returns an integer which is the sum of the first and second number\n     */\n\n    public int getSum(int a, int b) {\n        if (b == 0) {\n            return a;\n        }\n        int sum = a ^ b;\n        int carry = (a & b) << 1;\n        return getSum(sum, carry);\n    }\n}\n"
+}

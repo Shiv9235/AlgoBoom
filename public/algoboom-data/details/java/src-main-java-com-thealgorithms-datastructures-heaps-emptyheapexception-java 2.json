@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-heaps-emptyheapexception-java",
+  "slug": "emptyheapexception",
+  "title": "EmptyHeapException",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / heaps",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/heaps/EmptyHeapException.java",
+  "content": "package com.thealgorithms.datastructures.heaps;\n\n/**\n * @author Nicolas Renard Exception to be thrown if the getElement method is\n * used on an empty heap.\n */\n@SuppressWarnings(\"serial\")\npublic class EmptyHeapException extends Exception {\n\n    public EmptyHeapException(String message) {\n        super(message);\n    }\n\n    public EmptyHeapException(String message, Throwable cause) {\n        super(message, cause);\n    }\n}\n"
+}

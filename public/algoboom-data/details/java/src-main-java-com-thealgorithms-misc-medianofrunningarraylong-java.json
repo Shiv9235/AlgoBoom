@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-medianofrunningarraylong-java",
+  "slug": "medianofrunningarraylong",
+  "title": "MedianOfRunningArrayLong",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MedianOfRunningArrayLong.java",
+  "content": "package com.thealgorithms.misc;\n\npublic final class MedianOfRunningArrayLong extends MedianOfRunningArray<Long> {\n    @Override\n    public Long calculateAverage(final Long a, final Long b) {\n        return (a + b) / 2L;\n    }\n}\n"
+}

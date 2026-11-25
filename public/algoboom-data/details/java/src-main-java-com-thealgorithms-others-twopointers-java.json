@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-others-twopointers-java",
+  "slug": "twopointers",
+  "title": "TwoPointers",
+  "source": "java",
+  "category": "com / thealgorithms / others",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/others/TwoPointers.java",
+  "content": "package com.thealgorithms.others;\n\n/**\n * The two-pointer technique is a useful tool to utilize when searching for\n * pairs in a sorted array.\n *\n * <p>\n * Link: https://www.geeksforgeeks.org/two-pointers-technique/\n */\npublic final class TwoPointers {\n\n    private TwoPointers() {\n    }\n\n    /**\n     * Checks whether there exists a pair of elements in a sorted array whose sum equals the specified key.\n     *\n     * @param arr a sorted array of integers in ascending order (must not be null)\n     * @param key the target sum to find\n     * @return {@code true} if there exists at least one pair whose sum equals {@code key}, {@code false} otherwise\n     * @throws IllegalArgumentException if {@code arr} is {@code null}\n     */\n    public static boolean isPairedSum(int[] arr, int key) {\n        if (arr == null) {\n            throw new IllegalArgumentException(\"Input array must not be null.\");\n        }\n\n        int left = 0;\n        int right = arr.length - 1;\n\n        while (left < right) {\n            int sum = arr[left] + arr[right];\n\n            if (sum == key) {\n                return true;\n            }\n            if (sum < key) {\n                left++;\n            } else {\n                right--;\n            }\n        }\n        return false;\n    }\n}\n"
+}

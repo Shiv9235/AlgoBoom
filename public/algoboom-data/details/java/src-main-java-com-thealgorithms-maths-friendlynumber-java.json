@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-friendlynumber-java",
+  "slug": "friendlynumber",
+  "title": "FriendlyNumber",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/FriendlyNumber.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Two numbers are Friendly if they share the same abundancy index,\n * which is the ratio of the sum of divisors to the number itself.\n * Example: 6 and 28 are friendly because sigma(6)/6 = 2 and sigma(28)/28 = 2\n *\n * @see <a href=\"https://en.wikipedia.org/wiki/Friendly_number\">\n *     Wikipedia: Friendly Number</a>\n *\n * @author Vraj Prajapati @Rosander0\n */\npublic final class FriendlyNumber {\n\n    private FriendlyNumber() {\n        // Utility class\n    }\n\n    private static int sumOfDivisors(final int number) {\n        int sum = 0;\n        final int root = (int) Math.sqrt(number);\n        for (int i = 1; i <= root; i++) {\n            if (number % i == 0) {\n                sum += i;\n                final int other = number / i;\n                if (other != i) {\n                    sum += other;\n                }\n            }\n        }\n        return sum;\n    }\n\n    /**\n     * Checks whether two numbers are Friendly Numbers.\n     *\n     * @param a First number (must be positive)\n     * @param b Second number (must be positive)\n     * @return true if a and b are friendly numbers, false otherwise\n     */\n    public static boolean areFriendly(final int a, final int b) {\n        if (a <= 0 || b <= 0) {\n            return false;\n        }\n        final long sigmaA = sumOfDivisors(a);\n        final long sigmaB = sumOfDivisors(b);\n        return sigmaA * b == sigmaB * a;\n    }\n}\n"
+}

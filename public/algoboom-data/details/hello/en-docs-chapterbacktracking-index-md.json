@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterbacktracking-index-md",
+  "slug": "backtracking",
+  "title": "Backtracking",
+  "source": "hello",
+  "category": "backtracking",
+  "sourcePath": "Algorithms/en/docs/chapter_backtracking/index.md",
+  "content": "# Backtracking\n\n![Backtracking](../assets/covers/chapter_backtracking.jpg)\n\n!!! abstract\n\n    Like explorers in a maze, we may encounter obstacles as we move forward.\n    \n    Backtracking lets us start again, try new paths, and eventually find our way out into the light.\n"
+}

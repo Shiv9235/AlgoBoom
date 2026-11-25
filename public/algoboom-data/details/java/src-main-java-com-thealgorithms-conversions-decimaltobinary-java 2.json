@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-decimaltobinary-java",
+  "slug": "decimaltobinary",
+  "title": "DecimalToBinary",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/DecimalToBinary.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * This class provides methods to convert a decimal number to a binary number.\n */\nfinal class DecimalToBinary {\n    private static final int BINARY_BASE = 2;\n    private static final int DECIMAL_MULTIPLIER = 10;\n\n    private DecimalToBinary() {\n    }\n\n    /**\n     * Converts a decimal number to a binary number using a conventional algorithm.\n     * @param decimalNumber the decimal number to convert\n     * @return the binary representation of the decimal number\n     */\n    public static int convertUsingConventionalAlgorithm(int decimalNumber) {\n        int binaryNumber = 0;\n        int position = 1;\n\n        while (decimalNumber > 0) {\n            int remainder = decimalNumber % BINARY_BASE;\n            binaryNumber += remainder * position;\n            position *= DECIMAL_MULTIPLIER;\n            decimalNumber /= BINARY_BASE;\n        }\n\n        return binaryNumber;\n    }\n\n    /**\n     * Converts a decimal number to a binary number using a bitwise algorithm.\n     * @param decimalNumber the decimal number to convert\n     * @return the binary representation of the decimal number\n     */\n    public static int convertUsingBitwiseAlgorithm(int decimalNumber) {\n        int binaryNumber = 0;\n        int position = 1;\n\n        while (decimalNumber > 0) {\n            int leastSignificantBit = decimalNumber & 1;\n            binaryNumber += leastSignificantBit * position;\n            position *= DECIMAL_MULTIPLIER;\n            decimalNumber >>= 1;\n        }\n        return binaryNumber;\n    }\n}\n"
+}

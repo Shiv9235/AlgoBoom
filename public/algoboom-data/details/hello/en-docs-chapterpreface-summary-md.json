@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterpreface-summary-md",
+  "slug": "summary",
+  "title": "Summary",
+  "source": "hello",
+  "category": "preface",
+  "sourcePath": "Algorithms/en/docs/chapter_preface/summary.md",
+  "content": "# Summary\n\n### Key takeaways\n\n- This book is primarily for beginners in algorithms. If you already have some background, it can help you review your knowledge systematically, and its source code can serve as a toolkit for solving practice problems.\n- The book has three main parts—complexity analysis, data structures, and algorithms—covering most topics in the field.\n- For beginners, reading an introductory book early on is essential and can help avoid many detours.\n- The animated illustrations usually explain key or challenging concepts. Pay particular attention to them as you read.\n- Practice is the best way to learn programming. We strongly recommend running the source code and writing it out yourself.\n- Every section in the web edition has a comments area. You are welcome to share your questions and insights at any time.\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-slidingwindow-maxsumksizesubarray-java",
+  "slug": "maxsumksizesubarray",
+  "title": "MaxSumKSizeSubarray",
+  "source": "java",
+  "category": "com / thealgorithms / slidingwindow",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/slidingwindow/MaxSumKSizeSubarray.java",
+  "content": "package com.thealgorithms.slidingwindow;\n\n/**\n * The Sliding Window algorithm is used to find the maximum sum of a subarray\n * of a fixed size k within a given array.\n *\n * <p>\n * Worst-case performance O(n)\n * Best-case performance O(n)\n * Average performance O(n)\n * Worst-case space complexity O(1)\n *\n * @author Your Name (https://github.com/Chiefpatwal)\n */\npublic final class MaxSumKSizeSubarray {\n\n    // Prevent instantiation\n    private MaxSumKSizeSubarray() {\n    }\n\n    /**\n     * This method finds the maximum sum of a subarray of a given size k.\n     *\n     * @param arr is the input array where the maximum sum needs to be found\n     * @param k   is the size of the subarray\n     * @return the maximum sum of the subarray of size k\n     */\n    public static int maxSumKSizeSubarray(int[] arr, int k) {\n        if (arr.length < k) {\n            return -1; // Edge case: not enough elements\n        }\n\n        int maxSum;\n        int windowSum = 0;\n\n        // Calculate the sum of the first window\n        for (int i = 0; i < k; i++) {\n            windowSum += arr[i];\n        }\n        maxSum = windowSum;\n\n        // Slide the window across the array\n        for (int i = k; i < arr.length; i++) {\n            windowSum += arr[i] - arr[i - k];\n            maxSum = Math.max(maxSum, windowSum);\n        }\n\n        return maxSum;\n    }\n}\n"
+}

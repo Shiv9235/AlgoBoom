@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-greedyalgorithms-digitseparation-java",
+  "slug": "digitseparation",
+  "title": "DigitSeparation",
+  "source": "java",
+  "category": "com / thealgorithms / greedyalgorithms",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/greedyalgorithms/DigitSeparation.java",
+  "content": "package com.thealgorithms.greedyalgorithms;\n\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\n\n/**\n * This class provides methods to separate the digits of a large positive number into a list.\n */\npublic class DigitSeparation {\n    public DigitSeparation() {\n    }\n    /**\n     * Separates the digits of a large positive number into a list in reverse order.\n     * @param largeNumber The large number to separate digits from.\n     * @return A list of digits in reverse order.\n     */\n    public List<Long> digitSeparationReverseOrder(long largeNumber) {\n        List<Long> result = new ArrayList<>();\n        if (largeNumber != 0) {\n            while (largeNumber != 0) {\n                result.add(Math.abs(largeNumber % 10));\n                largeNumber = largeNumber / 10;\n            }\n        } else {\n            result.add(0L);\n        }\n        return result;\n    }\n    /**\n     * Separates the digits of a large positive number into a list in forward order.\n     * @param largeNumber The large number to separate digits from.\n     * @return A list of digits in forward order.\n     */\n    public List<Long> digitSeparationForwardOrder(long largeNumber) {\n        List<Long> result = this.digitSeparationReverseOrder(largeNumber);\n        Collections.reverse(result);\n        return result;\n    }\n}\n"
+}

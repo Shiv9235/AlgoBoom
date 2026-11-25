@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-iseven-java",
+  "slug": "iseven",
+  "title": "IsEven",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/IsEven.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * Checks whether a number is even\n * @author Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n */\n\npublic final class IsEven {\n    private IsEven() {\n    }\n    public static boolean isEven(int number) {\n        return (number & 1) == 0;\n    }\n}\n"
+}

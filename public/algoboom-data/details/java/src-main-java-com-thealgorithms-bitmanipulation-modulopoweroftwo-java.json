@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-bitmanipulation-modulopoweroftwo-java",
+  "slug": "modulopoweroftwo",
+  "title": "ModuloPowerOfTwo",
+  "source": "java",
+  "category": "com / thealgorithms / bitmanipulation",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/bitmanipulation/ModuloPowerOfTwo.java",
+  "content": "package com.thealgorithms.bitmanipulation;\n\n/**\n * This class provides a method to compute the remainder\n * of a number when divided by a power of two (2^n)\n * without using division or modulo operations.\n *\n * @author Hardvan\n */\npublic final class ModuloPowerOfTwo {\n    private ModuloPowerOfTwo() {\n    }\n\n    /**\n     * Computes the remainder of a given integer when divided by 2^n.\n     *\n     * @param x the input number\n     * @param n the exponent (power of two)\n     * @return the remainder of x divided by 2^n\n     */\n    public static int moduloPowerOfTwo(int x, int n) {\n        if (n <= 0) {\n            throw new IllegalArgumentException(\"The exponent must be positive\");\n        }\n\n        return x & ((1 << n) - 1);\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-reducers-directory-js",
+  "slug": "directory",
+  "title": "Directory",
+  "source": "visualizer",
+  "category": "reducers",
+  "sourcePath": "AlgoVisualizer/src/reducers/directory.js",
+  "content": "import { combineActions, createAction, handleActions } from 'redux-actions';\n\nconst prefix = 'DIRECTORY';\n\nconst setCategories = createAction(`${prefix}/SET_CATEGORIES`, categories => ({ categories }));\nconst setScratchPapers = createAction(`${prefix}/SET_SCRATCH_PAPERS`, scratchPapers => ({ scratchPapers }));\n\nexport const actions = {\n  setCategories,\n  setScratchPapers,\n};\n\nconst defaultState = {\n  categories: [],\n  scratchPapers: [],\n};\n\nexport default handleActions({\n  [combineActions(\n    setCategories,\n    setScratchPapers,\n  )]: (state, { payload }) => ({\n    ...state,\n    ...payload,\n  }),\n}, defaultState);\n"
+}

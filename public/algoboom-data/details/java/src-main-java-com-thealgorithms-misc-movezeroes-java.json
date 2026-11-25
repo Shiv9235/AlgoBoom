@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-movezeroes-java",
+  "slug": "movezeroes",
+  "title": "MoveZeroes",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MoveZeroes.java",
+  "content": "package com.thealgorithms.misc;\n\n/**\n * Moves all zeroes in an array to the end while maintaining the relative\n * order of non-zero elements. The operation is performed in-place.\n *\n * <p>Example: [0, 1, 0, 3, 12] -> [1, 3, 12, 0, 0]\n *\n * <p>Time complexity: O(n), Space complexity: O(1)\n *\n * @see <a href=\"https://leetcode.com/problems/move-zeroes/\">LeetCode #283</a>\n */\npublic final class MoveZeroes {\n    private MoveZeroes() {\n    }\n\n    public static void moveZeroes(int[] nums) {\n        int insertPos = 0;\n        for (int num : nums) {\n            if (num != 0) {\n                nums[insertPos++] = num;\n            }\n        }\n        while (insertPos < nums.length) {\n            nums[insertPos++] = 0;\n        }\n    }\n}\n"
+}

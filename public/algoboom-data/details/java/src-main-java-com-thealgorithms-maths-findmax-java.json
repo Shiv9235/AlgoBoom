@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-findmax-java",
+  "slug": "findmax",
+  "title": "FindMax",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/FindMax.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class FindMax {\n    private FindMax() {\n    }\n\n    /**\n     * @brief finds the maximum value stored in the input array\n     *\n     * @param array the input array\n     * @exception IllegalArgumentException input array is empty\n     * @return the maximum value stored in the input array\n     */\n    public static int findMax(final int[] array) {\n        int n = array.length;\n        if (n == 0) {\n            throw new IllegalArgumentException(\"Array must be non-empty.\");\n        }\n        int max = array[0];\n        for (int i = 1; i < n; i++) {\n            if (array[i] > max) {\n                max = array[i];\n            }\n        }\n        return max;\n    }\n}\n"
+}

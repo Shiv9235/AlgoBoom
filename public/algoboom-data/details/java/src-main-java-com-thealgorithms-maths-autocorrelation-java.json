@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-autocorrelation-java",
+  "slug": "autocorrelation",
+  "title": "AutoCorrelation",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/AutoCorrelation.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * Class for linear auto-correlation of a discrete signal\n *\n * @author Athina-Frederiki Swinkels\n * @version 2.0\n */\n\npublic final class AutoCorrelation {\n    private AutoCorrelation() {\n    }\n\n    /**\n     * Discrete linear auto-correlation function.\n     * Input and output signals have starting index 0.\n     *\n     * @param x The discrete signal\n     * @return The result of the auto-correlation of signals x. The result is also a signal.\n     */\n    public static double[] autoCorrelation(double[] x) {\n\n        /*\n        To find the auto-correlation of a discrete signal x, we perform cross-correlation between x signal and itself.\n        Here's an example:\n        x=[1,2,1,1]\n        y=[1,2,1,1]\n\n        i=0:      [1,2,1,1]\n            [1,2,1,1]               result[0]=1*1=1\n\n        i=1:       [1,2,1,1]\n               [1,2,1,1]            result[1]=1*1+2*1=3\n\n        i=2:       [1,2,1,1]\n                 [1,2,1,1]          result[2]=1*2+2*1+1*1=5\n\n        i=3:       [1,2,1,1]\n                   [1,2,1,1]        result[3]=1*1+2*2+1*1+1*1=7\n\n        i=4:       [1,2,1,1]\n                     [1,2,1,1]      result[4]=2*1+1*2+1*1=5\n\n        i=5:       [1,2,1,1]\n                       [1,2,1,1]    result[5]=1*1+1*2=3\n\n        i=1:       [1,2,1,1]\n                         [1,2,1,1]  result[6]=1*1=1\n\n        result=[1,3,5,7,5,3,1]\n\n\n         */\n\n        return CrossCorrelation.crossCorrelation(x, x);\n    }\n}\n"
+}

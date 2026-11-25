@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-selectionsort-java",
+  "slug": "selectionsort",
+  "title": "SelectionSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/SelectionSort.java",
+  "content": "package com.thealgorithms.sorts;\n\n/**\n * Implementation of the Selection Sort algorithm.\n *\n * @see SortAlgorithm\n */\npublic class SelectionSort implements SortAlgorithm {\n    /**\n     * Generic Selection Sort algorithm.\n     *\n     * Time Complexity:\n     * - Best case: O(n^2)\n     * - Average case: O(n^2)\n     * - Worst case: O(n^2)\n     *\n     * Space Complexity: O(1) – in-place sorting.\n     *\n     * @param array the array to be sorted\n     * @param <T> the type of elements in the array\n     * @return the sorted array\n     */\n    @Override\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        for (int i = 0; i < array.length - 1; i++) {\n            final int minIndex = findIndexOfMin(array, i);\n            SortUtils.swap(array, i, minIndex);\n        }\n        return array;\n    }\n\n    /**\n     * Finds the index of the minimum element in the array starting from a given index.\n     *\n     * @param array the array to search\n     * @param startIndex the index to start searching from\n     * @param <T> the type of elements in the array\n     * @return the index of the minimum element\n     */\n    private static <T extends Comparable<T>> int findIndexOfMin(T[] array, final int startIndex) {\n        int minIndex = startIndex;\n        for (int i = startIndex + 1; i < array.length; i++) {\n            if (SortUtils.less(array[i], array[minIndex])) {\n                minIndex = i;\n            }\n        }\n        return minIndex;\n    }\n}\n"
+}

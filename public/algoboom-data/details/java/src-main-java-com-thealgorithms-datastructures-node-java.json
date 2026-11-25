@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-node-java",
+  "slug": "node",
+  "title": "Node",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/Node.java",
+  "content": "package com.thealgorithms.datastructures;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class Node<T> {\n\n    private final T value;\n    private final List<Node<T>> children;\n\n    public Node(final T value) {\n        this.value = value;\n        this.children = new ArrayList<>();\n    }\n\n    public Node(final T value, final List<Node<T>> children) {\n        this.value = value;\n        this.children = children;\n    }\n\n    public T getValue() {\n        return value;\n    }\n\n    public void addChild(Node<T> child) {\n        children.add(child);\n    }\n\n    public List<Node<T>> getChildren() {\n        return children;\n    }\n}\n"
+}

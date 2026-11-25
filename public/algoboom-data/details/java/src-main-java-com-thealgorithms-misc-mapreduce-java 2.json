@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-mapreduce-java",
+  "slug": "mapreduce",
+  "title": "MapReduce",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MapReduce.java",
+  "content": "package com.thealgorithms.misc;\n\nimport java.util.Arrays;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.function.Function;\nimport java.util.stream.Collectors;\n\n/**\n * MapReduce is a programming model for processing and generating large data sets\n * using a parallel, distributed algorithm on a cluster.\n * It consists of two main phases:\n * - Map: the input data is split into smaller chunks and processed in parallel.\n * - Reduce: the results from the Map phase are aggregated to produce the final output.\n *\n * See also: https://en.wikipedia.org/wiki/MapReduce\n */\npublic final class MapReduce {\n\n    private MapReduce() {\n    }\n\n    /**\n     * Counts the frequency of each word in a given sentence using a simple MapReduce-style approach.\n     *\n     * @param sentence the input sentence\n     * @return a string representing word frequencies in the format \"word: count,word: count,...\"\n     */\n    public static String countWordFrequencies(String sentence) {\n        // Map phase: split the sentence into words\n        List<String> words = Arrays.asList(sentence.trim().split(\"\\\\s+\"));\n\n        // Group and count occurrences of each word, maintain insertion order\n        Map<String, Long> wordCounts = words.stream().collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));\n\n        // Reduce phase: format the result\n        return wordCounts.entrySet().stream().map(entry -> entry.getKey() + \": \" + entry.getValue()).collect(Collectors.joining(\",\"));\n    }\n}\n"
+}

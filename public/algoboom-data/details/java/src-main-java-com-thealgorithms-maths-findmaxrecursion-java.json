@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-findmaxrecursion-java",
+  "slug": "findmaxrecursion",
+  "title": "FindMaxRecursion",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/FindMaxRecursion.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class FindMaxRecursion {\n\n    private FindMaxRecursion() {\n    }\n    /**\n     * Get max of an array using divide and conquer algorithm\n     *\n     * @param array contains elements\n     * @param low the index of the first element\n     * @param high the index of the last element\n     * @return max of {@code array}\n     */\n    public static int max(final int[] array, final int low, final int high) {\n        if (array.length == 0) {\n            throw new IllegalArgumentException(\"Array must be non-empty.\");\n        }\n        if (low == high) {\n            return array[low]; // or array[high]\n        }\n\n        int mid = (low + high) >>> 1;\n\n        int leftMax = max(array, low, mid); // get max in [low, mid]\n        int rightMax = max(array, mid + 1, high); // get max in [mid+1, high]\n\n        return Math.max(leftMax, rightMax);\n    }\n\n    /**\n     * Get max of an array using recursion algorithm\n     *\n     * @param array contains elements\n     * @return max value of {@code array}\n     */\n    public static int max(final int[] array) {\n        return max(array, 0, array.length - 1);\n    }\n}\n"
+}

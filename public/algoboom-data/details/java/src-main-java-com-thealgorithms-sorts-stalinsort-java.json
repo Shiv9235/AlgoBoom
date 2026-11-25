@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-sorts-stalinsort-java",
+  "slug": "stalinsort",
+  "title": "StalinSort",
+  "source": "java",
+  "category": "com / thealgorithms / sorts",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/sorts/StalinSort.java",
+  "content": "package com.thealgorithms.sorts;\n\npublic class StalinSort implements SortAlgorithm {\n    @SuppressWarnings(\"unchecked\")\n    public <T extends Comparable<T>> T[] sort(T[] array) {\n        if (array.length == 0) {\n            return array;\n        }\n        int currentIndex = 0;\n        for (int i = 1; i < array.length; i++) {\n            if (SortUtils.greaterOrEqual(array[i], array[currentIndex])) {\n                currentIndex++;\n                array[currentIndex] = array[i];\n            }\n        }\n        // Create a result array with sorted elements\n        T[] result = (T[]) java.lang.reflect.Array.newInstance(array.getClass().getComponentType(), currentIndex + 1);\n        System.arraycopy(array, 0, result, 0, currentIndex + 1);\n        return result;\n    }\n}\n"
+}

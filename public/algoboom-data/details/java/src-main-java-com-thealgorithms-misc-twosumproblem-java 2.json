@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-twosumproblem-java",
+  "slug": "twosumproblem",
+  "title": "TwoSumProblem",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/TwoSumProblem.java",
+  "content": "package com.thealgorithms.misc;\n\nimport java.util.HashMap;\nimport java.util.Optional;\nimport org.apache.commons.lang3.tuple.Pair;\n\npublic final class TwoSumProblem {\n    private TwoSumProblem() {\n    }\n\n    /**\n     * The function \"twoSum\" takes an array of integers and a target integer as input, and returns an\n     * array of two indices where the corresponding elements in the input array add up to the target.\n     * @param values An array of integers.\n     * @param target The target is the sum that we are trying to find using two numbers from the given array.\n     * @return A pair or indexes such that sum of values at these indexes equals to the target\n     * @author Bama Charan Chhandogi (https://github.com/BamaCharanChhandogi)\n     */\n\n    public static Optional<Pair<Integer, Integer>> twoSum(final int[] values, final int target) {\n        HashMap<Integer, Integer> valueToIndex = new HashMap<>();\n        for (int i = 0; i < values.length; i++) {\n            final var remainder = target - values[i];\n            if (valueToIndex.containsKey(remainder)) {\n                return Optional.of(Pair.of(valueToIndex.get(remainder), i));\n            }\n            if (!valueToIndex.containsKey(values[i])) {\n                valueToIndex.put(values[i], i);\n            }\n        }\n        return Optional.empty();\n    }\n}\n"
+}

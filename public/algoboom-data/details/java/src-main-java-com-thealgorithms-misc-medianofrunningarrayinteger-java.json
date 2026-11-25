@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-misc-medianofrunningarrayinteger-java",
+  "slug": "medianofrunningarrayinteger",
+  "title": "MedianOfRunningArrayInteger",
+  "source": "java",
+  "category": "com / thealgorithms / misc",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/misc/MedianOfRunningArrayInteger.java",
+  "content": "package com.thealgorithms.misc;\n\npublic final class MedianOfRunningArrayInteger extends MedianOfRunningArray<Integer> {\n    @Override\n    public Integer calculateAverage(final Integer a, final Integer b) {\n        return (a + b) / 2;\n    }\n}\n"
+}

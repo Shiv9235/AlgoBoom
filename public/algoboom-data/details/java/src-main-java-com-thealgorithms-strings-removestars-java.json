@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-removestars-java",
+  "slug": "removestars",
+  "title": "RemoveStars",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/RemoveStars.java",
+  "content": "package com.thealgorithms.strings;\n\n/**\n * Removes characters affected by '*' in a string.\n * Each '*' deletes the closest non-star character to its left.\n *\n * Example:\n * Input: leet**cod*e\n * Output: lecoe\n */\n\npublic final class RemoveStars {\n\n    private RemoveStars() {\n    }\n\n    public static String removeStars(String s) {\n        StringBuilder result = new StringBuilder();\n\n        for (char c : s.toCharArray()) {\n            if (c == '*') {\n                if (result.length() > 0) {\n                    result.deleteCharAt(result.length() - 1);\n                }\n            } else {\n                result.append(c);\n            }\n        }\n        return result.toString();\n    }\n}\n"
+}

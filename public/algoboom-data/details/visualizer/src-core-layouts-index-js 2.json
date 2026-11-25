@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-core-layouts-index-js",
+  "slug": "index",
+  "title": "Index",
+  "source": "visualizer",
+  "category": "core / layouts",
+  "sourcePath": "AlgoVisualizer/src/core/layouts/index.js",
+  "content": "export { default as Layout } from './Layout';\nexport { default as HorizontalLayout } from './HorizontalLayout';\nexport { default as VerticalLayout } from './VerticalLayout';\n"
+}

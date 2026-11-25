@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-searches-boyermoore-java",
+  "slug": "boyermoore",
+  "title": "BoyerMoore",
+  "source": "java",
+  "category": "com / thealgorithms / searches",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/searches/BoyerMoore.java",
+  "content": "package com.thealgorithms.searches;\n\nimport java.util.HashMap;\nimport java.util.Map;\n\n/**\n * Boyer-Moore string search algorithm.\n * Efficient algorithm for substring search.\n * https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm\n */\npublic class BoyerMoore {\n\n    private final Map<Character, Integer> right; // Bad character rule table: last index of each pattern character\n    private final String pattern;\n\n    public BoyerMoore(String pat) {\n        this.pattern = pat;\n        // A map instead of a 256-entry array, so characters outside extended ASCII work too\n        this.right = new HashMap<>();\n\n        for (int j = 0; j < pat.length(); j++) {\n            right.put(pat.charAt(j), j);\n        }\n    }\n\n    public int search(String text) {\n        if (pattern.isEmpty()) {\n            return 0;\n        }\n\n        int m = pattern.length();\n        int n = text.length();\n\n        int skip;\n        for (int i = 0; i <= n - m; i += skip) {\n            skip = 0;\n            for (int j = m - 1; j >= 0; j--) {\n                char txtChar = text.charAt(i + j);\n                char patChar = pattern.charAt(j);\n                if (patChar != txtChar) {\n                    skip = Math.max(1, j - right.getOrDefault(txtChar, -1));\n                    break;\n                }\n            }\n            if (skip == 0) {\n                return i; // Match found\n            }\n        }\n\n        return -1; // No match\n    }\n\n    public static int staticSearch(String text, String pattern) {\n        return new BoyerMoore(pattern).search(text);\n    }\n}\n"
+}

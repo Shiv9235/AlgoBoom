@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chaptercomputationalcomplexity-index-md",
+  "slug": "complexity-analysis",
+  "title": "Complexity analysis",
+  "source": "hello",
+  "category": "computational_complexity",
+  "sourcePath": "Algorithms/en/docs/chapter_computational_complexity/index.md",
+  "content": "# Complexity analysis\n\n![Complexity analysis](../assets/covers/chapter_complexity_analysis.jpg)\n\n!!! abstract\n\n    Complexity analysis is our guide to time and space in the vast universe of algorithms.\n    \n    It leads us to explore these two dimensions in depth as we search for more elegant solutions.\n"
+}

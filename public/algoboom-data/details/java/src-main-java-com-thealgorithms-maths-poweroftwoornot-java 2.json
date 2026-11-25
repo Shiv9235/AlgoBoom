@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-poweroftwoornot-java",
+  "slug": "poweroftwoornot",
+  "title": "PowerOfTwoOrNot",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/PowerOfTwoOrNot.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * A utility to check if a given number is power of two or not. For example 8,16\n * etc.\n */\npublic final class PowerOfTwoOrNot {\n    private PowerOfTwoOrNot() {\n    }\n\n    /**\n     * Checks whether given number is power of two or not.\n     *\n     * @param number the number to check\n     * @return {@code true} if given number is power of two, otherwise\n     * {@code false}\n     */\n    public static boolean checkIfPowerOfTwoOrNot(final int number) {\n        return number != 0 && ((number & (number - 1)) == 0);\n    }\n}\n"
+}

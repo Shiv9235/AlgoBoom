@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-standarddeviation-java",
+  "slug": "standarddeviation",
+  "title": "StandardDeviation",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/StandardDeviation.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class StandardDeviation {\n    private StandardDeviation() {\n    }\n\n    public static double stdDev(double[] data) {\n        double variance = 0;\n        double avg = 0;\n        for (int i = 0; i < data.length; i++) {\n            avg += data[i];\n        }\n        avg /= data.length;\n        for (int j = 0; j < data.length; j++) {\n            variance += Math.pow((data[j] - avg), 2);\n        }\n        variance /= data.length;\n        return Math.sqrt(variance);\n    }\n}\n"
+}

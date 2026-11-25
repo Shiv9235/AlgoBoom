@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-sumofarithmeticseries-java",
+  "slug": "sumofarithmeticseries",
+  "title": "SumOfArithmeticSeries",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/SumOfArithmeticSeries.java",
+  "content": "package com.thealgorithms.maths;\n\n/**\n * In mathematics, an arithmetic progression (AP) or arithmetic sequence is a\n * sequence of numbers such that the difference between the consecutive terms is\n * constant. Difference here means the second minus the first. For instance, the\n * sequence 5, 7, 9, 11, 13, 15, . . . is an arithmetic progression with common\n * difference of 2.\n *\n * <p>\n * Wikipedia: https://en.wikipedia.org/wiki/Arithmetic_progression\n */\npublic final class SumOfArithmeticSeries {\n    private SumOfArithmeticSeries() {\n    }\n\n    /**\n     * Calculate sum of arithmetic series\n     *\n     * @param firstTerm the initial term of an arithmetic series\n     * @param commonDiff the common difference of an arithmetic series\n     * @param numOfTerms the total terms of an arithmetic series\n     * @return sum of given arithmetic series\n     */\n    public static double sumOfSeries(final double firstTerm, final double commonDiff, final int numOfTerms) {\n        if (numOfTerms < 0) {\n            throw new IllegalArgumentException(\"numOfTerms nonnegative.\");\n        }\n        return (numOfTerms / 2.0 * (2 * firstTerm + (numOfTerms - 1) * commonDiff));\n    }\n}\n"
+}

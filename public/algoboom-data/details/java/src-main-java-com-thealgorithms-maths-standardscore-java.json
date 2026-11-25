@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-standardscore-java",
+  "slug": "standardscore",
+  "title": "StandardScore",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/StandardScore.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class StandardScore {\n    private StandardScore() {\n    }\n\n    public static double zScore(double num, double mean, double stdDev) {\n        return (num - mean) / stdDev;\n    }\n}\n"
+}

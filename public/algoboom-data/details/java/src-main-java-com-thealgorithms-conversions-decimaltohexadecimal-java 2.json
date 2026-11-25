@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-conversions-decimaltohexadecimal-java",
+  "slug": "decimaltohexadecimal",
+  "title": "DecimalToHexadecimal",
+  "source": "java",
+  "category": "com / thealgorithms / conversions",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/conversions/DecimalToHexadecimal.java",
+  "content": "package com.thealgorithms.conversions;\n\n/**\n * This class provides a method to convert a decimal number to a hexadecimal string.\n */\nfinal class DecimalToHexadecimal {\n    private static final int SIZE_OF_INT_IN_HALF_BYTES = 8;\n    private static final int NUMBER_OF_BITS_IN_HALF_BYTE = 4;\n    private static final int HALF_BYTE_MASK = 0x0F;\n    private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};\n\n    private DecimalToHexadecimal() {\n    }\n\n    /**\n     * Converts a decimal number to a hexadecimal string.\n     * @param decimal the decimal number to convert\n     * @return the hexadecimal representation of the decimal number\n     */\n    public static String decToHex(int decimal) {\n        StringBuilder hexBuilder = new StringBuilder(SIZE_OF_INT_IN_HALF_BYTES);\n        for (int i = SIZE_OF_INT_IN_HALF_BYTES - 1; i >= 0; --i) {\n            int currentHalfByte = decimal & HALF_BYTE_MASK;\n            hexBuilder.insert(0, HEX_DIGITS[currentHalfByte]);\n            decimal >>= NUMBER_OF_BITS_IN_HALF_BYTE;\n        }\n        return removeLeadingZeros(hexBuilder.toString().toLowerCase());\n    }\n\n    private static String removeLeadingZeros(String str) {\n        if (str == null || str.isEmpty()) {\n            return str;\n        }\n\n        int i = 0;\n        while (i < str.length() && str.charAt(i) == '0') {\n            i++;\n        }\n\n        return i == str.length() ? \"0\" : str.substring(i);\n    }\n}\n"
+}

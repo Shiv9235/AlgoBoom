@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-geometry-point-java",
+  "slug": "point",
+  "title": "Point",
+  "source": "java",
+  "category": "com / thealgorithms / geometry",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/geometry/Point.java",
+  "content": "package com.thealgorithms.geometry;\n\nimport java.util.Comparator;\n\npublic record Point(int x, int y) implements Comparable<Point> {\n\n    @Override\n    public int compareTo(Point other) {\n        int cmpY = Integer.compare(this.y, other.y);\n        return cmpY != 0 ? cmpY : Integer.compare(this.x, other.x);\n    }\n\n    @Override\n    public String toString() {\n        return String.format(\"(%d, %d)\", x, y);\n    }\n\n    public Comparator<Point> polarOrder() {\n        return new PolarOrder();\n    }\n\n    public static int orientation(Point a, Point b, Point c) {\n        return Integer.compare((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x), 0);\n    }\n\n    private final class PolarOrder implements Comparator<Point> {\n        @Override\n        public int compare(Point p1, Point p2) {\n            int dx1 = p1.x - x;\n            int dy1 = p1.y - y;\n            int dx2 = p2.x - x;\n            int dy2 = p2.y - y;\n\n            if (dy1 >= 0 && dy2 < 0) {\n                return -1; // p1 above p2\n            } else if (dy2 >= 0 && dy1 < 0) {\n                return 1; // p1 below p2\n            } else if (dy1 == 0 && dy2 == 0) { // Collinear and horizontal\n                return Integer.compare(dx2, dx1);\n            } else {\n                return -orientation(Point.this, p1, p2); // Compare orientation\n            }\n        }\n    }\n}\n"
+}

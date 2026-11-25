@@ -1,0 +1,9 @@
+{
+  "id": "visualizer:src-reducers-player-js",
+  "slug": "player",
+  "title": "Player",
+  "source": "visualizer",
+  "category": "reducers",
+  "sourcePath": "AlgoVisualizer/src/reducers/player.js",
+  "content": "import { combineActions, createAction, handleActions } from 'redux-actions';\n\nconst prefix = 'PLAYER';\n\nconst setChunks = createAction(`${prefix}/SET_CHUNKS`, chunks => ({ chunks }));\nconst setCursor = createAction(`${prefix}/SET_CURSOR`, cursor => ({ cursor }));\nconst setLineIndicator = createAction(`${prefix}/SET_LINE_INDICATOR`, lineIndicator => ({ lineIndicator }));\n\nexport const actions = {\n  setChunks,\n  setCursor,\n  setLineIndicator,\n};\n\nconst defaultState = {\n  chunks: [],\n  cursor: 0,\n  lineIndicator: undefined,\n};\n\nexport default handleActions({\n  [combineActions(\n    setChunks,\n    setCursor,\n    setLineIndicator,\n  )]: (state, { payload }) => ({\n    ...state,\n    ...payload,\n  }),\n}, defaultState);\n"
+}

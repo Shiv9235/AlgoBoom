@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-maths-absolutemin-java",
+  "slug": "absolutemin",
+  "title": "AbsoluteMin",
+  "source": "java",
+  "category": "com / thealgorithms / maths",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/maths/AbsoluteMin.java",
+  "content": "package com.thealgorithms.maths;\n\npublic final class AbsoluteMin {\n    private AbsoluteMin() {\n    }\n\n    /**\n     * Compares the numbers given as arguments to get the absolute min value.\n     *\n     * @param numbers The numbers to compare\n     * @return The absolute min value\n     */\n    public static int getMinValue(int... numbers) {\n        if (numbers == null || numbers.length == 0) {\n            throw new IllegalArgumentException(\"Numbers array cannot be empty or null\");\n        }\n\n        long absMin = numbers[0];\n        for (int i = 1; i < numbers.length; i++) {\n            long current = numbers[i];\n            if (Math.abs(current) < Math.abs(absMin) || (Math.abs(current) == Math.abs(absMin) && current < absMin)) {\n                absMin = current;\n            }\n        }\n        return (int) absMin;\n    }\n}\n"
+}

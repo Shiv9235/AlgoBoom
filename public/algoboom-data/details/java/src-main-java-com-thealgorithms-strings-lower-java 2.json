@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-lower-java",
+  "slug": "lower",
+  "title": "Lower",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/Lower.java",
+  "content": "package com.thealgorithms.strings;\n\npublic final class Lower {\n    private Lower() {\n    }\n\n    /**\n     * Driver Code\n     */\n    public static void main(String[] args) {\n        String[] strings = {\"ABC\", \"ABC123\", \"abcABC\", \"abc123ABC\"};\n        for (String s : strings) {\n            assert toLowerCase(s).equals(s.toLowerCase());\n        }\n    }\n\n    /**\n     * Converts all of the characters in this {@code String} to lower case\n     *\n     * @param s the string to convert\n     * @return the {@code String}, converted to lowercase.\n     */\n    public static String toLowerCase(String s) {\n        char[] values = s.toCharArray();\n        for (int i = 0; i < values.length; ++i) {\n            if (Character.isLetter(values[i]) && Character.isUpperCase(values[i])) {\n                values[i] = Character.toLowerCase(values[i]);\n            }\n        }\n        return new String(values);\n    }\n}\n"
+}

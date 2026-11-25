@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-hammingdistance-java",
+  "slug": "hammingdistance",
+  "title": "HammingDistance",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/HammingDistance.java",
+  "content": "package com.thealgorithms.strings;\n\n/**\n * Class for calculating the Hamming distance between two strings of equal length.\n * <p>\n * The Hamming distance is the number of positions at which the corresponding symbols are different.\n * It is used in information theory, coding theory, and computer science.\n * </p>\n * @see <a href=\"https://en.wikipedia.org/wiki/Hamming_distance\">Hamming distance - Wikipedia</a>\n */\npublic final class HammingDistance {\n    private HammingDistance() {\n    }\n\n    /**\n     * Calculates the Hamming distance between two strings of equal length.\n     * <p>\n     * The Hamming distance is defined only for strings of equal length. If the strings are not\n     * of equal length, this method throws an {@code IllegalArgumentException}.\n     * </p>\n     *\n     * @param s1 the first string\n     * @param s2 the second string\n     * @return the Hamming distance between the two strings\n     * @throws IllegalArgumentException if the lengths of {@code s1} and {@code s2} are not equal\n     */\n    public static int calculateHammingDistance(String s1, String s2) {\n        if (s1 == null || s2 == null) {\n            throw new IllegalArgumentException(\"Strings must not be null\");\n        }\n\n        if (s1.length() != s2.length()) {\n            throw new IllegalArgumentException(\"String lengths must be equal\");\n        }\n\n        int distance = 0;\n\n        for (int i = 0; i < s1.length(); i++) {\n            if (s1.charAt(i) != s2.charAt(i)) {\n                distance++;\n            }\n        }\n        return distance;\n    }\n}\n"
+}

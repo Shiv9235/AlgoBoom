@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-slidingwindow-minsumksizesubarray-java",
+  "slug": "minsumksizesubarray",
+  "title": "MinSumKSizeSubarray",
+  "source": "java",
+  "category": "com / thealgorithms / slidingwindow",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/slidingwindow/MinSumKSizeSubarray.java",
+  "content": "package com.thealgorithms.slidingwindow;\n/**\n * The Sliding Window algorithm is used to find the minimum sum of a subarray\n * of a fixed size k within a given array.\n *\n * <p>\n * Worst-case performance O(n)\n * Best-case performance O(n)\n * Average performance O(n)\n * Worst-case space complexity O(1)\n *\n * This class provides a static method to find the minimum sum of a subarray\n * with a specified length k.\n *\n * @author Rashi Dashore (https://github.com/rashi07dashore)\n */\npublic final class MinSumKSizeSubarray {\n\n    // Prevent instantiation\n    private MinSumKSizeSubarray() {\n    }\n\n    /**\n     * This method finds the minimum sum of a subarray of a given size k.\n     *\n     * @param arr is the input array where the minimum sum needs to be found\n     * @param k   is the size of the subarray\n     * @return the minimum sum of the subarray of size k\n     */\n    public static int minSumKSizeSubarray(int[] arr, int k) {\n        if (arr.length < k) {\n            return -1; // Edge case: not enough elements\n        }\n\n        int minSum;\n        int windowSum = 0;\n\n        // Calculate the sum of the first window\n        for (int i = 0; i < k; i++) {\n            windowSum += arr[i];\n        }\n        minSum = windowSum;\n\n        // Slide the window across the array\n        for (int i = k; i < arr.length; i++) {\n            windowSum += arr[i] - arr[i - k];\n            minSum = Math.min(minSum, windowSum);\n        }\n        return minSum;\n    }\n}\n"
+}

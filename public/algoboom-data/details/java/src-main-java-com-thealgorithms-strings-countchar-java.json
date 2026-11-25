@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-strings-countchar-java",
+  "slug": "countchar",
+  "title": "CountChar",
+  "source": "java",
+  "category": "com / thealgorithms / strings",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/strings/CountChar.java",
+  "content": "package com.thealgorithms.strings;\n\npublic final class CountChar {\n    private CountChar() {\n    }\n\n    /**\n     * Counts the number of non-whitespace characters in the given string.\n     *\n     * @param str the input string to count the characters in\n     * @return the number of non-whitespace characters in the specified string;\n     *         returns 0 if the input string is null\n     */\n    public static int countCharacters(String str) {\n        if (str == null) {\n            return 0;\n        }\n        return str.replaceAll(\"\\\\s\", \"\").length();\n    }\n}\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-datastructures-trees-bstfromsortedarray-java",
+  "slug": "bstfromsortedarray",
+  "title": "BSTFromSortedArray",
+  "source": "java",
+  "category": "com / thealgorithms / datastructures / trees",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/datastructures/trees/BSTFromSortedArray.java",
+  "content": "package com.thealgorithms.datastructures.trees;\n\nimport com.thealgorithms.datastructures.trees.BinaryTree.Node;\n\n/**\n * Given a sorted array. Create a balanced binary search tree from it.\n *\n * Steps: 1. Find the middle element of array. This will act as root 2. Use the\n * left half recursively to create left subtree 3. Use the right half\n * recursively to create right subtree\n */\npublic final class BSTFromSortedArray {\n    private BSTFromSortedArray() {\n    }\n    public static Node createBST(int[] array) {\n        if (array == null || array.length == 0) {\n            return null;\n        }\n        return createBST(array, 0, array.length - 1);\n    }\n\n    private static Node createBST(int[] array, int startIdx, int endIdx) {\n        // No element left.\n        if (startIdx > endIdx) {\n            return null;\n        }\n        int mid = startIdx + (endIdx - startIdx) / 2;\n\n        // middle element will be the root\n        Node root = new Node(array[mid]);\n        root.left = createBST(array, startIdx, mid - 1);\n        root.right = createBST(array, mid + 1, endIdx);\n        return root;\n    }\n}\n"
+}

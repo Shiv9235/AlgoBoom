@@ -1,0 +1,9 @@
+{
+  "id": "hello:en-docs-chapterheap-index-md",
+  "slug": "heaps",
+  "title": "Heaps",
+  "source": "hello",
+  "category": "heap",
+  "sourcePath": "Algorithms/en/docs/chapter_heap/index.md",
+  "content": "# Heaps\n\n![Heaps](../assets/covers/chapter_heap.jpg)\n\n!!! abstract\n\n    Heaps resemble mountain ranges, rising in layers of varied shapes.\n    \n    The peaks stand at different heights, yet the highest always catches the eye first.\n"
+}

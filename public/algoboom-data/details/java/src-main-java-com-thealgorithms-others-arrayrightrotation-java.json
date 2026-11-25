@@ -1,0 +1,9 @@
+{
+  "id": "java:src-main-java-com-thealgorithms-others-arrayrightrotation-java",
+  "slug": "arrayrightrotation",
+  "title": "ArrayRightRotation",
+  "source": "java",
+  "category": "com / thealgorithms / others",
+  "sourcePath": "AlgorithmsJAVA/src/main/java/com/thealgorithms/others/ArrayRightRotation.java",
+  "content": "package com.thealgorithms.others;\n\n/**\n * Provides a method to perform a right rotation on an array.\n * A left rotation operation shifts each element of the array\n * by a specified number of positions to the right.\n *\n * https://en.wikipedia.org/wiki/Right_rotation *\n */\npublic final class ArrayRightRotation {\n    private ArrayRightRotation() {\n    }\n\n    /**\n     * Performs a right rotation on the given array by the specified number of positions.\n     *\n     * @param arr the array to be rotated\n     * @param k the number of positions to rotate the array to the left\n     * @return a new array containing the elements of the input array rotated to the left\n     */\n    public static int[] rotateRight(int[] arr, int k) {\n        if (arr == null || arr.length == 0 || k < 0) {\n            throw new IllegalArgumentException(\"Invalid input\");\n        }\n\n        int n = arr.length;\n        k = k % n; // Handle cases where k is larger than the array length\n\n        reverseArray(arr, 0, n - 1);\n        reverseArray(arr, 0, k - 1);\n        reverseArray(arr, k, n - 1);\n\n        return arr;\n    }\n\n    /**\n     * Performs reversing of an array\n     * @param arr the array to be reversed\n     * @param start starting position\n     * @param end ending position\n     */\n    private static void reverseArray(int[] arr, int start, int end) {\n        while (start < end) {\n            int temp = arr[start];\n            arr[start] = arr[end];\n            arr[end] = temp;\n            start++;\n            end--;\n        }\n    }\n}\n"
+}
